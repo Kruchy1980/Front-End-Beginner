@@ -45,8 +45,585 @@ git checkout podstawy_html.
 Ale żeby to uczynić, to musimy najpierw pchnąć wszystkie zmiany w plikach, które obsługujemy w gałęzi, którą stworzyliśmy i używamy dotychczas.
 Robimy to teraz, potem przerzucimy się na kodzenie, a na koniec rozdziału powrzucamy wszystkie elememty do każdej odpowiedniej z gałęzi.
 
+!!!!    Informacja    !!!!
+
+Aby zawartość nowej gałęzi wyświetliła się w repo zdalnym, to trzeba najpierw ją tam pchnąć:
+
+git push origin <branch - której to dotyczy>
+
+Aby skasować niepotrzebną już gałąź, należy użyć komendę:
+
+git branch -d <nazwa gałęzi> - -d oznacza delete
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! UWAGA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Zawsze należy pamiętać, aby wszystkie zmiany w danej gałęzi pchnąć do gita zanim zmienimy gałąź ponieważ w przeciwnym wypadku wszystko stracimy.
 
 
+--------------------------------------------------------------------------
 
+1. Kilka linków, które przydadzą się do tworzenia stron Html-owych:
+
+Developer Tools
+https://www.w3.org/developers/tools/
+
+About HTML and CSS
+https://www.w3.org/standards/webdesign/htmlcss
+
+About web browsers 
+https://en.wikipedia.org/wiki/Web_browser
+
+Get Notepadd ++ for Windows
+https://notepad-plus-plus.org/
+
+Get Text Wrangler for Mac
+http://www.barebones.com/products/textwrangler/
+
+Get Brackets for any platform
+http://brackets.io/
+
+Work with HTML CSS and JavaScript live online
+http://codepen.io/pen/
+
+More about HTML5 and different tags
+https://en.wikipedia.org/wiki/HTML5
+
+Attributes
+https://www.w3.org/TR/2010/WD-html-markup-20100624/common-attributes.html
+
+Images
+<img src="http://lorempixel.com/400/200" /> - jest to tag, który wykorzystujemy do przywoływania obrazków na stronę.
+
+http://lorempixel.com/
+
+List of Elements
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+More about attributes
+
+https://www.w3.org/TR/2010/WD-html-markup-20100624/common-attributes.html
+
+Get dummy images
+
+http://lorempixel.com/
+
+HTML element reference
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+HTML elements
+
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+Forms
+
+https://www.w3.org/wiki/HTML_forms_-_the_basics
+
+https://www.w3.org/wiki/HTML5_form_additions
+
+
+-------------------------------------------------------------------------
+
+2. Podstawowe elementy HTML:
+
+<!DOCTYPE html>
+<!--Doctype pisane z małej lub dużej litery jest nieodzownym elementem nagłówka strony HTML, mówiąca przeglądarc, aby interepretowała ten poniższy kod jako elementy języka HTML-->
+<html lang="pl">
+<!-- Ten tag mówi przeglądarce, jaki język ma używać/rozpoznawać, zdefiniowany jest "en", a ja zmieniłem na polski.-->
+<!--Język "pl" pozwala nam używać polskich znaków na stronie  -->
+
+<head>
+    <!-- Teraz pomiędzy tagiem head znajdują się informacje o stronie, które nie są widoczne dla użytkownika, natomiast mówią przeglądarkom jak mogą interpretować nasz kod i inne potrzebne rzeczy do działania strony: -->
+    <!-- Poniższe tagi meta, określają nam niektóre elementy strony internetowej i muszą być zawsze umiszczane pomiędzy tagiem head naszej strony, a są to między innymi:-->
+    <meta charset="UTF-8">
+    <!--Jest odpowiedzialny za kodownie treści, co pomaga naszej przeglądarce zrozumieć, jak interpretować nasz zapisany tutaj kod.-->
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <!-- Możemy lecz nie musimy dodawać tego taga, ktorym możemy do-opisać naszą stronę, czyli wprowadzić tutaj krótki opis naszej strony, a mianowicie tego czego ma dotyczyć-->
+    <meta name="author" content="Jakub Kruszyński">
+    <!-- Chyba nie trzebs opisywać ponieważ odpowiada on za wpisanie autora strony - nie jest obowiązkowy-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--viewport mówi preglądarce , jak ma skalować obraz w zależności od urządzenia na którym jest wywietlana strona -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Ten meta tag mówi o kompatybilnośi w przeglądarce Explorer nie obowiązkowy, aczkolwiek być możę.-->
+    <!-- <meta http-eqquiv="refresh" content="30"> - ten tag odświeża zawartość naszej strony co 30 sekund, może być potrzebny dla stron, które ze względu na zmieniającą się zawartość powinny być odświeżane.-->
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <!--Obecnie żadko używane meta, kiedyś służące do pozycjonowania stron ponieważ słowa klucze wpisywane w przeglądarce wyświetlają daną stronę więc czasem potrzebne-->
+    <title>Podstawy HTML'a</title>
+    <!-- Wyśietl się jako tytuł naszej zakłądki, na której jest nasza strona otwierana/odczytywany nasz kod -->
+</head>
+
+<body>
+    <!-- Wszystko co znajduje sie w tagu body, jest wyświetlane w oknie przeglądarki, czyli jest widoczne dla użytkownika.-->
+    <h1>Nasza pierwsza strona</h1>
+</body>
+
+</html>
+
+-------------------------------------------------------------------------
+ 3. Główne tagi i elementy HTML:
+
+ <!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <title>Tagi</title>
+</head>
+
+<body>
+    <!-- Wszystko co znajduje sie w tagu <body></body>, jest wyświetlane w oknie przeglądarki, czyli jest widoczne dla użytkownika.-->
+    <h1>Nasza pierwsza strona</h1>
+    <!-- Tutaj użyjemy tagu paragrafu, który to wyróżnia podany w sobie tekst i jest tagiem zamykanym. -->
+    <p>Tutaj jest nasz pierwszy paragraf.</p>
+    <!-- Wprowadzając kilka takich samych paragrafó zauważymy, że tagi paragrafu mają zdefiniowane marginesy i odstępy, co czyni je trochę bardziej czytelnymi. -->
+    <p>Tutaj jest nasz drugi paragraf.</p>
+    <p>Tutaj jest nasz trzeci paragraf.</p>
+    <p>Tutaj jest nasz czwarty paragraf.</p>
+    <!-- Teraz użyjemy tagu  <br> oddzielającego linią teksty przez nas zapisane, ten tag jest dobrym przykładem tagua/u samozamykakjącego się. -->
+    Pierwsza linia <br>
+    Druga linia <br>
+    Trzecia linia <br>
+    Czwarta linia <br>
+    <!-- Można używać tagu <br> aby dzielić na linie np jakiś paragraf czy header <hx></h> gdzie x jest liczbą od 1-6, która definiuje wielkość headera -->
+    <p>Pierwsza linia tekstu, <br> Druga linia tekstu w jednym paragrafie.</p>
+    <p>Przykłady wielkości headerów:</p>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+
+</body>
+
+</html>
+
+Dodamy tu jeszcze kilka informacji na temat elementów sekcji języka HTML5:
+<section></section> - określa główną sekcję przeważnie zawiera też navbar.
+<article></article> - jest to kontenerek na zawartość główną strony.
+<header></header> - kontenerek na nagłówek strony.
+<nav></nav> - to jest kontenerek na pasek nawigacyjny strony.
+<footer></footer> - stopka strony, również pełni rolę kontenerka znajdującego się u dołu strony.
+<aside></adide> - kontenerek poboczny, w którym możemy umieścić podmenu, a sam kontenerek może się znajdować w sekdcji article na przykład, ale nie tylko.
+
+-------------------------------------------------------------------------
+
+4. Metadane i puste miejsca(spacje) w kodzie HTML.
+
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <!-- Aby dodać style do wyglądu naszej strony, możemy to zrobić na kilka sposobów
+    1. to użyć w headzie strony tag'a 'style' jak poniżej - obecnie nie stosowane;
+    2. Możemy użyć tego na tzw sposób inline, czyli doposując do danego elementu style="font-color: red" na ten przykład;
+    3. Obecnym jednak sposobem jest utworzenie osobnego pliku stylu, nazywając go np main.css i za pomocą tagu link połączyć z naszą stroną:
+    przykład : <link rel="stylesheet" href="ścieżka do naszego pliku stylu"-->
+    <style>
+        body {
+            background-color: green;
+        }
+    </style>
+    <link rel="stylesheet" href="cssstyle/mainstyle.css">
+    <!-- Powyższy zapis odwołujący do naszego pliku css'owego jest obecnie stosowaną metodą nadawania styli do naszych stron. -->
+
+    <title>Spacje</title>
+</head>
+
+<body>
+    <!-- Inlie'nowy sposób umieszczania styli.-->
+    <p style="background-color: yellowgreen;">Jeśli chodzi o spacje w tekstach kodu HTML, to nic nie da używanie samej
+        spacji.
+        Aby zwiększyć spację, należy:
+        <ol>
+            <li> Użyć tagu '& n b s p ;' pisanego razem ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tę linię chcemy oddalić
+            </li>
+            <li> Aby pisać linijkę pod linijką, używamy tagu < br> <br>
+                    Tę linijkę chcemy mieć pod powyższą <br>
+                    A tę najniżej</li>
+        </ol>
+    </p>
+</body>
+
+</html>
+-------------------------------------------------------------------------
+
+5. Inne Elementy HTML - dodawanie obrazków:
+!!!!!!!!!!! UWAGA Informacja !!!!!!!!!!
+Atrybut srcset="" jest atrybutem dodawanym do tagu  obrazków, jeśli chcemy, aby przeglądarka odpowiednio skalowała obrazki w zależności od urządzenia, na którym są wyświetlane.
+Oczywiście jest to set, więc albo trzeba będzie w apostrofy wrzucić odpowiednie adresy url do obrazków o różnej roazdzielczościm, a przegladarka już sama sobie przypasuje odpowiednie wielkości.
+Przykład https://html.com/attributes/img-srcset/ ,  https://www.sitepoint.com/how-to-build-responsive-images-with-srcset/:
+<img src="image-src.png" srcset="image-1x.png 1x, image-2x.png 2x,
+                                 image-3x.png 3x, image-4x.png 4x">
+Można użyć również atrybutu sizes https://www.keycdn.com/blog/responsive-images:
+     sizes="(max-width: 480px) 100vw,
+            (max-width: 900px) 33vw,
+            254px"
+     src="responsive-images-car.jpg" alt="responsive images car">
+SRCSET Disp
+
+
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <title>Atrybuty i obrazki.</title>
+</head>
+
+<body>
+    <img src="http://lorempixel.com/400/200">
+</body>
+
+</html>
+-------------------------------------------------------------------------
+
+6. Listy:
+
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <title>Rodzaje list w HTML</title>
+</head>
+
+<body>
+    <h2>Rodzaje list w HTML</h2>
+    <!-- Lista nieuporządkowana -->
+    <h3>Unordered list - Lista nieuporządkowana. <br>
+        Tego typu list z zasady używamy w paskach nawigacyjnych.</h3>
+    <ul>
+        <li>Firma/Company</li>
+        <li>Strona domowa/Home</li>
+        <li>O mnie/About</li>
+        <li>Kontakt/Contact</li>
+    </ul>
+    <!-- Lista uporządkowana  wersja podstawowa-->
+    <h3>Ordered List - lista uporządkowana</h3>
+    <ol>
+        <li>Pierwsza rzecz z listy</li>
+        <li>Druga rzecz z listy</li>
+        <li>Trzecia rzecz z listy</li>
+        <li>Czwarta rzecz z listy</li>
+    </ol>
+    <!-- Wersja z atrybutem np-->
+    <h3>Lista uporządkowana z atrybutem przypisującym litery zamiast cyfr.</h3>
+    <ol type="a">
+        <li>Pierwsza rzecz z listy</li>
+        <li>Druga rzecz z listy</li>
+        <li>Trzecia rzecz z listy</li>
+        <li>Czwarta rzecz z listy</li>
+    </ol>
+    <h3>Lista uporządkowana z iterowaniem I oraz zaczynającs się od numeru drugiego.</h3>
+    <ol type="I" , start="2">
+        <li>Pierwsza rzecz z listy</li>
+        <li>Druga rzecz z listy</li>
+        <li>Trzecia rzecz z listy</li>
+        <li>Czwarta rzecz z listy</li>
+    </ol>
+
+</body>
+
+</html>
+-----------------------------------------------------------------------
+
+7. Tabele:
+
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <title>Tabele w HTML</title>
+    <link rel="stylesheet" href="cssstyle/table.css">
+</head>
+
+<body>
+    <h1>Tabele</h1>
+    <br>
+    <h3>Ogólny wygląd tabeli <br>
+        <span style="color: red;">!!!Należy zaznaczyć, że nagłówki czyli 'thead' nie są niezbędne i <br>
+            można je pominąć, jeśli nie potrzebujemy nagłówków w tabeli, a<br>
+            jedynie chcielibyśmy stabelaryzować dla lepszego porządku jakieś elementy.</span></h3>
+    <table border="1" style="border: 2px dotted green;">
+        <!--Style najlepiej przerzucić do pliku css'owego, aby nie zajmować miejsca tutaj i aby kod był uporządkowany.-->
+        <!--table jest tagiem wywołującym tabelę i jest ogólny. Reszte argumentów jako styli dodaliśmy, zby była ona bardziej odzwierciedlająca się.-->
+        <thead>
+            <!-- thead Jest to tag wywołujący nagłówki tabeli-->
+            <tr>
+                <!--tr(table row) jest tagiem odpowiadającym za wiersze tabeli-->
+                <th>Państwo</th> <!-- th(table head) są to kolumny nagłówków naszej Tabeli-->
+                <th>Miasto</th>
+                <th>Stolica - opis</th>
+                <th>W razie braku miejsca</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--tbody jest to ciało tabeli coś jak body dla strony.-->
+            <tr>
+                <td>Polska</td>
+                <!--td(table column/data) jest to kolumna ciała tanbeli.-->
+                <td>Radom</td>
+                <td colspan="2">Warszawa z syrenką w swoim godle.</td>
+                <!--colspan - pozwala nam łączyć kolumny tabeli - jest to coś jak merge w excelu.-->
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
+------------------------------------------------------------------------
+
+8. Hiperlinki i połączenia
+
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <title>Hiperlinki</title>
+    <link rel="stylesheet" href="cssstyle/table.css">
+</head>
+
+<body>
+    <h2>Hiperlinki, czyli jak połączyć inne strony z naszą <br>
+        Lub jak pod element (tekst lub obrazek) podłączyć adresy URL</h2>
+    <!--Robimy to za pomocą prostego kotwiczenia :
+    a href="tutaj podajemy adres url">A tutaj możemy wpisać jakikolwiek tekst</a>-->
+    <h3>Tutaj przykład połączenia ze stroną np google.com</h3>
+    <a href="https://google.com" target="blank">Przejdź do google'a</a> - dodając do tagu kotwiczenia atrybut
+    target="blank" spowoduje to otwarcie strony w zupełnie nowej zakładce.
+    <!--Możemy również użyć targeta, jeśli wpiszemy w nim blank, to otworzy nam strone w zupełnie nowej zakładce, jeśli nie wpisujemy targeta to zdefiniowane jest otwarcie strony w tej samej zaakładce.-->
+
+    <h3>Oczywiście nie trzeba łączyć tylko z adresami url <br>
+        A dla naszego projektu jeśli mamy kilka stron przygotowanych, to możemy łączyć się z nimi <br>
+        poprzez podaanie ścieżki do naszego pliku html, np:</h3>
+    <h3>Tworzymy sobie np listę niuporządkowaną i pod jej zawartości wrzucamy linki naszych stron. <br>
+        Przyjęło się, że stronę Home tytułową nazywamy plikiem 'index.html'</h3>
+    <ul>
+        <!-- Przypisujemy do każdej ze stron które stworzyliśmy odpowiednią stronę -->
+        <li><a href="strony_html/home.html"> Domowa</a> - dajemy tutaj odpowiednie linki, czyli ścieżki do miejsc, w
+            których przygotowane są nasze strony.</li>
+        <li><a href="strony_html/about.html"> Opis</a> - dajemy tutaj odpowiednie linki, czyli ścieżki do miejsc, w
+            których przygotowane są nasze strony.</li>
+        <li><a href="strony_html/contact.html"> Kontakt</a> - dajemy tutaj odpowiednie linki, czyli ścieżki do miejsc, w
+            których przygotowane są nasze strony.</li>
+    </ul>
+    <h3>Oczywiście nie musi to być lista, mogą to być pojedyncze kotwiczenia w zupełnie nieuporządkowanych miejscach.
+    </h3> <br>
+    <h3>Nie musimy oczywiście linkować pod teksty, lecz możemy zrobić to pod obrazki, np:</h3>
+    <a href="https://www.wp.pl" target="blank"><img
+            src="https://www.google.com/imgres?imgurl=http%3A%2F%2Fregiodom.pl%2Fportal%2Fsites%2Fregiodom%2Ffiles%2Fimagecache%2F755x%2Fimages%2Fregiodompl%2F78%2F39279380_269240030348410_1228492845749370880_n.jpg%3Fpdysoe&imgrefurl=http%3A%2F%2Fregiodom.pl%2Fportal%2Fporady-domowe%2Fporzadki-i-eksploatacja%2Fzdjecie-skrzynki-pocztowe&docid=TdYkxyx7y1OPOM&tbnid=cm6QLqMU1oWW0M%3A&vet=10ahUKEwjr0tLeivnjAhWKw6YKHTPXDYEQMwiPAigQMBA..i&w=755&h=705&bih=930&biw=962&q=skrzynki%20pocztowe&ved=0ahUKEwjr0tLeivnjAhWKw6YKHTPXDYEQMwiPAigQMBA&iact=mrc&uact=8"
+            alt="skrzynka pocztowa"></a>
+
+</body>
+<!--Tutaj tylko skopiowany adres url z którego korzystamy do podłączenia linku.-->
+<!-- https://www.google.com/imgres?imgurl=http%3A%2F%2Fregiodom.pl%2Fportal%2Fsites%2Fregiodom%2Ffiles%2Fimagecache%2F755x%2Fimages%2Fregiodompl%2F78%2F39279380_269240030348410_1228492845749370880_n.jpg%3Fpdysoe&imgrefurl=http%3A%2F%2Fregiodom.pl%2Fportal%2Fporady-domowe%2Fporzadki-i-eksploatacja%2Fzdjecie-skrzynki-pocztowe&docid=TdYkxyx7y1OPOM&tbnid=cm6QLqMU1oWW0M%3A&vet=10ahUKEwjr0tLeivnjAhWKw6YKHTPXDYEQMwiPAigQMBA..i&w=755&h=705&bih=930&biw=962&q=skrzynki%20pocztowe&ved=0ahUKEwjr0tLeivnjAhWKw6YKHTPXDYEQMwiPAigQMBA&iact=mrc&uact=8 -->
+
+</html>
+------------------------------------------------------------------------
+
+9. Podstawowe formularze HTML:
+
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <title>Formularze</title>
+    <link rel="stylesheet" href="cssstyle/forms.css">
+</head>
+
+<body>
+    <h1>Formularze w języku Html tworzymy za pomocą <br>
+        głównego tagu "< f o r m>", a następnie różnego typu inputów. </h1>
+    <!--form jest tagiem otwierającym nasz formularz, i wszystko co się w nim znajduje dotyczy formularza. Ma to dużo możliwości i posiada różne rodzanie inputów, które są głównymi składowymi formularzy.-->
+    <!-- Aby przycisk Submit zadziałał, to musimy dopisać tutaj atrybut action, i do niego przypisać co ma się stać po wciśnięciu przycisku Submit. Można np podać adres url lub adres do stworzonej przez nas strony lub cokolwiek-->
+    <form action="strony_html/home.html" target="blank" method="post" autocomplete="on" target="_blank">
+        <!-- target'em określamy, czy chcemy aby strona, na którą następuje przekierowanie, otwierała się w tej samej zakłądce, czy w nowej. blank - określa czystą stronę, a więc nową zakłądkę.-->
+        <!--method określa sposób przesyłania danych. Jako zadeklarowana jest metoda 'get', która jak wiemy jest mniej bezpieczna oraz nie można dzięki niej przesyłać większej ilości danych, więc chcąc być bezpieczniejszym używamy metody post.-->
+        <h3>Poniższe 2 atrybuty dopisywać możey do tagu form</h3>
+        <h3>autocomplete="on" - automatycznie dopełnia miejsce w formularzu.</h3>
+        <h3>target="_blank"- otwiera stronę formularza w nowej zakładce po kliknięciu przycisku Submit.</h3>
+
+        <h3>Te argumenty możemy przypisywać do osobnych inputów</h3>
+        <h3>reauired - ten argument powoduje wymóg wypełnienia pola formularza, jeśli tego się nie zrobi to nie
+            przekieruje nas nigdzie po zatwierdzeniu formularza, jednak przy okienku oznaczonym tym argumentem pokaże
+            się komunikat że trzeba wypełnić dane pole.</h3>
+
+        <h3>Są różne typy inputów w formularzach, które definiuje się poprzez dodanie argumentu type do tagu input.
+        </h3>
+
+        <h2>Niektóre atrybuty, które możemy używać z inputami:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atrybut</th>
+                    <th>Opis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="one">type</td>
+                    <td class="two">odpowiadający za typ inputu</td>
+                </tr>
+                <tr>
+                    <td class="one">name</td>
+                    <td class="two">nazwa, która pozwala zidentyfikować input</td>
+                </tr>
+                <tr>
+                    <td class="one">value</td>
+                    <td class="two"> podpisuje miejsce inputu i aby je zastąpić trzeba skasować podpis manualnie
+                    </td>
+                </tr>
+                <tr>
+                    <td class="one">placeholder</td>
+                    <td class="two">atrybut podpisujące pole inputu, który to podpis po kliknięciu na pole i
+                        rozpoczęciu pisania znika</td>
+                </tr>
+                <tr>
+                    <td class="one">reszta do dokończenia</td>
+                    <td class="two">Opisy również pododajemy</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>!!! Później zrobimy tabelkę do typów</h1>
+        <h2>Przykłady wartości argumentu type:</h2>
+        <h3>"text" - pozwala na wpisywanie tekstu włącznie ze znakami specjalnymi
+            oraz cyframi itd.</h3><br>
+        <span> Username:</span> <br>
+        <input type="text" name="username" value="Enter your Name - value"> <br> <!-- tu jest input tekstowy-->
+
+
+        <h3>"number" - pozwala wpisywać lub strzałkami ustawiać tylko numery</h3>
+        <span> Age:</span> <br>
+        <input type="number" name="age" placeholder="Enter your age - placeholder"> <br>
+        <!-- tu jest input numerowy-->
+
+        <h3>"email" - jest jednym ze specyficznych inputów formularza, który jeśli odpowiednio nazwiemy,
+            będzie przyjmował &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tylko adresy email czyli zapisy z '@' i 'domeną'.</h3>
+        <span> Email:</span> <br>
+        <input type="email" name="email" placeholder="ziutek.b@gmail.com">
+
+        <h3>password - jest kolejnym ze specjalnych typów charakteruzujący się tym, że wpisywane przez nas litery
+            hasła
+            są wyświetlane jako kropki. </h3>
+        <span> Password:</span> <br>
+        <input type="password" name="password" placeholder="Enter your password">
+
+        <h2>Radio buttons:</h2>
+        <h3> Są to guziki, które zaznaczamy, aby wybrać jedną z opcji. <br>
+            Inputy radiobutton'owe, zby powiązać, musimy nazwać tak samo, co przy ich przełączaniu nie pozwoli na
+            zaznaczanie kilklu opcji jednocześnie - oczywiśie kilku opcji w tym samym secie np. <br>
+            ! Informacja: Radiobutton's muszą a przynajmniej powinny posiadać wartość, abyśmy wiedzieli co zaznaczamy w
+            przypadku dalszej obróbki, to znaczy gdybyśmy chcieli użyć/wyciągnąć potem jako wartości, szczególnie przy
+            dodawaniu logiki do strony w języku JScript.</h3>
+
+        Czy podoba się Tobie ta strona? <br> <br>
+
+        <input type="radio" name="myradio" value="0" checked> Tak - <span>Tutaj użyliśmy argumentu "checked"</span> <br>
+
+        <input type="radio" name="myradio" value="1"> Nie<br>
+
+        <input type="radio" name="myradio" value="2" disabled> Nie mam zdania - <span>Tutaj użyliśmy argumentu
+            "disabled, który wyłącza nam ten wybór."</span><br> <br>
+
+        <h2 class="warn">!!! Uwaga: Jeśli do input'a rdiobutton'a dodamy argument <span class="term"> "checked"</span>,
+            to przy przejściu na stronę będzie on od razu zaznaczony.
+            Nie musimy jednak tego robić i wtedy żaden z butonów nie będzie zaznaczony.</h2>
+
+        <h2>Checkbox'y</h2>
+        <h3>"checkbox" - Checkbox'y używamy głównie wtedy, gdy chcemy zaanaczyć więcej niż jedną rzecz z zestawu <br>
+            i są to kwadraciki, które zaznaczamy ptaszkiem:) - bez skojarzeń proszę:P</h3>
+
+        <input type="checkbox" name="mycheck" value="zaznaczone 1"> Zaznacz <br>
+        <input type="checkbox" name="mycheck" value="zaznaczone 2"> Zaznacz <br>
+
+        <h2>Inne typy, które mogą urozmaicić formularz.</h2>
+        <h3>"color" - jest to typ, który działa jak kolorpicker na stronie</h3>
+
+        <input type="color" name="mojkolor"> Kolor <br>
+
+        <h3>"date" - jest to taki picker ale daty, który pozwala nam ją wybrać.</h3>
+
+        <input type="date" name="mojadata"> Data <br>
+
+        <h2>Menu rozwijalne w formularzu - robimy to w tagach < select> , a następnie w środku jako elementy listy
+                używamy tagu < option>.</h2>
+
+        <select name="pierwselekt">
+            <option value="1">Pierwszy element</option>
+            <option value="2">Drugi element</option>
+            <option value="3">Trzeci element</option>
+            <option value="4">Czwarty element</option>
+        </select> <br> <br>
+
+        <h3>"textarea" - jest to tag, który pozwala zastosować miejsce tekstowe o dużo większej pojemności i objętości
+            niż "text" <br>
+            Poprzez takie argumenty jak col="x" i row="y" ustawić możemy wielkość naszego obszaru tekstowego. <br>
+            jeśli jednak tego nie zdefiniujemy, to możemy sobie rozszerzać obszar jak tylko sobie chcemy. <br>
+            Ilość znaków które możemy wpisywać do obszaru również możemy zdefiniować poprzez argument max_length="x".
+            <br>
+            gdzie x i y ilość kolumn i wierszy jakie zadeklarujemy.</h3>
+
+        <textarea name="mojtext" placeholder="Wpisz tutaj swój text"></textarea> <br>
+
+        <h3>"file" - pozwala on na wrzucenie pliku poprzez formularz na zawartość naszej strony.</h3>
+
+        <span> File:</span> <br>
+        <input type="file" name="mojPlik"> <br>
+
+
+        <input type="submit" value="Submit">
+        <!-- tu jest input przyciskowy, który jednocześnie zatwierdza dane wypisane do formularza.-->
+
+    </form>
+
+</body>
+
+</html>
+---------------------------------------------------------------------
