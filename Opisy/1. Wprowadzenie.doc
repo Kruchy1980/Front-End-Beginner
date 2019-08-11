@@ -1,0 +1,52 @@
+##########################################################################
+################## Kurs Front End JavaScript, CSS i HTML #################
+##########################################################################
+
+I. HTML Od podstaw - poznawanie i praktykowanie.
+
+Zanim zaczniemy, zapiszmy sobie link do naszego Repozytorium:
+
+https://github.com/Kruchy1980/Front-End-Beginner.git
+
+Repo znajduje się na gicie (GITHUBI'e).
+
+Projekt Tworzony będzie na gałęziach roboczych, a następnie będziemy merge'ować te gałęzie z gałęzią główną.
+Aby stworzyć gałąź roboczą, używamy w konsoli git'a następującego polecenia:
+git checkout -b <nazwa gałęzi> - Tworzy nową gałąź i przełącza się na nią:
+-b == branch
+Wygląd polecenia zastosowanego
+Nazwijmy sobie naszą pierwszą gałąź podstawy_html:
+git checkout - b podstawy_html
+Jest to skrócona wersja poleceń:
+1. git branch podstawy_html - gir utwórz branch(odgałęzienie) o nazwie podstawy_html.
+2. git checkout podstawy_html - przełącz na  odgałęzienie  podstawy_html
+
+To polecenie tworzy nam w odpowiednim miejscu naszego repo gałąź przez nas zapisaną i w danym mommencie przełącza na tą gałąź, co oznacza, że wszystko co będziemy tutaj pushować, to będzie tej gałęzi, i żeby to zainicjować do repo, musimy połączyć ją z gałęzią główną, za pomocą polecenia merge.
+Teraz jednak stworzymy drugą gałąź, gdzie będziemy umieszczać opisy i tę gałąź nazwiemy po prostu opisy.
+czyli:
+git checkout -b opisy - tworzy nam i przełącza na gałąź opisy, gdzie będzeimy wrzucali tylko opisy do poszczególnych etapów nauki.
+
+Teraz chcąc przełączyć się pomiędzy gałęziami używamy tylko polecenia:
+git  checkout <nazwa gałęzi>
+Do tej pory mamy dwie gałęzie, a mianowicie:
+1. podstawy_html
+2. opisy
+opisy to katalog, do którego będę wrzucał opis każdego rozdziału nauku z danego kursu,
+Gałęzie o innej nazwie, np podstawy_html i kolejne utworzone, będą gałęziami z plikami kodowymi - lub też katalogami z pikami w których będziemy kodować.
+Teraz zróbmy commit pierwszy tylko do gałęzi opisy:
+1. git add Opisy - dodajemy śledzenie katalogu
+2. git commit -a -m "nasz komentarz" - opis commita
+3. git push  --set-upstream origin opisy - wrzucenie zmain do HEAD naszej gałęzi.
+Pamiętajmy jednak, że póki nie zmerg'ujemy naszej gałęzi z główną, to nie będzie jej widać w repo przez innych użytkowników.
+Teraz, gy opisy są pvhnięte, to można przełączyć się na inną gałąź, a robimy to za pomocą komendy:
+git checkout <nazwa branch/gałęzi>
+Oryginał:
+git checkout podstawy_html.
+Ale żeby to uczynić, to musimy najpierw pchnąć wszystkie zmiany w plikach, które obsługujemy w gałęzi, którą stworzyliśmy i używamy dotychczas.
+Robimy to teraz, potem przerzucimy się na kodzenie, a na koniec rozdziału powrzucamy wszystkie elememty do każdej odpowiedniej z gałęzi.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! UWAGA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Zawsze należy pamiętać, aby wszystkie zmiany w danej gałęzi pchnąć do gita zanim zmienimy gałąź ponieważ w przeciwnym wypadku wszystko stracimy.
+
+
+
