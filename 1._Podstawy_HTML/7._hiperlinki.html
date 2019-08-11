@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <title>Hiperlinki</title>
+    <link rel="stylesheet" href="cssstyle/table.css">
+</head>
+
+<body>
+    <h2>Hiperlinki, czyli jak połączyć inne strony z naszą <br>
+        Lub jak pod element (tekst lub obrazek) podłączyć adresy URL</h2>
+    <!--Robimy to za pomocą prostego kotwiczenia :
+    a href="tutaj podajemy adres url">A tutaj możemy wpisać jakikolwiek tekst</a>-->
+    <h3>Tutaj przykład połączenia ze stroną np google.com</h3>
+    <a href="https://google.com" target="blank">Przejdź do google'a</a> - dodając do tagu kotwiczenia atrybut
+    target="blank" spowoduje to otwarcie strony w zupełnie nowej zakładce.
+    <!--Możemy również użyć targeta, jeśli wpiszemy w nim blank, to otworzy nam strone w zupełnie nowej zakładce, jeśli nie wpisujemy targeta to zdefiniowane jest otwarcie strony w tej samej zaakładce.-->
+
+    <h3>Oczywiście nie trzeba łączyć tylko z adresami url <br>
+        A dla naszego projektu jeśli mamy kilka stron przygotowanych, to możemy łączyć się z nimi <br>
+        poprzez podaanie ścieżki do naszego pliku html, np:</h3>
+    <h3>Tworzymy sobie np listę niuporządkowaną i pod jej zawartości wrzucamy linki naszych stron. <br>
+        Przyjęło się, że stronę Home tytułową nazywamy plikiem 'index.html'</h3>
+    <ul>
+        <!-- Przypisujemy do każdej ze stron które stworzyliśmy odpowiednią stronę -->
+        <li><a href="strony_html/home.html"> Domowa</a> - dajemy tutaj odpowiednie linki, czyli ścieżki do miejsc, w
+            których przygotowane są nasze strony.</li>
+        <li><a href="strony_html/about.html"> Opis</a> - dajemy tutaj odpowiednie linki, czyli ścieżki do miejsc, w
+            których przygotowane są nasze strony.</li>
+        <li><a href="strony_html/contact.html"> Kontakt</a> - dajemy tutaj odpowiednie linki, czyli ścieżki do miejsc, w
+            których przygotowane są nasze strony.</li>
+    </ul>
+    <h3>Oczywiście nie musi to być lista, mogą to być pojedyncze kotwiczenia w zupełnie nieuporządkowanych miejscach.
+    </h3> <br>
+    <h3>Nie musimy oczywiście linkować pod teksty, lecz możemy zrobić to pod obrazki, np:</h3>
+    <a href="https://www.wp.pl" target="blank"><img
+            src="https://www.google.com/imgres?imgurl=http%3A%2F%2Fregiodom.pl%2Fportal%2Fsites%2Fregiodom%2Ffiles%2Fimagecache%2F755x%2Fimages%2Fregiodompl%2F78%2F39279380_269240030348410_1228492845749370880_n.jpg%3Fpdysoe&imgrefurl=http%3A%2F%2Fregiodom.pl%2Fportal%2Fporady-domowe%2Fporzadki-i-eksploatacja%2Fzdjecie-skrzynki-pocztowe&docid=TdYkxyx7y1OPOM&tbnid=cm6QLqMU1oWW0M%3A&vet=10ahUKEwjr0tLeivnjAhWKw6YKHTPXDYEQMwiPAigQMBA..i&w=755&h=705&bih=930&biw=962&q=skrzynki%20pocztowe&ved=0ahUKEwjr0tLeivnjAhWKw6YKHTPXDYEQMwiPAigQMBA&iact=mrc&uact=8"
+            alt="skrzynka pocztowa"></a>
+
+</body>
+<!--Tutaj tylko skopiowany adres url z którego korzystamy do podłączenia linku.-->
+<!-- https://www.google.com/imgres?imgurl=http%3A%2F%2Fregiodom.pl%2Fportal%2Fsites%2Fregiodom%2Ffiles%2Fimagecache%2F755x%2Fimages%2Fregiodompl%2F78%2F39279380_269240030348410_1228492845749370880_n.jpg%3Fpdysoe&imgrefurl=http%3A%2F%2Fregiodom.pl%2Fportal%2Fporady-domowe%2Fporzadki-i-eksploatacja%2Fzdjecie-skrzynki-pocztowe&docid=TdYkxyx7y1OPOM&tbnid=cm6QLqMU1oWW0M%3A&vet=10ahUKEwjr0tLeivnjAhWKw6YKHTPXDYEQMwiPAigQMBA..i&w=755&h=705&bih=930&biw=962&q=skrzynki%20pocztowe&ved=0ahUKEwjr0tLeivnjAhWKw6YKHTPXDYEQMwiPAigQMBA&iact=mrc&uact=8 -->
+
+</html>

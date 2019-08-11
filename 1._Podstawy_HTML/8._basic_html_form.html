@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <title>Formularze</title>
+    <link rel="stylesheet" href="cssstyle/forms.css">
+</head>
+
+<body>
+    <h1>Formularze w języku Html tworzymy za pomocą <br>
+        głównego tagu "< f o r m>", a następnie różnego typu inputów. </h1>
+    <!--form jest tagiem otwierającym nasz formularz, i wszystko co się w nim znajduje dotyczy formularza. Ma to dużo możliwości i posiada różne rodzanie inputów, które są głównymi składowymi formularzy.-->
+    <!-- Aby przycisk Submit zadziałał, to musimy dopisać tutaj atrybut action, i do niego przypisać co ma się stać po wciśnięciu przycisku Submit. Można np podać adres url lub adres do stworzonej przez nas strony lub cokolwiek-->
+    <form action="strony_html/home.html" target="blank" method="post" autocomplete="on" target="_blank">
+        <!-- target'em określamy, czy chcemy aby strona, na którą następuje przekierowanie, otwierała się w tej samej zakłądce, czy w nowej. blank - określa czystą stronę, a więc nową zakłądkę.-->
+        <!--method określa sposób przesyłania danych. Jako zadeklarowana jest metoda 'get', która jak wiemy jest mniej bezpieczna oraz nie można dzięki niej przesyłać większej ilości danych, więc chcąc być bezpieczniejszym używamy metody post.-->
+        <h3>Poniższe 2 atrybuty dopisywać możey do tagu form</h3>
+        <h3>autocomplete="on" - automatycznie dopełnia miejsce w formularzu.</h3>
+        <h3>target="_blank"- otwiera stronę formularza w nowej zakładce po kliknięciu przycisku Submit.</h3>
+
+        <h3>Te argumenty możemy przypisywać do osobnych inputów</h3>
+        <h3>reauired - ten argument powoduje wymóg wypełnienia pola formularza, jeśli tego się nie zrobi to nie
+            przekieruje nas nigdzie po zatwierdzeniu formularza, jednak przy okienku oznaczonym tym argumentem pokaże
+            się komunikat że trzeba wypełnić dane pole.</h3>
+
+        <h3>Są różne typy inputów w formularzach, które definiuje się poprzez dodanie argumentu type do tagu input.
+        </h3>
+
+        <h2>Niektóre atrybuty, które możemy używać z inputami:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atrybut</th>
+                    <th>Opis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="one">type</td>
+                    <td class="two">odpowiadający za typ inputu</td>
+                </tr>
+                <tr>
+                    <td class="one">name</td>
+                    <td class="two">nazwa, która pozwala zidentyfikować input</td>
+                </tr>
+                <tr>
+                    <td class="one">value</td>
+                    <td class="two"> podpisuje miejsce inputu i aby je zastąpić trzeba skasować podpis manualnie
+                    </td>
+                </tr>
+                <tr>
+                    <td class="one">placeholder</td>
+                    <td class="two">atrybut podpisujące pole inputu, który to podpis po kliknięciu na pole i
+                        rozpoczęciu pisania znika</td>
+                </tr>
+                <tr>
+                    <td class="one">reszta do dokończenia</td>
+                    <td class="two">Opisy również pododajemy</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h1>!!! Później zrobimy tabelkę do typów</h1>
+        <h2>Przykłady wartości argumentu type:</h2>
+        <h3>"text" - pozwala na wpisywanie tekstu włącznie ze znakami specjalnymi
+            oraz cyframi itd.</h3><br>
+        <span> Username:</span> <br>
+        <input type="text" name="username" value="Enter your Name - value"> <br> <!-- tu jest input tekstowy-->
+
+
+        <h3>"number" - pozwala wpisywać lub strzałkami ustawiać tylko numery</h3>
+        <span> Age:</span> <br>
+        <input type="number" name="age" placeholder="Enter your age - placeholder"> <br>
+        <!-- tu jest input numerowy-->
+
+        <h3>"email" - jest jednym ze specyficznych inputów formularza, który jeśli odpowiednio nazwiemy,
+            będzie przyjmował &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tylko adresy email czyli zapisy z '@' i 'domeną'.</h3>
+        <span> Email:</span> <br>
+        <input type="email" name="email" placeholder="ziutek.b@gmail.com">
+
+        <h3>password - jest kolejnym ze specjalnych typów charakteruzujący się tym, że wpisywane przez nas litery
+            hasła
+            są wyświetlane jako kropki. </h3>
+        <span> Password:</span> <br>
+        <input type="password" name="password" placeholder="Enter your password">
+
+        <h2>Radio buttons:</h2>
+        <h3> Są to guziki, które zaznaczamy, aby wybrać jedną z opcji. <br>
+            Inputy radiobutton'owe, zby powiązać, musimy nazwać tak samo, co przy ich przełączaniu nie pozwoli na
+            zaznaczanie kilklu opcji jednocześnie - oczywiśie kilku opcji w tym samym secie np. <br>
+            ! Informacja: Radiobutton's muszą a przynajmniej powinny posiadać wartość, abyśmy wiedzieli co zaznaczamy w
+            przypadku dalszej obróbki, to znaczy gdybyśmy chcieli użyć/wyciągnąć potem jako wartości, szczególnie przy
+            dodawaniu logiki do strony w języku JScript.</h3>
+
+        Czy podoba się Tobie ta strona? <br> <br>
+
+        <input type="radio" name="myradio" value="0" checked> Tak - <span>Tutaj użyliśmy argumentu "checked"</span> <br>
+
+        <input type="radio" name="myradio" value="1"> Nie<br>
+
+        <input type="radio" name="myradio" value="2" disabled> Nie mam zdania - <span>Tutaj użyliśmy argumentu
+            "disabled, który wyłącza nam ten wybór."</span><br> <br>
+
+        <h2 class="warn">!!! Uwaga: Jeśli do input'a rdiobutton'a dodamy argument <span class="term"> "checked"</span>,
+            to przy przejściu na stronę będzie on od razu zaznaczony.
+            Nie musimy jednak tego robić i wtedy żaden z butonów nie będzie zaznaczony.</h2>
+
+        <h2>Checkbox'y</h2>
+        <h3>"checkbox" - Checkbox'y używamy głównie wtedy, gdy chcemy zaanaczyć więcej niż jedną rzecz z zestawu <br>
+            i są to kwadraciki, które zaznaczamy ptaszkiem:) - bez skojarzeń proszę:P</h3>
+
+        <input type="checkbox" name="mycheck" value="zaznaczone 1"> Zaznacz <br>
+        <input type="checkbox" name="mycheck" value="zaznaczone 2"> Zaznacz <br>
+
+        <h2>Inne typy, które mogą urozmaicić formularz.</h2>
+        <h3>"color" - jest to typ, który działa jak kolorpicker na stronie</h3>
+
+        <input type="color" name="mojkolor"> Kolor <br>
+
+        <h3>"date" - jest to taki picker ale daty, który pozwala nam ją wybrać.</h3>
+
+        <input type="date" name="mojadata"> Data <br>
+
+        <h2>Menu rozwijalne w formularzu - robimy to w tagach < select> , a następnie w środku jako elementy listy
+                używamy tagu < option>.</h2>
+
+        <select name="pierwselekt">
+            <option value="1">Pierwszy element</option>
+            <option value="2">Drugi element</option>
+            <option value="3">Trzeci element</option>
+            <option value="4">Czwarty element</option>
+        </select> <br> <br>
+
+        <h3>"textarea" - jest to tag, który pozwala zastosować miejsce tekstowe o dużo większej pojemności i objętości
+            niż "text" <br>
+            Poprzez takie argumenty jak col="x" i row="y" ustawić możemy wielkość naszego obszaru tekstowego. <br>
+            jeśli jednak tego nie zdefiniujemy, to możemy sobie rozszerzać obszar jak tylko sobie chcemy. <br>
+            Ilość znaków które możemy wpisywać do obszaru również możemy zdefiniować poprzez argument max_length="x".
+            <br>
+            gdzie x i y ilość kolumn i wierszy jakie zadeklarujemy.</h3>
+
+        <textarea name="mojtext" placeholder="Wpisz tutaj swój text"></textarea> <br>
+
+        <h3>"file" - pozwala on na wrzucenie pliku poprzez formularz na zawartość naszej strony.</h3>
+
+        <span> File:</span> <br>
+        <input type="file" name="mojPlik"> <br>
+
+
+        <input type="submit" value="Submit">
+        <!-- tu jest input przyciskowy, który jednocześnie zatwierdza dane wypisane do formularza.-->
+
+    </form>
+
+</body>
+
+</html>

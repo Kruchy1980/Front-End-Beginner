@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <!-- Aby dodać style do wyglądu naszej strony, możemy to zrobić na kilka sposobów
+    1. to użyć w headzie strony tag'a 'style' jak poniżej - obecnie nie stosowane;
+    2. Możemy użyć tego na tzw sposób inline, czyli doposując do danego elementu style="font-color: red" na ten przykład;
+    3. Obecnym jednak sposobem jest utworzenie osobnego pliku stylu, nazywając go np main.css i za pomocą tagu link połączyć z naszą stroną:
+    przykład : <link rel="stylesheet" href="ścieżka do naszego pliku stylu"-->
+    <style>
+        body {
+            background-color: green;
+        }
+    </style>
+    <link rel="stylesheet" href="cssstyle/mainstyle.css">
+    <!-- Powyższy zapis odwołujący do naszego pliku css'owego jest obecnie stosowaną metodą nadawania styli do naszych stron. -->
+
+    <title>Spacje</title>
+</head>
+
+<body>
+    <!-- Inlie'nowy sposób umieszczania styli.-->
+    <p style="background-color: yellowgreen;">Jeśli chodzi o spacje w tekstach kodu HTML, to nic nie da używanie samej
+        spacji.
+        Aby zwiększyć spację, należy:
+        <ol>
+            <li> Użyć tagu '& n b s p ;' pisanego razem ; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tę linię chcemy oddalić
+            </li>
+            <li> Aby pisać linijkę pod linijką, używamy tagu < br> <br>
+                    Tę linijkę chcemy mieć pod powyższą <br>
+                    A tę najniżej</li>
+        </ol>
+    </p>
+</body>
+
+</html>

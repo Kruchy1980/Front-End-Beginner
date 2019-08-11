@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Nauka języka HTML i innych potrzebnyh do Front-Endu">
+    <meta name="author" content="Jakub Kruszyński">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, XML, JavaScript, Kurs, Nauka">
+    <title>Tabele w HTML</title>
+    <link rel="stylesheet" href="cssstyle/table.css">
+</head>
+
+<body>
+    <h1>Tabele</h1>
+    <br>
+    <h3>Ogólny wygląd tabeli <br>
+        <span style="color: red;">!!!Należy zaznaczyć, że nagłówki czyli 'thead' nie są niezbędne i <br>
+            można je pominąć, jeśli nie potrzebujemy nagłówków w tabeli, a<br>
+            jedynie chcielibyśmy stabelaryzować dla lepszego porządku jakieś elementy.</span></h3>
+    <table border="1" style="border: 2px dotted green;">
+        <!--Style najlepiej przerzucić do pliku css'owego, aby nie zajmować miejsca tutaj i aby kod był uporządkowany.-->
+        <!--table jest tagiem wywołującym tabelę i jest ogólny. Reszte argumentów jako styli dodaliśmy, zby była ona bardziej odzwierciedlająca się.-->
+        <thead>
+            <!-- thead Jest to tag wywołujący nagłówki tabeli-->
+            <tr>
+                <!--tr(table row) jest tagiem odpowiadającym za wiersze tabeli-->
+                <th>Państwo</th> <!-- th(table head) są to kolumny nagłówków naszej Tabeli-->
+                <th>Miasto</th>
+                <th>Stolica - opis</th>
+                <th>W razie braku miejsca</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--tbody jest to ciało tabeli coś jak body dla strony.-->
+            <tr>
+                <td>Polska</td>
+                <!--td(table column/data) jest to kolumna ciała tanbeli.-->
+                <td>Radom</td>
+                <td colspan="2">Warszawa z syrenką w swoim godle.</td>
+                <!--colspan - pozwala nam łączyć kolumny tabeli - jest to coś jak merge w excelu.-->
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

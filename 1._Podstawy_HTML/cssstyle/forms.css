@@ -1,0 +1,40 @@
+h1 {
+    color: darkslateblue;
+    text-decoration-line: underline;
+    text-align: center;
+}
+h2 {
+    text-decoration-line: underline;
+}
+.warn {
+    color: red;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.term {
+    color: rgb(3, 44, 3);
+}
+table, td, th {
+    border: 1px solid rgb(2, 2, 70);
+    min-height: 35px;
+    min-width: auto;
+
+}
+.one {
+    color: brown;
+    font-style: italic;
+    font-size: large;
+    font-weight: bold;
+    background-color: aqua;
+    padding: 4px;
+}
+.two {
+    font-style: italic;
+    background-color: cadetblue;
+
+}
+
+span {
+    font-weight: bold;
+    font-style: italic;
+    color: crimson;
+}
