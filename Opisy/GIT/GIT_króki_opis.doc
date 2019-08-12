@@ -1,0 +1,83 @@
+##########################################################################
+######################   GIT - system kontroli wersji    #################
+##########################################################################
+
+Git jest to tzw system kontroli wersji, który pomaga w tworzeniu i poprawkach
+w oprogramowaniu tworzonym przez osoby znajdujące się w różnych częściach nawet świata.
+
+Podstawowe komendy Gita do utworzenia i operowania na repozytorium:
+Zanim w ogóle przystąpimy do używania gita, musimy albo założyć sobie konto na github.com
+albo ściągnąc wersję desktopową
+
+1. Jednym ze sposobów utworzenia repozytorium, z którym mogą pracować zaangażowani w projekt ludzie jest:
+a) Najpierw zakładamy na swoim koncie repozytorium:
+- po wejściu na swoje konto na github.com klikamy w prawym górnym rogu znak plusa,
+- wybieramy New Repository
+- wypełniamy pola odpowiednio jak jest:
+Nazwa repozytorium - wymyślona przez nas np "Moje-repozytorium"
+Możemy lecz nie musimy wpisać parę słów opisu/description
+Zaznaczamy rodzaj repozytorium czy publiczne czy prywatne - oczywiście nie płatne jest publiczne.
+Możemy lecz nie musimy zaznaczyć, aby repo utworzyło z automatu plik README
+Możemy lecz nie musimy dodać plik "gitignore" - jest to plik w którym zaznaczamy, jakich plików nie trzeba commit'oawć do naszego repo, aby nie mieć śmieci niepotrzebnych.
+Możemy lecz nie musimy wybrać rodzaj licencji.
+Klikamy Create Repository.
+- Przenosi nas na stronę gita z naszym repozytorium, po czym znajdujemy przycisk
+"Clone or Download" i kopiujemy sobie adres URL do repozytorium.
+
+b) Idziemy  do miejsca na naszym komputerze, w którym chcemy to repozytorium posiadać, np:
+PC C:/User/<nazwa użytkownika>/Desktop - jeśli chcemy aby repozytorium było na naszym pulpicie
+
+c) Najlepiej, aby nie mieszało się i nie było rozrzucone, dobrze jest utworzyć katalog o łatwo rozpoznawalnej przez nas nazwie, np. Repo.
+
+d) Wchodzimy do katalogu naszego Repozytorium
+
+e) Klikamy PPM(Prawym przyciskiem myszy) i powinno w rozwiniętym meny ukazać się opcja między innymi:
+"Git Bash Here" - na którą klikamy i otwiera się nam konsola gita
+
+f) Teraz musimy sklonować nasze repozytorium za pomocą komendy:
+git clone <tu wklejamy lub wpisujemy adres URL skopiwany wcześniej ze strony naszego repozytorium>
+!!UWAGA Dobrze jest zapisać sobie gdzieś ten adres URL w razie ewentualnej utraty repozytorium z komputera.
+Adres URL pomaga potem przywrócić nasze repozytorium z serwera gita.
+
+Strony, z dobrze wyjaśnionymi komendami gita:
+https://rogerdudler.github.io/git-guide/index.pl.html - skrócona wersja
+
+https://git-scm.com/book/pl/v2 - polska wersja książki o gicie
+
+https://git-scm.com/book/en/v2 - angielska wersja ksiąki o gicie.
+-----------------------------------
+I Jesteśmy gotowi do pracy z gitem.
+Kilka przydatnych komend do posługiwania się command line'm naszego gita.
+
+1. git clone <ścieżka repo> - łączy repo z serwera gita z katalogiem, w którym chcemy je mieć.
+-------------------------------
+2. git add <plik> - zaczyna śledzić zmiany w pliku/ach (jeśli wpiszemy więcej nazw oddzielonych spacjami), co umożliwi potem ich updateowanie/aktualizację.
+git add * - zaczyna śledzić zmiany we wszystkich plikach, co umożliwi potem ich updateowanie/aktualizację.
+-----------------------------
+3. git commit -a -m "Komentarz" - potwierdza zmiany w plikach i przerzuca je do HEAD'A gałęzi w której działamy.
+Wyjaśnienia:
+-a zastępuje nam polecenie add, więc można je wykorzystać zamiast najpierw uruchamiania śledzenia czyli git add
+-m - pozwala wpisać nam komentarz commit'u - np. "Dodatki do projektu"
+-------------------------------
+4. git push - polecenie pchqające zmiany do repo, dzięki któremu użytkownicy repozytorium je widzą.
+
+4a. git push --set-upstream origin <nazwa naszej gałęzi> - pcha do HEAD'a gałęzi w której pracujemy - czyli np gałęzi develop a nie master czyli głównej.
+-------------------------------
+5. git checkout <branch/gałąź> - jest to przełączanie pomiędzy gałęziami
+!!! UWAGA !!!
+Gałęzie nie przełączą się, jeśli pliki zmienione w gałęzi użytkowej, czyli tej w której pracujemy
+nie będą śledzone, czy też dodane do śledzenia za ponocą polecenia git add.
+!!!
+Nie stosujmy polecenia git checkout -f(force) <branch> jeśli nie chcemy utracić ostatnich nie spuch'owanych zmian w plikach.
+To polecenie stosuje się tylko, gdy nie chcemy zapisać ostatnich zmian w plikach.
+----------------------------
+6. git merge <gałąź/branch z której chcemy mergować> - jest to scalanie gałęzi na których pracujemy, do gałęzi najbardziej stabilnej.
+Aby wykonać merge należy najpierw przełączyć się na gałąź do której chcemy scalić zmiany, a potem dopiero scalamy interesującą nas gałąź do niej.
+Całościowo:
+git checkout <branch>
+git merge <from branch>
+---------------------------------------
+To są najbardziej potrzebne komendy do operowania z repozytorium. 
+Bardziej szczegółowy opis znajdziemy na stronie:
+https://git-scm.com/book/en/v2
+
