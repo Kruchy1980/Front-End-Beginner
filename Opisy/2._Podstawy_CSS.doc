@@ -2,5 +2,264 @@
 ################## Kurs Front End JavaScript, CSS i HTML #################
 ##########################################################################
 
-II. CSS od podstaw - połączenia ze stronami HTML.
-Aby połączyć plik html 
+II. CSS od podstaw.
+
+1. Połączenia plików .css i .js z plikiem .html
+
+Aby połączyć plik css z kodem HTML, należy:
+W nagłówku strony połączyć go linkiem:
+    <link rel="stylesheet" href="ścieżka do naszego pliku .css">
+-------------
+Jeśli chcemy połączyć plik js z html-em, to używamy tagu:
+
+<script src="ścieżka do plilku javascript'owego"></script>
+
+I najlepiej jest zrobić to na samym dole pliku HTML.
+----------------------
+Kod Html z zaimplementowanymi plikami .js i .css.
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Linkowanie pliku CSS</title>
+    <!--Aby połączyć plik stylu z kodem html, dodajemy do head'a strony następujący tag.-->
+    <link rel="stylesheet" href="cssstyle/main.css">
+    <!--Jest to obecnie stosowany sposób nadawania styli stronom HTML, czyli w osobnym pliku css znajdującym się w otoczeniu naszego projektu .html-->
+    <!--Niestosowaną już metodą nadawania styli jest wklepywanie stylu na stronie z kodem html.
+    Pomocnym przy tworzeniu stron jest jednak wrzucenie na stronie html tagu style jeszcze w headzie strony i pisanie tutaj kodu css, aby na zakończenie działania ze stroną przerzucenie styli do powiązanego pliku .css-->
+
+    <!-- Wpisując w poniższe tagi style różne elementy css możemy wystylizować stronęm a następnie przenieść możemy ten kod do pliku .css  -->
+    <style>
+        div {
+            background-color: aquamarine;
+        }
+    </style>
+
+    <!-- Możemy również zaimplementować tutaj style skryptowe, aby potem przenieść je do pliku .js -->
+    <script>
+        alert('Strona prosta z kilkoma informacjami o połączeniach plików .css i .js z kodem HTML')
+    </script>
+</head>
+
+<body>
+    <!--Możemy jeszcze umieszczać style tzw inline, czyli w następujący sposób-->
+    <div
+        style="color: white; background-color: black; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        <p>Umieściliśmy w tym kontenerku - div'ie - kilka styli rozdzielonych średnikiem.</p>
+    </div>
+    <div>
+        <h1>Możemy również przypisać/zaimplementować sobie tutaj do h2 lub jakiegokolwiek innego tagu kod java
+            scriptowy,
+            który będzie np wyświetlał po kliknięciu komunikat w postaci np alertu, aby było to bardziej efektywne niż
+            wydruk w konsoli.</h1>
+        <h2 onclick="javascript:alert('Nacisnąłeś właśnie tekst powitalny kolego');">Tekst powitalny - kliknij mnie</h2>
+        <p>Jak widzimy możemy implementować proste polecenia java scriptowe - proste dlatego, że bardziej skomplikowane
+            zajmują więcej miejsca a co za tym idzie i więcej pamięci na czym nam nie zależy. <br>
+            Podobnie jak nadawanie styli dobrym zwyczajem jest umieszczać kody javascript w osobnym pliku, a następnie
+            łączenie go za pomocą tagu <br>
+            <span>
+                " < s c r i p t src="ścieżka do pliku javascript">
+                    < /s c r i p t> " </span> <br>
+            najlepiej umieszczając go na dole naszej strony - z tego powodu, że
+            przeważnie aby wykonał się kod JScript strona powinna być załadowana do końca, a jak wiemy kody
+            wykonywane są od góry do dołu więc implementując kod skryptowy na samym dole strony jednak jeszcze
+            pomiędzy tagiem html / html aby wiadomo było, że dotyczy to czegokolwiek ma dotyczyć w tym kodzie.
+        </p>
+        <h3>Należy zapamiętać, że metody stosowania czy styli czy skryptów metodami inlinowymi, nie są już modne i nie
+            używa się ich, natomiast dobrą praktyką jest używanie osobnych plików do styli i skryptów, a następnie ich
+            przywoływanie za pomocą odpowiednich tagów do kodu strony.</h3>
+    </div>
+</body>
+<!--Tutaj właśnie możemy umieścić powiązanie z naszym plikiem javascript-->
+<script src="javas/main.js"></script>
+
+</html>
+-------------------------------------------------------------------------
+!!! UWAGA - Jeśli chodzi o skrypty, to przeważnie wykonują się one po załadowaniu danego elementu strony, znaczy się element musi się załadować zanim wykona się kod skryptowy.
+Wiemy również, że kod jak każdy wykonuje się od góry czyli linijki 1 do dołu więc najbezpieczniej jest ustawić połączenie plików skryptowych na samym dole stronym po wykonaniu się już głównego kodu.
+Jest jednak możliwość zastosowania odpowiednij funkcji wykonywania kodu w samym kodzie skryptowym, który 
+-------------------------------------------------------------------------
+
+2. Praca ze stylami kolorów i ułożenia tekstów.
+Mamy w sumie 4 rodzaje zapisów kolorów:
+1. Po nazwie j.angielski np. red, blue, green, etc - i drobne zmiany jak darkblue or lightblue i inne kolory. niestety przez to nie ma dużo kolorów, dlatego używamy głównie kolorów:
+
+2. rgb(x, y, z)
+
+3. rgba(x, y, z, a)
+Gdzie w obu przypadkach:
+x - 0-255 red
+y - 0-255 green
+z - 0-255 blue
+a - odpowiada za przezroczystość kolorów i przyjmuje wartości od 0-1, np 0.3 albo 0.336 zapisywane z kropką, gdzie 0 to w pełni przezroczyste, a 1 to w ogóle nie przezroczyste.
+Jak wiemy są 3 podstawowe kolory:
+czerwony
+niebieski
+zielony
+A mieszanki tych kolorów dają odpowiednie odcienie więc możemy mieć szeroką paletę.
+
+4. Mamy jeszcze zapis heksagonalny, a mienowicie #223344, gdzie każdy z podstawowych kolorów zapisuje się dwoma cyfro-literami ponieważ przyjmują wartości od 0-f
+# - zaznaczenie kodu że będziemy używać hexagonalnego zapisu
+22 - czerwony przyjmujący wartości od 0-f każdy ze znaków
+33 - zielony przyjmujący wartości od 0-f każdy ze znaków
+44 - -niebieski przyjmujący wartości od 0-f każdy ze znaków
+Jest on najczęściej używany ze względu na mnogość odcieni, które może zaoferować.
+
+Plik css z naszego rozdziału:
+
+        /** Jeśli chcemy nadać jakiś styl elementowi strony, to zapisujemy to w poniższy sposób, 
+        piszemy nazwę elementy, następnie nawias klamrowy { }, w którym to wpisujemy style, a każdy styl kończymy średnikiem.**/
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            border: dashed 1px rgb(79, 79, 209);
+        }
+
+        td {
+            background-color: pink;
+            text-align: center;
+            border: solid 1px green;
+            padding: 2px;
+        }
+
+        /** Możemy nadawać style do kilku elementów jeśli nadamy im tą samą klasę, jednak te style będziemy zapisywać za pomocą kropki i nazwy ".nazwaKlasy" **/
+        /** Przypisaliśmy np klasę do wszystkich kolumn nr 1  i nadaliśmy nazwę klasie "jeden" **/
+        .jeden {
+            text-align: left;
+            background-color: rgb(30, 3, 58);
+            color: white;
+        }
+
+        .prawo {
+            text-align: right;
+            color: white;
+            margin-right: 40px;
+        }
+
+        .lewo {
+            text-align: left;
+            color: blueviolet;
+
+        }
+
+        /** Jest jeszcze możliwość nadawania styli elementom posiadającym identyfikator id="fiord" przykładowo. Stylizując element z identyfikatorem używamy "#nazwaIdentyfikatora"
+        Przy czym należy pamiętać, że  **/
+        #lista {
+            background-color: yellowgreen;
+            text-align: center
+        }
+
+
+
+        /** Możemy również łączyć elementy, robimy to po przecinku,  a także możemy szczegółówo zaznaczać elementy tzn że idziemy kroczek po kroczku do danego elementu np**/
+        body article ol li {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Tutaj pokażemy jak kilki elementom nadać jeden styl*/
+        header,
+        section,
+        p {
+            background-color: orangered;
+            color: whitesmoke;
+        }
+
+Plik html z tego rozdziału:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kolory i ułożenie tekstu</title>
+    <!--Łaczymy plik styli z plikiem html-->
+    <link rel="stylesheet" href="cssstyle/kolory_tekst.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1>Tutaj pobawimy się kolorami i ułożeniem tekstu na naszej stronie.</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="linkowe/index.html"> Przenieś mnie na inną stronę</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h3>A tutaj chcę wrzucić jakieś zdjądko z lorempixel.com, aby było ciekawiej:)</h3>
+            <img src="http://lorempixel.com/400/200/sports/1/Dummy-Text" alt="Zdjątko z lorempixel.com">
+            <p>Tutaj jeszcze trochę jakiegoś tekstu może:
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui hic deleniti illum nulla nam
+                necessitatibus culpa doloremque animi at veniam recusandae similique minima vero placeat deserunt
+                possimus itaque, adipisci dolor. <br>
+            </p>
+        </section>
+        <article id="lista">
+            <ol type="i" start="1">Dodamy jeszcze tylko drobną listę uporządkowaną.
+                <li>pierwszy element</li>
+                <li class="prawo">drugi element</li>
+                <li>trzeci element</li>
+                <li class="lewo">czwarty element</li>
+                <li>piąty element</li>
+                <li class="prawo">szósty element</li>
+                <li>siódmy element</li>
+                <li class="lewo">ósmy element</li>
+            </ol>
+        </article>
+        <aside>
+            <h2>I jeszcze drobną tabelkę ale tylko body.</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="jeden">kolumna 1</td>
+                        <td>kolumna 2</td>
+                        <td>kolumna 3</td>
+                        <td>kolumna 4</td>
+                    </tr>
+                    <tr>
+                        <td class="jeden">kolumna 1</td>
+                        <td colspan="2">kolumna 2 i 3</td>
+                        <td>kolumna 4</td>
+                    </tr>
+                    <tr>
+                        <td class="jeden" colspan="4">kolumna 1 - 4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+    </div>
+</body>
+
+</html>
+-----------------------------------------------------------------------
+Kod źródłowy do dodawania plików .js i .css oAaz stylozowanie inlino'we:
+
+Source Code adding CSS and JavaScript
+External File Source
+
+<script src="script.js"></script>
+
+<link rel="stylesheet" href="style.css" >
+
+Onpage CSS and JavaScript
+
+<script> alert('Page Hello'); </script>
+
+<style> div{ background-color:yellow; } </style>
+
+InLine Style and JavaScript
+
+<header style="background-color:yellow;"> <h1 onclick="javascript:alert('Hello');">Welcome to my Website</h1> <p>tag line</p> </header>
+----------------------------------------------------------------------------

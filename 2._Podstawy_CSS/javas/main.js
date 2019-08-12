@@ -1,0 +1,1 @@
+alert("A ta informacja idzie z pliku java scriptowego  i jej przywołąnie znajduje się na dole pliku .html w przeciwieństwie do pierwszego wyskakującego komunikatu/alerty informującego o tym o czym ta stronka jest;)");

@@ -1,0 +1,59 @@
+        /** Jeśli chcemy nadać jakiś styl elementowi strony, to zapisujemy to w poniższy sposób, 
+        piszemy nazwę elementy, następnie nawias klamrowy { }, w którym to wpisujemy style, a każdy styl kończymy średnikiem.**/
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            border: dashed 1px rgb(79, 79, 209);
+        }
+
+        td {
+            background-color: pink;
+            text-align: center;
+            border: solid 1px green;
+            padding: 2px;
+        }
+
+        /** Możemy nadawać style do kilku elementów jeśli nadamy im tą samą klasę, jednak te style będziemy zapisywać za pomocą kropki i nazwy ".nazwaKlasy" **/
+        /** Przypisaliśmy np klasę do wszystkich kolumn nr 1  i nadaliśmy nazwę klasie "jeden" **/
+        .jeden {
+            text-align: left;
+            background-color: rgb(30, 3, 58);
+            color: white;
+        }
+
+        .prawo {
+            text-align: right;
+            color: white;
+            margin-right: 40px;
+        }
+
+        .lewo {
+            text-align: left;
+            color: blueviolet;
+
+        }
+
+        /** Jest jeszcze możliwość nadawania styli elementom posiadającym identyfikator id="fiord" przykładowo. Stylizując element z identyfikatorem używamy "#nazwaIdentyfikatora"
+        Przy czym należy pamiętać, że  **/
+        #lista {
+            background-color: yellowgreen;
+            text-align: center
+        }
+
+
+
+        /** Możemy również łączyć elementy, robimy to po przecinku,  a także możemy szczegółówo zaznaczać elementy tzn że idziemy kroczek po kroczku do danego elementu np**/
+        body article ol li {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /** Tutaj pokażemy jak kilki elementom nadać jeden styl**/
+        header,
+        section,
+        p {
+            background-color: orangered;
+            color: whitesmoke;
+        }

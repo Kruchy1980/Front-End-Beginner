@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Linkowanie pliku CSS</title>
+    <!--Aby połączyć plik stylu z kodem html, dodajemy do head'a strony następujący tag.-->
+    <link rel="stylesheet" href="cssstyle/main.css">
+    <!--Jest to obecnie stosowany sposób nadawania styli stronom HTML, czyli w osobnym pliku css znajdującym się w otoczeniu naszego projektu .html-->
+    <!--Niestosowaną już metodą nadawania styli jest wklepywanie stylu na stronie z kodem html.
+    Pomocnym przy tworzeniu stron jest jednak wrzucenie na stronie html tagu style jeszcze w headzie strony i pisanie tutaj kodu css, aby na zakończenie działania ze stroną przerzucenie styli do powiązanego pliku .css-->
+
+    <!-- Wpisując w poniższe tagi style różne elementy css możemy wystylizować stronęm a następnie przenieść możemy ten kod do pliku .css  -->
+    <style>
+        div {
+            background-color: aquamarine;
+        }
+    </style>
+
+    <!-- Możemy również zaimplementować tutaj style skryptowe, aby potem przenieść je do pliku .js -->
+    <script>
+        alert('Strona prosta z kilkoma informacjami o połączeniach plików .css i .js z kodem HTML')
+    </script>
+</head>
+
+<body>
+    <!--Możemy jeszcze umieszczać style tzw inline, czyli w następujący sposób-->
+    <div
+        style="color: white; background-color: black; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        <p>Umieściliśmy w tym kontenerku - div'ie - kilka styli rozdzielonych średnikiem.</p>
+    </div>
+    <div>
+        <h1>Możemy również przypisać/zaimplementować sobie tutaj do h2 lub jakiegokolwiek innego tagu kod java
+            scriptowy,
+            który będzie np wyświetlał po kliknięciu komunikat w postaci np alertu, aby było to bardziej efektywne niż
+            wydruk w konsoli.</h1>
+        <h2 onclick="javascript:alert('Nacisnąłeś właśnie tekst powitalny kolego');">Tekst powitalny - kliknij mnie</h2>
+        <p>Jak widzimy możemy implementować proste polecenia java scriptowe - proste dlatego, że bardziej skomplikowane
+            zajmują więcej miejsca a co za tym idzie i więcej pamięci na czym nam nie zależy. <br>
+            Podobnie jak nadawanie styli dobrym zwyczajem jest umieszczać kody javascript w osobnym pliku, a następnie
+            łączenie go za pomocą tagu <br>
+            <span>
+                " < s c r i p t src="ścieżka do pliku javascript">
+                    < /s c r i p t> " </span> <br>
+            najlepiej umieszczając go na dole naszej strony - z tego powodu, że
+            przeważnie aby wykonał się kod JScript strona powinna być załadowana do końca, a jak wiemy kody
+            wykonywane są od góry do dołu więc implementując kod skryptowy na samym dole strony jednak jeszcze
+            pomiędzy tagiem html / html aby wiadomo było, że dotyczy to czegokolwiek ma dotyczyć w tym kodzie.
+        </p> <br>
+        <p>Plik .css linkujemy za pomocą tagu : <span> "< link rel="stylesheet" href="cssstyle/main.css">" </span></p>
+        <h3>Należy zapamiętać, że metody stosowania czy styli czy skryptów metodami inlinowymi, nie są już modne i nie
+            używa się ich, natomiast dobrą praktyką jest używanie osobnych plików do styli i skryptów, a następnie ich
+            przywoływanie za pomocą odpowiednich tagów do kodu strony.</h3>
+    </div>
+    <div id="info"> !!!UWAGA <br>
+
+        Działanie tej strony jest zależne od plików main.css i main.js więc, jeśli chcemy ją w pełni
+        odtworzyć musimy odpalić też te pliki.</div>
+</body>
+<!--Tutaj właśnie możemy umieścić powiązanie z naszym plikiem javascript-->
+<script src="javas/main.js"></script>
+
+</html>

@@ -1,0 +1,15 @@
+span {
+    color: brown;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+#info {
+    text-align: center;
+    background-color: blueviolet;
+    font-size: 1.5em;
+    color: rgb(90, 5, 5);
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+}
