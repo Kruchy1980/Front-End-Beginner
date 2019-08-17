@@ -1,0 +1,33 @@
+/* Jednym z rodzajów selektorów w języku CSS jest po prostu element */
+/* Aby trochę się tabelka wytóżniała, dodajmy chociaż granice */
+table, td {
+    border: 1px solid red;
+}
+
+/* Jednym z selektorów jest identyfikator zapisywany w html'u "id",
+jest on unikatowy i jeden identyfikator o danej nazwie może być użyty na jednej stronie.
+W języku css przywołuje się go za pomocą '#id'  i wtedy możemy nadawać sobie styl do danego jednego elementu.
+Możemy mieć dwa te same elementy np h1, a dany styl chcemy nadać tylko jednemu z nich to nadajemy mu identyfikator, a następnie stylizujemy za pomocą danego identyfikatora dany element np.*/
+#tytul {
+    /* Tutaj możemy teraz nadać jakiś styl dla danego elementu i tylko dla niego poniważ identyfiktor jest unikatowy. */
+    color: rgb(170, 170, 105);
+    background-color: black;
+}
+/* To samo możemy zrobić z całym headerem choć jeśli nie ma potrzeby stosowania identyfikatora, to lepiej tego nie robić ale jeśli będziemy mieli 2 headery to już inna sprawa */
+#mojnaglowek{
+    text-align: center;
+    background: url("http://lorempixel.com/400/200/sports/Dummy-Text") no-repeat  center;
+    background-size: cover;
+    height: 400px;
+}
+/* Dzięki temu możemy uzyskać ciekawy wygląc nagłówka ponieważ będzie rysunek jako tło i napis na pasku napisowym jeśli można t tak nazwać */
+/* Kolejnym z selektorów jest klasa, która w przeciwieństwie do identyfikatora nie jest unikatowa i wiele elementów na jednej stronie może posiadać klasę o tej samej nazwie, więc jeśli chcemy kilku nawet różnym elementom nadać ten sam styl,
+ to powinniśmy użyć klasy, którą wywołujemy w css'ie za pomocą '.class' */
+.pierwszystyl {
+    text-align: left;
+    text-decoration: underline;
+    column-count: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    color: brown;
+ }

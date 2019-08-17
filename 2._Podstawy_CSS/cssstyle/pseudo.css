@@ -1,0 +1,106 @@
+header {
+    text-align: center;
+    background: green url("http://lorempixel.com/400/200/sports/Dummy-Text") no-repeat center;
+    background-size: cover;
+    height: 400px;
+}
+/* Zajmiemy się tutaj pozycjonowaniem naszego elementu Kontakt na stronie */
+#kontakt span {
+    /* Najpierw kilka styli samego napisu, aby łatwiej było go zidentyfikować. */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: chocolate;
+    border: 1px double black;
+    height: 40px;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: rgb(189, 220, 247);
+}
+#kontakt { /* Podzieliliśmy tylko dlatego, aby style css nadać tylko elementowi objętemu kontenerkiem span. */
+    /* Teraz trochę na temat pozycjonowania: */
+    /* Z powodu tego, że zdeklarowana pozycja z automatu jest static-statyczna, czynie nie przesuwalna, nie będzie sensem jej deklarownie takie samo po prostu nic to nie zmieni. */
+    position: static; /*Nic to nie zmieni dla strony, jednak dla naszych potrzeb wystarczy pozycja elementy na swoim miejscu..*/
+    /* position: relative; Ten argument sam w sobie również nie zminia nic  pozycji elementu, natomiast otwiera nam możliwość nadawania/zmiany pozycji interesującego nas elementu. */
+    /* Możemy teraz deklarować odległości od w następujący sposób: */
+    /* position: absolute; Pozycja absolutna ustawia nam element w stosunku do całej strony, a nie w stosunku do miejscam w którym element się znajdował. */
+    /* position: fixed; /* Ta pozycja utrzymuje element w stałym miejscu i tak jak pozycja absolutna w stosunku do całej strony. */
+    /* top: 82px; */
+    /* right: 60px; */
+    /* bottom: 25px; */
+    /* left: 25px;  */ 
+    /* Jak widzimy możemy od naszeje pozycji początkowej przesuwać element w jakimkolwiek kierunku.
+    Oczywiście left i right są od siebie zależne i niepotrzebne dwa do jednego elementu ponieważ strona w tych kierunkach jest ograniczona wielkością ekranu w związku z czym element przesunięty do granicy strony będzie wychodził poza nią i będzie niewidoczny.  */
+    /* Użyliśmy tutaj 4rech kierunków aby udowodnić, że można przesuwać w różnych kierunkach. */
+    /* !! UWAGA jeśli position: static, to mimo zadeklarowanych odległości pozycja elementu nigdy by się nie zmieniła. */
+
+}
+table td{
+    border: 2px dashed orange;
+}
+h1 {
+    background-color: green;
+}
+/* Dodajmy kilka styli do naszego paska nawigacyjnego, którym będziemy chcieli się teraz zająć */
+#navpas a {
+    display: inline-block;
+    background: grey;
+    width: 300px;
+    position: relative;
+}
+/* Jedną z fajnych funkcji jest zmiana wyświetlania elementu podczac przejeżdżania po nich myszką/kursorem. */
+/* Pseudoklasy zapisujemy wstawiając dwukropek po nazwie elementu, np. */
+p:hover { /* Jak widać ta pseudoklasa nadaje styl elementowi w momencie najechania na niego myszką */
+    background-color: blueviolet;
+}
+/* Teraz zajmijmy się stylowniem dynamicznym naszego paska nawigacyjnego: */
+#navpas a:hover {
+    background-color: darkblue;
+    color: white;
+}
+.pierwszystyl:first-Child { /*Nadaje styl tylko pierwszemu elementowi danego zbioru. */
+    display: block;
+    background-color: green;
+}
+/* Obecny styl nadaje drugim(2) elementom  danego zbioru. */
+.trzecistyl td:nth-child(2) {
+    background-color: blueviolet;
+    color: white;
+    /* Oczywiście w nawiasie możemy np wpisać "even", czyli wszystkie parzyste elementy będą przsybierały dany styl, luc odd czyli wszystkie nieparzyste elementy daanego zbioru nabierają dany styl.*/
+}
+/* Czas na pseudo-elementy */
+/* Pseudo element do h4 */
+h4::after { /* Po danym elemencie pokazują się dane style. */
+    content: " h4's are here";
+    color: aqua;
+    background-color: beige;
+}
+/* Zanim jednak nadamy dymki pod interesujące nas elementy, nadajmy kolor czcionc przy kontakcie, aby się wyróżniała. */
+small {
+    color: crimson;
+    font-weight: bold;
+}
+/* Tutaj określamy sobie co ma się dziać przed i po najechaniu na nasze 3 elementy na stronie.strony */
+span[data-descr] {
+    position: relative;
+    text-decoration: underline;
+    color: #00F;
+    cursor: help;
+  }
+  
+  span[data-descr]:hover::after {
+    content: attr(data-descr);
+    position: absolute;
+    left: 0;
+    top: 24px;
+    min-width: 150px;
+    border: 1px #aaaaaa double;
+    border-radius: 10px;
+    background-color: #ffffcc;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+  }

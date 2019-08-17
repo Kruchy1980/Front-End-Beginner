@@ -1,0 +1,52 @@
+header {
+    text-align: center;
+}
+/* Skoro mamy już kilka rzeczy na naszej stronie, to możemy powrzucać też kilka styli, więc zaczynamy! */
+table, td, h1, h2, h3, h4, h5, h6  {
+    /* Margines oddala nam  elementy od siebie */
+    margin: 10px 0 10px 0;
+    /* Padding oddala nam naszą zawartość od granicy czyli tak jakby wpycha naszą zawartość do środka. */
+    padding: 5px;
+    /* Teraz kilka operacji na temat granic dla danych elementów */
+    border-width: 1px; /* Szerokość granicy */
+    border-style: ridge; /* Styl jakości grnicy jest kilka głównie używanych, a ridget jest to taka ledwo widoczna granica, ale jest więcej możliwości od lini ciągłej po kropkowaną włącznie. */
+    border-color: brown; /* Odpowiada za kolor granicy/obramowania */
+    background-color: grey;
+}
+ol, li {
+    /* Możemy zapiszć obramowania w jecnej linii z takim samym efektem */
+    border: 2px dashed olive; /* Aby w ogóle działało obramowanie, to musimy podać kilka podstawowych wartości. Nizbedna jest szerokość ponieważś zdefiniowana na stałe jest grubość 0px więc nie będziemy jej widzieli. reszta parametrów to nasze widzimisię ponieważ zadeklarowana na stałe jest kolor i rodzaj ograniczenia więc jeśli tego nie podamy to i tak będziemy to widzieli.*/
+   /* Możemy również podzielić margins i paddings na części a nie pisać tylko w jednej linijce. np: */
+    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 3px;
+    /* To samo możemy zrobić z padding'iem */
+    padding-top: 10px;
+    padding-bottom: 22px;
+    padding-left: 23px;
+    padding-right: 10px;
+}
+/* Css oferuje również zaokrąglanie granic, za pomocą nastpującego argumentu. */
+#oko {
+    /* Aby wyszło nam kółko to musimy podać wielkość pudełka, najlepiej w kwadracie ponieważ z prostokąta wyjdzie elipsa., które chcemy zaokrąglić, a następnie użżyć border-radius: 50%; */
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    /* vertical-align: middle; */ /* Przy określaniu pionowego położenia tekstu musimy również ustalić wielkość czyli wysokość i szerokość pudełka w którym chcemy umieścić tekst w środku. */
+    border: 1px black solid;
+    background-color: grey;
+    /* Tak robimy koło;) */
+    border-radius: 50%;
+}
+#oko2 {
+    text-align: center;
+    /* Tak nadajemy zaokrąglenia każdemu z rogów wedle takiej samej zasady jak przy prostych obramowaniach, zaczynając od lewego górnego rogu*/
+    border: 3px black dashed;
+    border-radius: 3em 20% 50px 25%; /* Jak też widaĆ możemy również mieszać jednostki, co jednak nie jest zalecane podczas komercyjnego tworzenia kodu. */
+    /* Jak w powyższym przykładzie powinniśmy również użyć kwadratu najlepiej lub prostokąta o niedużej różnicy ramionach, ponieważ przy całej długości strony nie widać dobrze efektu zaokrąglenia. */
+    height: 100px;
+    width: 100px;
+    background-color: greenyellow;
+}
+/* !!! UWAGA Należy pamiętać, że jak do zwykłych granic, tak i do zaokrąglonych, możemy używać różnego rodzaniu wielkości nie tylko % i px, ale dość popularne są też em - wielkości odpowiadające wartości wielkości czczionki, która w standardzie ma ok 16px więc 1 em == 16px (jeśli sami nie zdefiniujemy wielkości czzcionki. */

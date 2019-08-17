@@ -1,0 +1,29 @@
+h1 {
+    /* W ten sposób zmieniamy kolor tła , ale jest o wiele więcej możliwości nadania wyglądu tła.*/
+    background-color: rgb(51, 51, 13);
+    /* Możemy np zmienić  wysokość naszego h1, co spowoduje rozszerzenie tła, natomiast ze waględu na to, że nie zadeklarowaliśmy ułożenia tekstu vertykalnego, to sam tekst zostanie na górze.*/
+    height: 100px;
+}
+
+.header {
+    text-align: center;
+    height: 200px;
+    /* Można zastosować implementację zdjęcia jako tła w następujący sposób */
+    /* background-image: url("http://lorempixel.com/g/400/200"); Przy odpowiednim argumencie wpisujemy adres url do obrazka, który chcemy tutaj wrzucić */
+    /* Aby było widać czcionkę zmieniamy jej kolor*/ 
+    color: rgb(0, 133, 66);
+    /* Możemy również spozycjonować nasze zdjęcie ponieważ jest ono za małe i z automatu powtarzane jak widzimy na stronie.*/
+    background-position: center; /* Zdjęcie które wrzucimy ma być na środku, jednak mmusimy wyłączyć powtarzanie zdjęcia*/
+    background-repeat: no-repeat; /* Jest to oczywiście tylko jedna z opji, które możemy wybrać w tej kategorii, a jest tego wiele.*/
+    /* Możemy również personaliazować wielkość podkładu/tła, dzięki poniższemy argumentowi. */
+    /* background-size: 100px 50px; Na pierwszym miejscu jest szerokość 'width', a na drugim wysokość 'height'  */
+    /* Możemy również rozciągać obrazek za pomocą procentówm, a minowicie podawać jaki obszar obrazek ma zajmować, nie jest to jednak najlepszą metodo, ponieważ obrazki o mniejszej skali są rozciągane, przez co tracą też na jakości. */
+    /* background-size: 100% 100%; */
+    /* Obrazki możemy rónież doapasowywać za pomocą innych wartości, np*/
+    /* background-size: cover; Rozciąga obrazek  na całą szerokość strony/kontenerka nie zmieniając jednak rozmiarów elementów obrazka np: postaci, przedmiotów, itp, lecz doskalowuje ich wielkość */
+    /* Mamy również możliwość automatycznego przypisywania wielkościobrazka poprzez użycie wartości 'auto'.  */
+    /* background-size: auto; */
+    /* Możemy również przypisać kilka wartości do jednego argumentu oddzielając je tylko spacją a dopiero po zakończeniu przypisywania wartości stawiamy średnik */
+    background: url("http://lorempixel.com/g/400/200") no-repeat fixed center;
+}
+

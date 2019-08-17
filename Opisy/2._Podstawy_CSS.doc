@@ -263,3 +263,399 @@ InLine Style and JavaScript
 
 <header style="background-color:yellow;"> <h1 onclick="javascript:alert('Hello');">Welcome to my Website</h1> <p>tag line</p> </header>
 ----------------------------------------------------------------------------
+
+3. Opcje styli tła - Background styling options:
+
+Do tej części używamy pliku 3._cssbackstyle.html oraz głónym zainteresowanym jest
+bacjstyle.css:
+
+h1 {
+    /* W ten sposób zmieniamy kolor tła , ale jest o wiele więcej możliwości nadania wyglądu tła.*/
+    background-color: rgb(51, 51, 13);
+    /* Możemy np zmienić  wysokość naszego h1, co spowoduje rozszerzenie tła, natomiast ze waględu na to, że nie zadeklarowaliśmy ułożenia tekstu vertykalnego, to sam tekst zostanie na górze.*/
+    height: 100px;
+}
+
+.header {
+    text-align: center;
+    height: 200px;
+    /* Można zastosować implementację zdjęcia jako tła w następujący sposób */
+    /* background-image: url("http://lorempixel.com/g/400/200"); Przy odpowiednim argumencie wpisujemy adres url do obrazka, który chcemy tutaj wrzucić */
+    /* Aby było widać czcionkę zmieniamy jej kolor*/ 
+    color: rgb(0, 133, 66);
+    /* Możemy również spozycjonować nasze zdjęcie ponieważ jest ono za małe i z automatu powtarzane jak widzimy na stronie.*/
+    background-position: center; /* Zdjęcie które wrzucimy ma być na środku, jednak mmusimy wyłączyć powtarzanie zdjęcia*/
+    background-repeat: no-repeat; /* Jest to oczywiście tylko jedna z opji, które możemy wybrać w tej kategorii, a jest tego wiele.*/
+    /* Możemy również personaliazować wielkość podkładu/tła, dzięki poniższemy argumentowi. */
+    /* background-size: 100px 50px; Na pierwszym miejscu jest szerokość 'width', a na drugim wysokość 'height'  */
+    /* Możemy również rozciągać obrazek za pomocą procentówm, a minowicie podawać jaki obszar obrazek ma zajmować, nie jest to jednak najlepszą metodo, ponieważ obrazki o mniejszej skali są rozciągane, przez co tracą też na jakości. */
+    /* background-size: 100% 100%; */
+    /* Obrazki możemy rónież doapasowywać za pomocą innych wartości, np*/
+    /* background-size: cover; Rozciąga obrazek  na całą szerokość strony/kontenerka nie zmieniając jednak rozmiarów elementów obrazka np: postaci, przedmiotów, itp, lecz doskalowuje ich wielkość */
+    /* Mamy również możliwość automatycznego przypisywania wielkościobrazka poprzez użycie wartości 'auto'.  */
+    /* background-size: auto; */
+    /* Możemy również przypisać kilka wartości do jednego argumentu oddzielając je tylko spacją a dopiero po zakończeniu przypisywania wartości stawiamy średnik */
+    background: url("http://lorempixel.com/g/400/200") no-repeat fixed center;
+}
+
+Więcej opcji zabawy ze stylami css dotyczącymi tła znajdziemy w dokumentacji języaka CSS argument background.
+
+link do strony z właściwościami stylizacji tła języka css:
+
+https://www.w3schools.com/cssref/css3_pr_background.asp
+-------------------------------------------------------------------------
+
+4. Selekktory CSS.
+Plik powiązany to plik 4._selektory_css.html
+Plik główmy styli to:
+csssel.css:
+/* Jednym z rodzajów selektorów w języku CSS jest po prostu element */
+/* Aby trochę się tabelka wytóżniała, dodajmy chociaż granice */
+table, td {
+    border: 1px solid red;
+}
+
+/* Jednym z selektorów jest identyfikator zapisywany w html'u "id",
+jest on unikatowy i jeden identyfikator o danej nazwie może być użyty na jednej stronie.
+W języku css przywołuje się go za pomocą '#id'  i wtedy możemy nadawać sobie styl do danego jednego elementu.
+Możemy mieć dwa te same elementy np h1, a dany styl chcemy nadać tylko jednemu z nich to nadajemy mu identyfikator, a następnie stylizujemy za pomocą danego identyfikatora dany element np.*/
+#tytul {
+    /* Tutaj możemy teraz nadać jakiś styl dla danego elementu i tylko dla niego poniważ identyfiktor jest unikatowy. */
+    color: rgb(170, 170, 105);
+    background-color: black;
+}
+/* To samo możemy zrobić z całym headerem choć jeśli nie ma potrzeby stosowania identyfikatora, to lepiej tego nie robić ale jeśli będziemy mieli 2 headery to już inna sprawa */
+#mojnaglowek{
+    text-align: center;
+    background: url("http://lorempixel.com/400/200/sports/Dummy-Text") no-repeat  center;
+    background-size: cover;
+    height: 400px;
+}
+/* Dzięki temu możemy uzyskać ciekawy wygląc nagłówka ponieważ będzie rysunek jako tło i napis na pasku napisowym jeśli można t tak nazwać */
+/* Kolejnym z selektorów jest klasa, która w przeciwieństwie do identyfikatora nie jest unikatowa i wiele elementów na jednej stronie może posiadać klasę o tej samej nazwie, więc jeśli chcemy kilku nawet różnym elementom nadać ten sam styl,
+ to powinniśmy użyć klasy, którą wywołujemy w css'ie za pomocą '.class' */
+.pierwszystyl {
+    text-align: left;
+    text-decoration: underline;
+    column-count: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    color: brown;
+ }
+ --------------------------------------------------------------------------
+
+ 5. Pudełkowy model styli CSS - Box Model Boxes.
+ Pudełkowy wygląd styli czyli jak wygląda  i z czego się składa pojedynczy element strony, a mianowicie:
+ 1. Treść właściwa - jest to część, którą zajmuje rzeczywisty element,
+ 2. Padding - jest to odstęp od obrzeży pudełka, charakteryzuje się tym, że element jest tak jakby wpychany do środka pudełka,
+ 3. Border - obręb.granica dookoła naszego elementu
+ 4. Margin - jest marginesem, który wskazuje odstęp od innych elementów naszej strony.
+ Ogólnie i padding i margin zapisywać możemy podobnie, a mianowicie:
+ margin/padding: 10px(lub inne jednostki wielkości):
+    margin/padding: 10px 0 10px 0;
+    margin/padding: 0 10px 0 10px;
+    margin/padding: 10px 0;
+    margin/padding: 0 10px;
+    margin/padding: auto;
+    margin/padding: 5px 20px 8px 7pxx;
+Odczytujemy to w sposób następujący:
+Pierwsza wartość to odległość od góry.
+I zgodnie z ruchem wskazówek zegara druga wartość to odległość od lewej.
+Trzecia to odległosć od dołu.
+Czwarta to odległość z prawej.
+Jeśli używamy tylko jednej wartości lub wartości auto , oznacza że  chcemy takiej samej odległości z każdej strony. 
+Odległość o wartość albo auto, która znaczy, że daje odległość tę samą od każdej strony naszego pudełka:)
+Jeśli podajemy tylko dwie wartości, oznacza to można powiedzieć parowanie, czyli jeśli pierwsza wartość jest jakaś, to oznacza, że dotyczy góry i dołu,
+Jeśli jednak druga wartość jest podna to oznacza, że dotyczy prawej i lewej strony.
+ 
+ Plik powiązany to plik 5._cssbmb.html
+Plik główmy styli to:
+bmb.css:
+header {
+    text-align: center;
+}
+/* Skoro mamy już kilka rzeczy na naszej stronie, to możemy powrzucać też kilka styli, więc zaczynamy! */
+table, td, h1, h2, h3, h4, h5, h6  {
+    /* Margines oddala nam  elementy od siebie */
+    margin: 10px 0 10px 0;
+    /* Padding oddala nam naszą zawartość od granicy czyli tak jakby wpycha naszą zawartość do środka. */
+    padding: 5px;
+    /* Teraz kilka operacji na temat granic dla danych elementów */
+    border-width: 1px; /* Szerokość granicy */
+    border-style: ridge; /* Styl jakości grnicy jest kilka głównie używanych, a ridget jest to taka ledwo widoczna granica, ale jest więcej możliwości od lini ciągłej po kropkowaną włącznie. */
+    border-color: brown; /* Odpowiada za kolor granicy/obramowania */
+    background-color: grey;
+}
+ol, li {
+    /* Możemy zapiszć obramowania w jecnej linii z takim samym efektem */
+    border: 2px dashed olive; /* Aby w ogóle działało obramowanie, to musimy podać kilka podstawowych wartości. Nizbedna jest szerokość ponieważś zdefiniowana na stałe jest grubość 0px więc nie będziemy jej widzieli. reszta parametrów to nasze widzimisię ponieważ zadeklarowana na stałe jest kolor i rodzaj ograniczenia więc jeśli tego nie podamy to i tak będziemy to widzieli.*/
+   /* Możemy również podzielić margins i paddings na części a nie pisać tylko w jednej linijce. np: */
+    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 3px;
+    /* To samo możemy zrobić z padding'iem */
+    padding-top: 10px;
+    padding-bottom: 22px;
+    padding-left: 23px;
+    padding-right: 10px;
+}
+/* Css oferuje również zaokrąglanie granic, za pomocą nastpującego argumentu. */
+#oko {
+    /* Aby wyszło nam kółko to musimy podać wielkość pudełka, najlepiej w kwadracie ponieważ z prostokąta wyjdzie elipsa., które chcemy zaokrąglić, a następnie użżyć border-radius: 50%; */
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    /* vertical-align: middle; */ /* Przy określaniu pionowego położenia tekstu musimy również ustalić wielkość czyli wysokość i szerokość pudełka w którym chcemy umieścić tekst w środku. */
+    border: 1px black solid;
+    background-color: grey;
+    /* Tak robimy koło;) */
+    border-radius: 50%;
+}
+#oko2 {
+    text-align: center;
+    /* Tak nadajemy zaokrąglenia każdemu z rogów wedle takiej samej zasady jak przy prostych obramowaniach, zaczynając od lewego górnego rogu*/
+    border: 3px black dashed;
+    border-radius: 3em 20% 50px 25%; /* Jak też widaĆ możemy również mieszać jednostki, co jednak nie jest zalecane podczas komercyjnego tworzenia kodu. */
+    /* Jak w powyższym przykładzie powinniśmy również użyć kwadratu najlepiej lub prostokąta o niedużej różnicy ramionach, ponieważ przy całej długości strony nie widać dobrze efektu zaokrąglenia. */
+    height: 100px;
+    width: 100px;
+    background-color: greenyellow;
+}
+/* !!! UWAGA Należy pamiętać, że jak do zwykłych granic, tak i do zaokrąglonych, możemy używać różnego rodzaniu wielkości nie tylko % i px, ale dość popularne są też em - wielkości odpowiadające wartości wielkości czczionki, która w standardzie ma ok 16px więc 1 em == 16px (jeśli sami nie zdefiniujemy wielkości czzcionki. */
+--------------------------------------------------------------------------
+Link do strony, tłumaczącej użycia wartości parametrów granic w języku CSS:
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties
+--------------------------------------------------------------------------
+
+6. Display w języku CSS.
+display.css:
+
+header {
+    text-align: center;
+}
+span {
+    /* Ciekawym zastosowaniem display'a jest możliwość "zamiany" naszych span'ów na divy - czyli pudełka za pomocą wartości block */
+    display: block;
+    background-color: yellowgreen;
+}
+/* W drugą jednak stronę możemy zrobić myk, który zamienia div'y na span'y */
+#oko2 { /* Który jest naszym div-em */
+    display: inline-block; /* Które zamienia nam div-a na kontenerek o długości tekstu */
+    background-color: blue;
+} 
+#oko1 {
+    display: inline; /* Ta wartość argumentu tworzy span'a z div'a, jednak w przeciwieństwie do 'inline-block' zabrania również używania styli z pliku css lecz tylko z wysokości tagu tym rodzajem displaya objętego. */
+}
+/* Powyższą wartość argumentu dobrze jest użyć do paska nawigacyjnego, któremu nadaliśmy identyfikator "navpas".  */
+#navpas ul li a { /* Prześliśmy całą drogę do hiperlinków aby zinlineo'wać nasze giperlinki. */
+    /* Do sprawdzenia, czy dobrze poprowaedziliśmy ścieżkę zmieńmy kolor tła iperlinków */
+    display: inline-block; /* Tworzy blok wokół elementów listy, któremu możemy nadać stałe parametry jak np. poniższa szerokość "width." */
+    background-color: rgb(206, 188, 188); /* Do sprawdzenia i jakiegoś wyróżnienia elementu, którego to dotyczy. */
+    width: 300px; /* Szerokość ogólna bloku. z zaznaczonymi elementami. */
+}
+.reszta p {
+    /* Jest jeszcze kilka opcji displaya, które możemy wykorzystać, np: */
+    display: list-item; /* Wyświetla zawartość lub pojedyncze elementy w postaci listy nieuporządkowanej. */
+    background-color: yellow;
+    margin: 25px 25px 25px 25px;
+}
+.drugistyl h4 {
+    display: none; /* Rzeczy nie są widoczne i nie zabierają mniejsca na stronie.*/
+    /* visibility: hidden; Rzeczy podobnie jak do visibility none nie są widoczne dla użytkownika, ale zabierają miejsce na stronie. */
+    /* display: inline-table; Wyświetla wszystko w jednej linii niby w postaci tabeli przynajmniej osobne teksty. */
+}
+--------------------------------------------------------------------------
+
+7. Kilka dodatkowych infomacji o pozycjonowaniu elementów na stronie.
+pozycje.css:
+header {
+    text-align: center;
+    background: green url("http://lorempixel.com/400/200") no-repeat center;
+    background-size: cover;
+    height: 400px;
+}
+/* Zajmiemy się tutaj pozycjonowaniem naszego elementu Kontakt na stronie */
+#kontakt span {
+    /* Najpierw kilka styli samego napisu, aby łatwiej było go zidentyfikować. */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: chocolate;
+    border: 1px double black;
+    height: 40px;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: rgb(189, 220, 247);
+}
+#kontakt { /* Podzieliliśmy tylko dlatego, aby style css nadać tylko elementowi objętemu kontenerkiem span. */
+    /* Teraz trochę na temat pozycjonowania: */
+    /* Z powodu tego, że zdeklarowana pozycja z automatu jest static-statyczna, czynie nie przesuwalna, nie będzie sensem jej deklarownie takie samo po prostu nic to nie zmieni. */
+    /* position: static; Nic to nie zmieni dla strony. */
+    /* position: relative; Ten argument sam w sobie również nie zminia nic  pozycji elementu, natomiast otwiera nam możliwość nadawania/zmiany pozycji interesującego nas elementu. */
+    /* Możemy teraz deklarować odległości od w następujący sposób: */
+    /* position: absolute; Pozycja absolutna ustawia nam element w stosunku do całej strony, a nie w stosunku do miejscam w którym element się znajdował. */
+    position: fixed; /* Ta pozycja utrzymuje element w stałym miejscu i tak jak pozycja absolutna w stosunku do całej strony. */
+    top: 82px;
+    /* right: 60px; */
+    bottom: 25px;
+    left: 25px; 
+    /* Jak widzimy możemy od naszeje pozycji początkowej przesuwać element w jakimkolwiek kierunku.
+    Oczywiście left i right są od siebie zależne i niepotrzebne dwa do jednego elementu ponieważ strona w tych kierunkach jest ograniczona wielkością ekranu w związku z czym element przesunięty do granicy strony będzie wychodził poza nią i będzie niewidoczny.  */
+    /* Użyliśmy tutaj 4rech kierunków aby udowodnić, że można przesuwać w różnych kierunkach. */
+    /* !! UWAGA jeśli position: static, to mimo zadeklarowanych odległości pozycja elementu nigdy by się nie zmieniła. */
+
+}
+h1 {
+    background-color: green;
+}
+
+Jest dużo więcej opcji pocjonowania, ale te są jedne z najważniejszych i najczęściej używanych.
+---------------------------------------------------------------------------
+
+8. Pseudo-Klasy, pseudo elementy.
+Pseudo klasy - służą do definiowana specjalnych stanów elementów, zapisujemy je za pomocą jednego ":".
+Peudo elementy - jest to element nadający style do części elementu, zapisujemy je za pomocą dwóch "::".
+pseudo.css:
+
+header {
+    text-align: center;
+    background: green url("http://lorempixel.com/400/200/sports/Dummy-Text") no-repeat center;
+    background-size: cover;
+    height: 400px;
+}
+/* Zajmiemy się tutaj pozycjonowaniem naszego elementu Kontakt na stronie */
+#kontakt span {
+    /* Najpierw kilka styli samego napisu, aby łatwiej było go zidentyfikować. */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: chocolate;
+    border: 1px double black;
+    height: 40px;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: rgb(189, 220, 247);
+}
+#kontakt { /* Podzieliliśmy tylko dlatego, aby style css nadać tylko elementowi objętemu kontenerkiem span. */
+    /* Teraz trochę na temat pozycjonowania: */
+    /* Z powodu tego, że zdeklarowana pozycja z automatu jest static-statyczna, czynie nie przesuwalna, nie będzie sensem jej deklarownie takie samo po prostu nic to nie zmieni. */
+    position: static; /*Nic to nie zmieni dla strony, jednak dla naszych potrzeb wystarczy pozycja elementy na swoim miejscu..*/
+    /* position: relative; Ten argument sam w sobie również nie zminia nic  pozycji elementu, natomiast otwiera nam możliwość nadawania/zmiany pozycji interesującego nas elementu. */
+    /* Możemy teraz deklarować odległości od w następujący sposób: */
+    /* position: absolute; Pozycja absolutna ustawia nam element w stosunku do całej strony, a nie w stosunku do miejscam w którym element się znajdował. */
+    /* position: fixed; /* Ta pozycja utrzymuje element w stałym miejscu i tak jak pozycja absolutna w stosunku do całej strony. */
+    /* top: 82px; */
+    /* right: 60px; */
+    /* bottom: 25px; */
+    /* left: 25px;  */ 
+    /* Jak widzimy możemy od naszeje pozycji początkowej przesuwać element w jakimkolwiek kierunku.
+    Oczywiście left i right są od siebie zależne i niepotrzebne dwa do jednego elementu ponieważ strona w tych kierunkach jest ograniczona wielkością ekranu w związku z czym element przesunięty do granicy strony będzie wychodził poza nią i będzie niewidoczny.  */
+    /* Użyliśmy tutaj 4rech kierunków aby udowodnić, że można przesuwać w różnych kierunkach. */
+    /* !! UWAGA jeśli position: static, to mimo zadeklarowanych odległości pozycja elementu nigdy by się nie zmieniła. */
+
+}
+table td{
+    border: 2px dashed orange;
+}
+h1 {
+    background-color: green;
+}
+/* Dodajmy kilka styli do naszego paska nawigacyjnego, którym będziemy chcieli się teraz zająć */
+#navpas a {
+    display: inline-block;
+    background: grey;
+    width: 300px;
+    position: relative;
+}
+/* Jedną z fajnych funkcji jest zmiana wyświetlania elementu podczac przejeżdżania po nich myszką/kursorem. */
+/* Pseudoklasy zapisujemy wstawiając dwukropek po nazwie elementu, np. */
+p:hover { /* Jak widać ta pseudoklasa nadaje styl elementowi w momencie najechania na niego myszką */
+    background-color: blueviolet;
+}
+/* Teraz zajmijmy się stylowniem dynamicznym naszego paska nawigacyjnego: */
+#navpas a:hover {
+    background-color: darkblue;
+    color: white;
+}
+.pierwszystyl:first-Child { /*Nadaje styl tylko pierwszemu elementowi danego zbioru. */
+    display: block;
+    background-color: green;
+}
+/* Obecny styl nadaje drugim(2) elementom  danego zbioru. */
+.trzecistyl td:nth-child(2) {
+    background-color: blueviolet;
+    color: white;
+    /* Oczywiście w nawiasie możemy np wpisać "even", czyli wszystkie parzyste elementy będą przsybierały dany styl, luc odd czyli wszystkie nieparzyste elementy daanego zbioru nabierają dany styl.*/
+}
+/* Czas na pseudo-elementy */
+/* Pseudo element do h4 */
+h4::after { /* Po danym elemencie pokazują się dane style. */
+    content: " h4's are here";
+    color: aqua;
+    background-color: beige;
+}
+/* Zanim jednak nadamy dymki pod interesujące nas elementy, nadajmy kolor czcionc przy kontakcie, aby się wyróżniała. */
+small {
+    color: crimson;
+    font-weight: bold;
+}
+/* Tutaj określamy sobie co ma się dziać przed i po najechaniu na nasze 3 elementy na stronie.strony */
+span[data-descr] {
+    position: relative;
+    text-decoration: underline;
+    color: #00F;
+    cursor: help;
+  }
+  
+  span[data-descr]:hover::after {
+    content: attr(data-descr);
+    position: absolute;
+    left: 0;
+    top: 24px;
+    min-width: 150px;
+    border: 1px #aaaaaa double;
+    border-radius: 10px;
+    background-color: #ffffcc;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+  }
+  ----------------------------------------------------------------------
+  
+  9. Trochę teorii na temat zastosowania selektorów.
+  Możemy nadać kilku elementom style w jednym zapisie, np:
+  h1(element), .h2(klasa), #h3(identyfikator) - jeśli selektory są oddzielone przecinkiem, oznacza to, że każy z nich ma przybrać nadant styl.
+Jest również możliwe nadawanie kiklu elementom pseudo-klas i pseudo-elementów oczywiście stosując przekinek
+Nadanie kilku elementom tej samej pseudoklasy i pseudoelementu odbywa się w następujący sposób.
+h1:pseudo-klasa::pseudo-element, .h2:pseudo-klasa::pseudo-element, itd.
+  
+  Jeśli jednak elementy nie są oddzialone przecinkiem, to oznacza, ze wpisujemy ścieżkę po kroczku do elementu nas interesującego, zby nadać mu styl i nazywa się to nestowaniem czyli zagnieżdżaniem, np:
+  #navpas ul li a {...} - jest to droga do elementu kotwiczącego "a", który znajduje się w elemencie o klasie "navpas" , w której zagnieżdżona jest lista w której znajdują się kotwice do linków przenoszących nas na jakąś stronę.
+  Jeśli chcemy nadać pseudo klasę czy też pseudo element dla tak zagnieżdżonego elementu, nadajemy to ostatecznemu elementowi w następujący sposób:
+  #navpas ul li a:pseudoklasa::pseudoelement - ponieważ można również dodać pseudo-element do pseudo-klasy. 
+
+--------------------------------------------------------------------------
+Link do strony, opisującej pseudo-klas języka CSS:
+
+Pseudo Classes
+https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-classes
+
+pseudo Elements
+https://developer.mozilla.org/en/docs/Web/CSS/Pseudo-elements
+
+CSS tooltip on codepen
+https://codepen.io/discoveryvip/pen/qZJvdb
+--------------------------------------------------------------------------
+
+10.Ulepszenie strony.
+Poprawiony wygląd ogólny strony, kilka standardów, ale jeszcze kilka starych styli pokazujących różne zastosowania argumentów, parametrów i wartości języka CSS.
+Została jeszcze zamiana listy nieuporządkowanej w pasesk nawigacyjny.
+I utworzenie 2 kolumn na głównej stronie.
+

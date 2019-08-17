@@ -1,0 +1,34 @@
+header {
+    text-align: center;
+}
+span {
+    /* Ciekawym zastosowaniem display'a jest możliwość "zamiany" naszych span'ów na divy - czyli pudełka za pomocą wartości block */
+    display: block;
+    background-color: yellowgreen;
+}
+/* W drugą jednak stronę możemy zrobić myk, który zamienia div'y na span'y */
+#oko2 { /* Który jest naszym div-em */
+    display: inline-block; /* Które zamienia nam div-a na kontenerek o długości tekstu */
+    background-color: blue;
+} 
+#oko1 {
+    display: inline; /* Ta wartość argumentu tworzy span'a z div'a, jednak w przeciwieństwie do 'inline-block' zabrania również używania styli z pliku css lecz tylko z wysokości tagu tym rodzajem displaya objętego. */
+}
+/* Powyższą wartość argumentu dobrze jest użyć do paska nawigacyjnego, któremu nadaliśmy identyfikator "navpas".  */
+#navpas ul li a { /* Prześliśmy całą drogę do hiperlinków aby zinlineo'wać nasze giperlinki. */
+    /* Do sprawdzenia, czy dobrze poprowaedziliśmy ścieżkę zmieńmy kolor tła iperlinków */
+    display: inline-block; /* Tworzy blok wokół elementów listy, któremu możemy nadać stałe parametry jak np. poniższa szerokość "width." */
+    background-color: rgb(206, 188, 188); /* Do sprawdzenia i jakiegoś wyróżnienia elementu, którego to dotyczy. */
+    width: 300px; /* Szerokość ogólna bloku. z zaznaczonymi elementami. */
+}
+.reszta p {
+    /* Jest jeszcze kilka opcji displaya, które możemy wykorzystać, np: */
+    display: list-item; /* Wyświetla zawartość lub pojedyncze elementy w postaci listy nieuporządkowanej. */
+    background-color: yellow;
+    margin: 25px 25px 25px 25px;
+}
+.drugistyl h4 {
+    display: none; /* Rzeczy nie są widoczne i nie zabierają mniejsca na stronie.*/
+    /* visibility: hidden; Rzeczy podobnie jak do visibility none nie są widoczne dla użytkownika, ale zabierają miejsce na stronie. */
+    /* display: inline-table; Wyświetla wszystko w jednej linii niby w postaci tabeli przynajmniej osobne teksty. */
+}

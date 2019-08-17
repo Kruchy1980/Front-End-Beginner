@@ -1,0 +1,42 @@
+header {
+    text-align: center;
+    background: green url("http://lorempixel.com/400/200") no-repeat center;
+    background-size: cover;
+    height: 400px;
+}
+/* Zajmiemy się tutaj pozycjonowaniem naszego elementu Kontakt na stronie */
+#kontakt span {
+    /* Najpierw kilka styli samego napisu, aby łatwiej było go zidentyfikować. */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: chocolate;
+    border: 1px double black;
+    height: 40px;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: rgb(189, 220, 247);
+}
+#kontakt { /* Podzieliliśmy tylko dlatego, aby style css nadać tylko elementowi objętemu kontenerkiem span. */
+    /* Teraz trochę na temat pozycjonowania: */
+    /* Z powodu tego, że zdeklarowana pozycja z automatu jest static-statyczna, czynie nie przesuwalna, nie będzie sensem jej deklarownie takie samo po prostu nic to nie zmieni. */
+    /* position: static; Nic to nie zmieni dla strony. */
+    /* position: relative; Ten argument sam w sobie również nie zminia nic  pozycji elementu, natomiast otwiera nam możliwość nadawania/zmiany pozycji interesującego nas elementu. */
+    /* Możemy teraz deklarować odległości od w następujący sposób: */
+    /* position: absolute; Pozycja absolutna ustawia nam element w stosunku do całej strony, a nie w stosunku do miejscam w którym element się znajdował. */
+    position: fixed; /* Ta pozycja utrzymuje element w stałym miejscu i tak jak pozycja absolutna w stosunku do całej strony. */
+    top: 82px;
+    /* right: 60px; */
+    bottom: 25px;
+    left: 25px; 
+    /* Jak widzimy możemy od naszeje pozycji początkowej przesuwać element w jakimkolwiek kierunku.
+    Oczywiście left i right są od siebie zależne i niepotrzebne dwa do jednego elementu ponieważ strona w tych kierunkach jest ograniczona wielkością ekranu w związku z czym element przesunięty do granicy strony będzie wychodził poza nią i będzie niewidoczny.  */
+    /* Użyliśmy tutaj 4rech kierunków aby udowodnić, że można przesuwać w różnych kierunkach. */
+    /* !! UWAGA jeśli position: static, to mimo zadeklarowanych odległości pozycja elementu nigdy by się nie zmieniła. */
+
+}
+h1 {
+    background-color: green;
+}
