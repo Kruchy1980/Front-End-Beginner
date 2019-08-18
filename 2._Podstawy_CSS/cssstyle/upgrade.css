@@ -4,16 +4,71 @@ body{
     line-height: 18px;  /* Odpowiadz za wysokość linii przeważnie lepiej jest wziąć trochę większą czcionkę. */
     color: #111;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-
+/* HEADER */
 header {
+    font-family: 'Philosopher', sans-serif;
     text-align: center;
     background: green url("http://lorempixel.com/400/200/sports/Dummy-Text") no-repeat center;
     background-size: cover;
     height: 400px;
 }
 
+/* TYTUŁ */
+/* Nadajmy kilka standardowych styli do kilku elementów */
+#tytul {
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 40px;
+    background-color: black;
+    color: crimson;
+}
+
+/* KONTAKT */
+#kontakt span {
+    
+    font-family: 'Philosopher', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: chocolate;
+    border: 1px double black;
+    height: 40px;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: rgb(189, 220, 247);
+}
+
+#kontakt { 
+    font-family: 'Philosopher', sans-serif;
+    position: absolute; 
+    top: 92px;
+    left: 25px;
+}
+
+small {
+    font-family: 'Philosopher', sans-serif;
+    color: crimson;
+    font-weight: bold;
+}
+
+
+/* PASEK NAWIGACYJNY */
+#navpas {
+    background-color:#333344;
+    color: #efefef;
+    height: 60px;
+    margin: 0;
+}
+
+#navpas a:hover {
+    background-color: rgb(115, 185, 10);
+    color: white;
+}
 
 /* Jak tworzymy nasz pasek nawigacyjny w czystym css'ie i HTML'u */
 #navpas ul {
@@ -22,40 +77,125 @@ header {
     padding: 0;
 }
 #navpas ul li a {
-    margin-right: 5px;
-    padding: 21px;
+    vertical-align: middle;
     text-align: center;
     display: inline-block;
-    background: grey;
-    width: 100px;
+    background: rgb(218, 214, 214);
     color: #000;
     position: relative;
     text-decoration: none;
+    height: 35px;
+    width: 95%;
+    margin: 0 1%; 
 }
 
 #navpas ul li {
     float: left; /* Float pozwala nam jak chcemy mieć otaczający nas text umieścić. */
+    width: 25%;
+    /* margin: auto; */
 }
 
-#navpas {
-    background-color:#333344;
-    color: #efefef;
-    height: 60px;
-    margin: 10px 0;
-}
 
+/* SUBMENU */
 #podmenu {
+    font-family: 'Philosopher', sans-serif;
     float: left;
-    width: 29%;
+    width: 28%;
+    padding: 1%;
+    height: 400px;
+}
+
+#podmenu h1 {
+    text-align: center;
+} 
+
+/* WSZYSTKO W JEDNYM KONTENERZE */
+#glkon {
+    max-width: 1140px; /*Skoro jest to kontener otaczający wszystko, to w taki sposób można naprawić błąd wynikający z różnej wielkości monitorów*/
+}
+
+/* CAŁOŚĆ ZAWARTOŚCI */
+#kontener{
+    background-color: #a5a5ac;
+    height: 1220px;
+}
+/* GŁÓNWNA ZAWARTOŚĆ */
+.zawartosc {
+    /* clear: both; Utrzymuje odstęp po obu stronach danego elementu */
     background-color: #ddd;
+    float: left;
+    width: 68%;
     padding: 1%;
 }
 
-.zawartosc {
-    /* clear: both; Utrzymuje odstęp po obu stronach danego elementu */
+/* EDYCJA OBRAZKA - ponieważ można. */
+.mojobraz {
+    background-size: cover;
     float: left;
-    width: 69%;
+    margin: 10px;
 }
+
+/* Tabelka */
+table {
+    width: 100%;
+}
+
+table td{
+    border: 2px dashed darkgray;
+}
+
+th, td {
+    padding: 10px;
+    min-width: 60px;
+}
+
+/* LISTA */
+#lista{
+    clear: both;
+}
+
+
+/* Te style obecnie trochę przeszkadzają, ale zostawiam do wglądu. */
+/*
+.reszta p {
+    border: 1px dashed red;
+    background-color: grey;
+    color: antiquewhite;
+    min-height: 50px;
+    margin: 30px 0 0 0;
+}
+.reszta p:hover {
+    background-color: rgb(4, 4, 83);
+    color: chartreuse;
+}
+*/
+
+
+.drugistyl p, h5 {
+    display: block;
+    background-color: gray;
+    color: darkred;
+}
+
+.drugistyl p:hover::before, .drugistyl p:hover {
+    content: "To jest nasza ";
+    color: aliceblue;
+}
+
+.trzecistyl td:nth-child(2) {
+    background-color: blueviolet;
+    color: white;
+}
+
+h4:hover::after { 
+    border: 2px dotted orange;
+    content: " to jest h4";
+    color: rgb(2, 48, 48);
+    background-color: yellowgreen;
+}
+
+
+/* STÓPKA */
 .clear  {
     clear: both;
 }
@@ -69,83 +209,14 @@ header {
 
 }
 
-#kontakt span {
-    
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    font-size: 1.5em;
-    color: chocolate;
-    border: 1px double black;
-    height: 40px;
-    width: 200px;
-    padding: 5px;
-    text-align: center;
-    border-radius: 25px;
-    background-color: rgb(189, 220, 247);
-}
-
-
-
-#kontakt { 
-    position: absolute; 
-    top: 92px;
-    left: 25px;
-}
-
-
-table td{
-    border: 2px dashed darkgray;
-}
-/* Nadajmy kilka standardowych styli do kilku elementów */
-#tytul {
-    font-size: 30px;
-    font-weight: 900;
-    line-height: 40px;
-    background-color: black;
-    color: crimson;
-}
-
-.reszta p {
-    border: 1px dashed red;
-    background-color: grey;
-    color: antiquewhite;
-    min-height: 50px;
-    margin: 30px 0 0 0;
-}
-.reszta p:hover {
-    background-color: rgb(4, 4, 83);
-    color: chartreuse;
-}
-
-#navpas a:hover {
-    background-color: rgb(115, 185, 10);
-    color: white;
-}
-
-
-.trzecistyl td:nth-child(2) {
-    background-color: blueviolet;
-    color: white;
-}
-h4:hover::after { 
-    border: 2px dotted orange;
-    content: " to jest h4";
-    color: rgb(2, 48, 48);
-    background-color: yellowgreen;
-}
-
-small {
-    color: crimson;
-    font-weight: bold;
-}
-
+  /* Dymki spod kilku elementów */
 span[data-descr] {
     position: relative;
     text-decoration: underline;
     color: #00F;
     cursor: help;
 }
-  
+
 span[data-descr]:hover::after {
     content: attr(data-descr);
     position: absolute;
@@ -160,14 +231,52 @@ span[data-descr]:hover::after {
     font-size: 14px;
     z-index: 1;
 }
-
-.drugistyl p, h5 {
-    display: block;
-    background-color: gray;
-    color: darkred;
+/* POPRAWKA DOSTOSOWANIA DO WIELKOŚCI EKRANU */
+/* Poniższy kawałek kodu robimy, aby w miarę rozszerzania strony na ekranie, dostosowała się ona do wielkości ekranu aby wyświetlała się bardziej czytelnie. */
+/* Kolejny element eliminujący błędy zależące od wielkości ekranu. */
+@media screen and (max-width:600px) { /* Jest to animacja dotycząca maksymalnego rozszerzenia strony na ekranie, a mianowicie ogranicza to. */
+    #glkont { /* Oznacza to, że jeśli dojedziemy do granicznej szerokości to tło naszej strony, a mianowicie kontenera się zmienui na zadane. */
+        background-color: yellowgreen;
+    }
+/* DODATKI  */
+/* Możemy zrobić dodatkowy selektor do menu, w którym umieścimy tylko rzeczy opisujące wielkości elementów menu. */
+#navpas ul li a {
+    width: 92%;
+    margin: 1%;
+    padding: 4px;
 }
 
-.drugistyl p:hover::before, .drugistyl p:hover {
-    content: "To jest nasza ";
-    color: aliceblue;
+#navpas ul li {
+    width: 25%;
+}
+/* Taki sam drugi selektor możemy zrobić do podmenu aby je lepiej obrobić. */
+
+#podmenu {
+    float: none;
+    width: 100%;
+    padding: 0;
+    height: auto;
+}
+/* Rzędy i kolumny tabelki */
+th, td {
+    font-family: 'Philosopher', sans-serif;
+    padding: 0;
+    min-width: auto;
+}
+/* Obrazek */
+.mojobraz {
+    float: none;
+    margin: 0;
+    width: 100%;
+}
+
+/* I dodatek do zawartości */
+.zawartosc {
+    /* clear: both; Utrzymuje odstęp po obu stronach danego elementu */
+    background-color: #ddd;
+    float: none;
+    width: 100%;
+    padding: 1%;
+    background-color: #ddd;
+}
 }
