@@ -6,3 +6,72 @@ III. JavaScript od podstaw.
 
 1. Wprowadzenie do JavaScript.
 
+JavaScript jest wysokopoziomowym, dynamicznym, bez typowym i interpretowalnym językiem programowania, co oznacza, że umomżliwia pisać skrypty zawierającę polecenia wywołujące logikę do strony, 
+Umożliwiając tworzyć ją dynamiczną, co równocześnie poprawia jej działanie i robi ją bardziej nowoczesną.
+Kod języka skryptowego java zapisujemy w plikach o rozszerzeniu .js.
+JavaScript jest językiem mocno kompatybilnym, co prowadzi do możliwości używania go w niemal każcym edytorze tekstu, jednak jednym z lepszycj obecnie do tego języka jest Intelij lub też używane przeze mnie Visual Code Studio.
+Jest kilka metod do połączenia naszego skryptu do strony  HTML:
+1. Umieszczanie w danych miejscach tagów skryptowych <script> 'Treść' </script> - nie zalecany.
+2. Inlinowe stosowanie funkcji języka JavaScript - całkowicie niezalecane. 
+3. Rekomendowany osobny plik z rozszerzeniem '.js', zawierający tylko kod JavaScript i użycie jego przywołania <script src="ścieżka_do_pliku_.js"></script> na dole kodu HTML pomiędzy tagami:
+    </body>
+        <script src="ścieżka_do_pliku_.js"></script>
+</html>
+-------------------------------------------------------------
+Przykład inlineowe'go użycia kodu javascript w Html'u - całkowicie nie zalecane:
+<div id="but" onclick="alert('mój tekst');"> Click Me</div>
+
+---------------------------------------------------------------------
+Przykład implementacji kodu js do html za pomocą tagu script:
+    
+    <div id="but1">Kliknij mnie (użycie tagu script) </div> - określenie elementu którego ma to dotyczyć.
+    
+    <script> - przywołanie skryptu poprzez odpowiedni tag.
+        document.getElementById("but1").addEventListener("click", function () {
+            alert('Użycie Js-a w postaci tagu script.');
+        }) - Zawartość tego co znajduje się w nawiasach klamrowych, jest skryptem, który ma się wykonać po odpowiedniej akcji
+    </script>
+    
+Opis elementów:
+    document.getElementById - Jest to selektor używany przez język javascript, odwołujący się do elementu, a mianowici przywołujący element po jego 'id'
+    ("but1") - w nawiasie i cudzysłowie wpisujemy Id elementu 
+    (!!!Zauważmy, że nie używamy selektora jak w cssie, a mianowicie '#' tylkok wpisujemy nazwę.), którego akcja zadeklarowana w skrypcie ma użyć.
+    .addEventListener - dodanie słuchaca wydarzenia - a mianowicie chodzi o to, co ma się wykonać po:
+    addEventListener - posiada dwa parametry, z których pierwszy "click" określa co mamy zrobić, aby wywołać zadeklarowaną funkcję,
+    ("click", function () {...} - pierwszy parametr określa metodę wywołania event'u, a drugi parametr określa funkcję, która wykonuje określone przez nas czynności.
+------------------------------------------------------------------------
+Najlepszym i najbardziej rekomendowanym sposobem jest wczytywanie kodu skryptowego z pliku javascript powiąznego z naszą stroną.
+Powiązanie pliku .html z plikiem .js- najlepszy sposób:
+
+    </body>
+        <script src="ścieżka_do_pliku_.js"></script>
+</html>
+Zapis HTML:
+    <div id="but1">Kliknij mnie (Implementowane z pliku .js) </div> - zapis elementu, którego dotyczyć ma sama funkcja.
+
+Kod JS:
+
+document.getElementById('but2').addEventListener('click', function () {
+    alert('Właśnie zaimplementowałeś funkcję z pliku .js !');
+})
+
+Ten sam skompresowany kod wyglada w następujący sposób:
+alert("Właśnie połączyłeś swoją stronę z plikiem .js."), document.getElementById("but2").addEventListener("click", function () { alert("Właśnie zaimplementowałeś funkcję z pliku .js !") });
+----------------------------------------------------------------------
+
+Jak w każdym projekcie możemy trafić na błędy ponieważ nawet maszyny je popełniają.
+Aby wykryć i naprawić błędy dobrze jest umieć używać narzędzi do tego przeznaczonych.
+Nazywa się je narzędziami do debuggowania kodu.
+
+-----------------------------------------------------------------------
+Kilka informacji z wikipedii o języku JavaScript:
+
+ENG:
+https://en.wikipedia.org/wiki/JavaScript
+
+PL:
+https://pl.wikipedia.org/wiki/JavaScript
+
+Strona z kompresorem kodu js:
+https://jscompress.com/
+-----------------------------------------------------------------------
