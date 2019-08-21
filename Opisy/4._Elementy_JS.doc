@@ -3,9 +3,302 @@
 ##########################################################################
 
 
-IV. Zmienne/Variables.
+IV. Elementy JavaScript.
 
-1.Język JavaScript posiada 3 główne zmienne a mianowicie:
+1. ZMIENNE / VARIABLES.
+a) Typy proste danych.
+Język JavaScript posiada 3 główne typy danych a mianowicie:
 a) Strings - stringi czyli ciągi tekstowe
 b) Numbers - po prostu numery/liczby
 c) Boolean - Prawda/Fałsz
+
+Poza tym jest jeszcze kilkla innych typów danych, jak:
+- zmienna "null:
+- zmienna "undefined" - zmienna, która nie posiada wartości
+- zmienna liczbowa "int" - liczby rzeczywiste
+- zmienna liczbowa "float" - liczby zmiennoprzecinkowe
+- zmienne stałe "const" - wartości zmiennej nie zmienimy w żadnym module w przeciwieństwie do "var" i "let" - jest to zmienna używana tylko wtedy, kiedy jesteśmy pewni, że jakiejś danej nie chcemy zmieniać za żadną cenę, np nr PESEL lub nazwisko rodowe, które jednak w obecnych czasach jest możliwe do zmiany jak większość rzeczy.
+
+
+Zmienne string w java scripcie zapisuje się następująco:
+a) var <nazwazmiennej> = <wartość zmiennej> - var jest to zmienna globalna, używana do projektów, w których jedna zmienna użyta jest w kilku modułach i bez problemu może być zadeklarowana poza modułami.
+b) let <nazwazmiennej> = <wartość zmiennej> - let jest to zmienna lokalna, używana w modułach, i jest bardzo dobrym rowiązaniem, jeśli zmiennej nie trzeba używać w kilku osobnych modułach.
+
+Sposób zapisu:
+nazwa zmiennej nie może rozpoczynać się od:
+- $ - ponieważ jest to znak użwany jako selektor w języku jQuery
+- 123 - od cyfr
+Powinno się natomiast:
+- jeśli łączymy nazwy np mojBlogPierwszy - każdy wyraz rozpoczynać z dużej litery
+- można używać cyfr w kolejnych częściach nazwy np mojBlog1 - to nie będzie inrerpretowane jako błąd.
+- nazwy wymyślać kojarzące się z funkcją, którą mają spełniać.
+- można nazywać zmienne za pomocą jednej litery, ale nie zawsze jest to dobre przy identyfikacji.
+- Jeśli mamy natomiast  w zmiennej string jakiś dłuższy tekst lub słowo króre chcemy zapisać z apostrofem, to możemy zrobić to w następujący sposób:
+var myString = 'Inlin\'owe'; - możemy zapisać ją w ten sposób.
+
+b) Typy złożone danych.
+Zmienne złożone, są to typy zmiennych, które posiadają jedną lub więcej wartości. Takimi danymi są:
+a) listy/array(tabele)- które są zapisywane za pomocą nawiasów kwadratowych - [wartość1, wartość2, ..., wartośćn].
+b) krotki/tuple - zapisywane zaz pomocą nawiasów (wartość1, wartość2, ..., wartośćn).
+c) słowniki(objekty)/obj - jest specyficznym typem danych złożonych zapisywanym w nawiasach klamrowych i posiadających zestawy wartości, nazywane:
+- klucz,
+- wartość klucza
+{klucz1: 'wartość klucza1, klucz2: 'wartość klucza2, ..., kluczn: 'wartość kluczan} - a wywołuje się wartości za pomocą klucza/słowa klucz.
+-------------------------------------------------------------------------
+=== Dane Złożone.
+2. LISTY / ARRAYS.
+Jedne z działań, które możemy wykonywać na listach, to:
+a) Używać funkcji wbudowanych:
+- join() - łączenie elementów z listy (nazwa_listy).join(separator), gdzie separator jest znakiem, który ma oddzielać dane elementy. Niezdefiniowanym jest przecinek.
+- push() - dodawanie elementu do listy zawsze na koniec listy.
+- sort() - odpowiada za sortowanie elementów listy. Można sortować, gdy w liśie znajdują się dane różnych typów lecz sortuje to w taki sposób jak jest alfabet czyli cyfry a potem alfabet
+        Stąd też dobrą praktyką jest nie tworzenie list z różnymi typami danych.
+- pop() - usuwa elementy z listy, a jeśli nie zdefiniujemy miejsca z którego ma usunąć element, to zawsze usuwa ostatni element.
+- shift() - usuwa pierwszy element z listy
+- unshift() - dodaje element na pierwsze miejsce listy.
+- reverse() - odwracanie elementów do listy na pierwsze miejsce
+- concat() - łączenie elementów z listy. list1.concat(list2) - połączy listy 1 i 2
+- splice(index,ile usunąć,!nowe elementy!) - jest to metoda wykorzystywana do usuwania lub dodawania elementu z/do listy w konkretntm miejscu.
+index - określa miejsce w tablicy, od którego zacznie się usuwanie w tablicy,
+ile usunąć - mówi ile elementów powinno być usuniętych z tablicy, jeśli wpiszemy 0 to nic nie zostanie usunięte
+!nowe elementy! - jest to parametr odcjonalny, jeśli zostanie wpisany to będzie/dą wstawiony/ane przed elementami, które mają zostać usunięte.
+- fill(par) - służy do wypełniania elementami danej listy, gdzie par == element jaki chcemy wpisać.
+- flat(x) - spłaszczenie listy wielowymiarowej/znestowanej, x == ilość poziomów o ile chcemy ją spłaszczyć.
+- splice(a,b) - Wybieramy elementy z listy a - od którego elementu włącznie, b - do którego elementu, ale bez niego.
+-------------------------------------------------------------------------
+Kilka wskazówek, jak za pomocą JavaScript odświeżyć stronę znajduje się na tej stronie:
+https://stackoverflow.com/questions/5294842/refresh-a-page-using-javascript-or-html
+
+A tutaj pozostałe 534 sposoby.
+http://www.phpied.com/files/location-location/location-location.html
+
+Tutaj sposób odświeżania strony za pomocą jQuery i JavaScript.
+https://www.js-tutorials.com/javascript-tutorial/how-to-reload-and-refresh-page-using-jquery-and-javascript/
+
+!!! UWAGA Należy zapamiętać, że jeśli chcemy aby JQuery w ogóle współpracował, trzeba połączyć go z naszym kodem html, a najlepiej jest zrobić to z serwera, czyli podobnie jak powiązanie np frameworka bootstrap należy dodać odpowiedni kawałek kodu do nagłówka naszego kodu HTML.
+Link do połączenia jquer'ego do naszej strony znajdziemy na stronie:
+https://code.jquery.com/ - znajdują się tam linki różnych wersji jquery, wraz z opisami, instrukcją i linkiem który musimy wkleić do do nagłóka naszego kodu html.
+-------------------------------------------------------------------------
+
+3. SŁOWNIKI/OBJECTS.
+Słowniki/Obiekty podobnie jak Tablice/Listy/Arrays służą do przechowywania wielu danych, lecz w trochę inny sposób niż listy.
+Zapis słownika wykonujemy za pomocą nawiasa klamrowego oraz za pomocą słów kluczy, do których przypisujemy  wartości.
+Przykład:
+Słownik = {klucz/key1: 'wartość1', klucz/key2: 'wartość2', ..., klucz/keyn: 'wartośćn'};
+
+document.getElementById('but1').addEventListener('click', function () {
+    location = location // W ten sposób możemy odświeżyć stronę za pomocą skryptu javascript
+})
+//Zaczniemy od dodania prostego obiektu/słownika.
+//1.a. Tworzenie słownika za pomocą poleceń
+var mojSłownik = new Object(); // Definiujemy zmienną globalną o nazwie 'mojSłownik'
+mojSłownik.firstName = "Jakub"; // Dodajemy kilka danych = to co po kropce to słowo klucz, a wartość to wartość przypisana do słowa klucz
+mojSłownik.company = "Dom";
+mojSłownik.age = 25;
+console.log(mojSłownik);
+// Co w  wyniku daje nam takie wyjście:
+// {firstName: "Jakub", company: "Dom",       age: 25}
+// {   klucz1: wartość1, klucz2: warrość2, klucz3: wartość3}
+
+//1.b. Tworzenie słownika za pomocą zwykłego zapisu.
+var mojSłownik1 = { firstName: "Jakub", company: "Dom", age: 25 }; //Co da nam identyczne wyjście co powyższe 3 polecenia.
+console.log(mojSłownik1);
+// Aby jednak zauważyć działąnie w konsoli, zmieńmy wartości w drugim zapisie i zobaczymy o będzie.
+var mojSłownik2 = { firstName: "Eryk", company: "Biuro", age: 33 };
+console.log(mojSłownik2);
+
+//2. Wypisywanie w konsoli elementów słownika.
+// Aby wyświetlić jakikolwiek element ze słownika w konsoli, nie używamy index'u, lecz używamy słowa klucza.
+console.log(mojSłownik['firstName']); // Wyświeli nam w konsoli imię, ponieważ przywołaliśmy je za pomocą słowa klucza.
+// I tak możemy sobie przywoływać każdą daną poprzez przywoływani słów kluczy, co jest świetnym rozwiązaniem przy korzystaniu z informacji z baz danych czy też formularzy.
+// Wywoływanie możemy zrobić również na inny sposób, a mianowicie sposób użycia mniejszej ilości kodu a co za tym idzi bardziej dynamiczny.
+console.log(mojSłownik.firstName); // Co jak widzimy skraca kod nie zmieniając wyjścia 
+//Zapis:
+//par1<mojSłownik> - skąd pobrać dane
+//par2(['firstName'])/.firstName - którą z danych pobrać.
+
+//3. Wykorzystanie słownika w praktyce z wykorzystaniem funkcji 'this.':
+// Deklarujemy zmienną 'mojSłownik3', który ma zostać stworzony za pomocą kreatora zdefiniowanego prze użytkownika.
+var mojSłownik3 = new mójKreator("Jurek", "BOR", 35);
+// Tworzymy funkcję, która ma utworzyć nasz słownik.
+function mójKreator(a, b, c) {
+    this.firstName = a;
+    this.company = b;
+    this.age = c;
+}
+console.log(mojSłownik3);
+//Jak zauważyliśmy, trzy opisane przez nas pzarametry zadeklarowane przez nas w funkcji kreator, stworzyły nam słownik o nazwie mójKreator
+// Możemy po utworzeniu słownika spokojnie wykorzystywać z niego dane w ten sam sposób,
+console.log(mojSłownik3.firstName); //Przywołujemy warość imienia.
+
+//4. Zmiana danych słownika za pomocą kreatora.
+// Aby tego dokonać to w kreatorze zmieniamy tylklo wartości, a reszta zostanie zmieniona z automatu podczas tworzenia słownika.
+var mojSłownik4 = new mójKreator("Aleksy", "SLD", 50);
+console.log(mojSłownik4);
+---------------------------------------------------------------------------
+
+4.FUNKCJE.
+Funkcja jest oddzielnym blokiem kodu, który może być wielokrotnie wykonywany w danym programie, poprzez jej wielokrotne wywoływanie.
+Do funkcji przekazujemy przeważnie jakieś argumenty, a funkcja może nam zwracać jakąś wartość. Dobrze jest tworzyć funkcję tak, aby wykonywała jedno określone zadanie - czyli większe operacje w programie rozdzielamy na kilka wywoływanych kolejno funkcji.
+Dzięki temu tworzymy cegiełki, z których budujemy potem cały skrypt, a które możemy wykorzystać w innych skryptach (gdy zapiszemy je w oddzielnych plikach)
+Funkcję definiujemy na początku kodu strony - czyli w sekcji HEAD, a wywołujemy ją w dowolnym miejscu poniżej, jeżeli zajdzie taka potrzeba.
+Dzięki temu możemy być pewni, że funkcja jest załadowana, zanim następuje jej wywołanie.
+Jednak tworząc logikę strony internetowej za pomocą języka JavaScript, korzystamy z pliku zewnętrznego więc funkcje będą mogły być wywoływane dopiero gdy załaduje się cała strona,
+Ponieważ będziemy działać na jej elementach wię plik przywołujemy na samym dole strony, o czym powiedziane było na początku tego skryptu.
+Funkcje podobnie jak zmienne są fundamentalnymi blokami tworzącymi JavaScript.
+
+Funkcje w JavaScript dzielimy na wbudowane/predefiniowane, a przykładem takich funkcji są:
+- return - funkcja zwracająca wynik zadeklarowanej funkcji do bufora pamięci, i możliwe jest wtedy wyświetlenie go za pomocą wywołania funkcji, więc zajmuje to mniej pamięci niż funkcja console.log();
+Składnia: return <działanie>;
+- alert(); - wyświetla okno alertowe w przeglądarce
+Składnia: alert('text');
+- console.log(); - wypisuje dany element w konsoli przeglądarki
+Składnia: console.log(<nazwa elementu, tekst, itd.>);
+- escape() - funcja zwraca heksadecymalny zapis łańcucha znaków w zmiennej kodowany w ISO-8859-1.
+Składnia: escape("Text";)
+- eval() - funkcja oblicza wartość wyrażenia podanego jako argument.
+Składnia: eval(co mamy obliczyć);
+- isNaN() - unkcja określa, czy wartość przekazana do niej jest liczbą, czy też nie.
+Składnia: inNaN(value);
+- parseFloat() - funkcja konwertuje łańcuch znaków na liczbę zmiennoprzecinkową.
+Składnia: parseFloat("13.25");
+- parseInt() - funkcja konwertuje łańcuch znaków na liczbę całkowitą.
+Składnia: parseInt("string" [rad]);
+- unescape() - funkcja, używana niekiedy w skryptach z hasłem lub szyfrujących, dekoduje łańcuch znaków zakodowany za pomocą escape.
+Składnia: unescape("tekst do deszyfracji");
+Jest to tylko kilka z funkcji wbudowanych.
+Oraz funkcje definiowane przez użytkownika - czyli te, które użytkownik sam zdefiniuje.
+
+document.getElementById('but1').addEventListener('click', function () {
+    location = location // W ten sposób możemy odświeżyć stronę za pomocą skryptu javascript
+})
+// Zajmijmy się tworzeniem podstawowych funkcji.
+//1. Najpierw przygotowujemy funkję (pustą, czyli bez żadnego argumentu):
+function mojaFunkcja() {
+    console.log("Wywołana funkcja");
+}
+//2. Przywołujemy funkcję.
+mojaFunkcja();
+// Możemy ją przywołać ile razy chcemy i w miejscach które sobie zażyczymy aby przywołać raz zadeklarowaną funkcję, co powoduje potężną minimalizację kodu.
+mojaFunkcja();
+mojaFunkcja();
+mojaFunkcja();
+
+// Jeśli chcemy przywołać funkcję z inną własnąścią, musimy zadeklarować ją przy tworzeniu funkcji,np:
+function mojaFunkcja1(a) {
+    console.log(a + "Wywołana funkcja " + a + " jest funkcją z argumentem " + a); // tutaj deklarujemy, gdzie powinien być wstawiony argument, może on być wstawiony w kilku miejscach nawet
+    console.log(a + " Wywołana funkcja jest poprzedzona argumentem a"); // Lub tylko w jednym miejscu, jednocześnie może być na końcu.
+
+}
+// I teraz przywołując funkcję powinniśmy podać jeden argument ze względu na zadeklarowany on został jako argument funkcji.
+mojaFunkcja1("Kiedy jest"); // Argumenty wstawione w nawiasach będą wstawiane do naszej funkcji w miejsc przez nas zaedeklarowane przy tworzeniu tej funkcji.
+mojaFunkcja1("Przecież to");
+mojaFunkcja1("Jak");
+mojaFunkcja1('Kiedy');
+mojaFunkcja1(); // Tutaj nie mamy zadeklarowanego argumentu więc będzie on wyświetlany jako puste miejsce.'
+
+// Dodanie argumentu który będzie numerował wywołane funkcje:
+var x = 0; //Najpierw tworzymy zmienną globalną, która przyjmuje wattość 0, ponieważ chcemy, aby pierwsza funkcja miała wartość 1
+var y = 1; // Tę zmienną zwiększamy po wykonamiu funkcji, więc zadeklarowana wartość początkowa musi być taka od której chcemy rozpoczynać, czyli 1
+function mojaFunkcja2(a) {
+    x++; // Do zmiennej 'x' dodajemy 1po każdym wywołaniu funkcji. Ten zapis równożnaczny jest z zapisem x += 1, co jest równe zapisowi x = x +1.
+    console.log(x + a + " Wywołana funkcja " + a + " jest funkcją z argumentem " + a); // Ze względu na to , że deklarujemy tutaj numerowanie, przed pustym argumentem, to przeglądarka bierze to jako wartość nieistniejącą NaN.
+    console.log(y + " Wywołana funkcja jest zakończona argumentem " + a); // Lub tylko w jednym miejscu, jednocześnie może być na końcu.
+    y++; // Jeśli zadeklarujemy zmienną  po wywołaniu funkcji, to będzie się ona również zwiększała ale zaczynając od 0 w związku z czym musimy zadeklarować wartość początkową 1
+}
+mojaFunkcja2(" Kiedy jest");
+mojaFunkcja2(" Przecież to");
+mojaFunkcja2(" Jak");
+mojaFunkcja2(' Kiedy');
+mojaFunkcja2();
+
+// Stwórzmy funkcje, która wykorzystuje funkcję wbudowaną return.
+
+function ret(a) {
+    return a + x; // Ze względu na to, że zadeklarowaliśmy zmienną globalną x, a ostatecznie przyjęła  ona wartość 5, po wykonnych czynnościach poprzedniej funkcji, to do zadeklarowanego argumentu dodajemy 5 i mamy wynik.
+}
+console.log(ret(3));
+
+// Możemy oczywiście stworzyć funkcję z dwoma lub większą ilością argumentów.
+function ret1(a, c) {
+    return a ** c; // Ze względu na to, że zadeklarowaliśmy zmienną globalną x, a ostatecznie przyjęła  ona wartość 5, po wykonnych czynnościach poprzedniej funkcji, to do zadeklarowanego argumentu dodajemy 5 i mamy wynik.
+}
+console.log(ret1(2, 4));
+// Możemy sie jeszcze pobawić np:
+function ret2(a, c) {
+    let z = (a + c) / y; // Specjalnie deklarujemy tylko lokalną zmienną.
+    y++;
+    return z; // Ze względu na to, że zadeklarowaliśmy zmienną globalną x, a ostatecznie przyjęła  ona wartość 5, po wykonnych czynnościach poprzedniej funkcji, to do zadeklarowanego argumentu dodajemy 5 i mamy wynik.
+}
+// Za każdym razem ze względu na zwiększającą się wartość y wynik będzie się zmieniał przy tych samych danych nawet.
+console.log(ret2(2, 4));
+console.log(ret2(2, 4));
+console.log(ret2(2, 4));
+console.log(ret2(2, 4));
+console.log(ret2(2, 4));
+
+//// Powiązania ze słownikami/obiektami:
+// Stwórzmy szybki słownik:
+var mojSłownik = { firstName: "Henryk", company: "Astek", age: 25 };
+// Teraz stwórzmy funkcję, która ma za zadanie zupdateować nasz słownik - a mianowicie dodać do niego jakąś daną np:
+function dodaj(h) {  // Zadeklarowanie funkcji, która będzie miała dodawać element do naszego słownika/obiektu
+    h.nazwisko = "Kalęda"; // Klucz i wartość którą chcemy dodać
+}
+console.log(mojSłownik); // Wywołanie słownika
+dodaj(mojSłownik); // Wywołanie funkcji dodaj i zwróćmy uwagę, że musimy podać w nawiasach element, który ma ta funkcja ,że tak powiem zaimplementować.
+console.log(mojSłownik); // I tu wywołujemy nasz już zupdatowany słownik.
+//------------------------------------------------------------------
+// Scope w funkcjach, czyli ograniczenia modułów/pudełek.
+// Zmienne globalne - działają w i poza modułami:
+var g = 1; //Globalna
+var gg = "GLOBAL";
+function funk() {
+    console.log(gg); //Nie drukuje wartości zmiennej globalnej tylko uważa ją za undefined. Poniważ później w kodzie zmieniamy jej wartość.
+    // let gg = "LOCAL"; // Wystąpi błąd, ponieważ zmiennej globalnej nie można zmienić na lokalną ot tak
+    var gg = "LOCAL"; // Można zmienić jednak jej wartość - Ta zmiana dotyczy dałęj funkcji więc drukowane w funkcji nie przyjmie wartości spoza funkcji mimo iż jest ona globalna.
+    console.log(gg); // Wydrukuje nam zmienną zadeklarowaną/zmienioną w funkcji, czyli można powiedzieć lokalną.
+}
+console.log(gg); // Tutaj przywołując zmienną wydrukuje nam globalną, co dowodzi, że zmieniona wartość zmiennej globalnej gg w funkcji, działa tylko w funkcji.
+funk(); // Wywołanie funkcji.
+console.log(gg); // Mimo wywołania tej zmiennej poza naszą funkcją nie zmieni wartości zmiennej globalnej ponieważ zmienna globalna działa poza funkcjami i w funkcjach pod warunkiem że nie jest w nich jej wartość zmianiona.
+// Należy zapamiętać, że deklarowanie zmiennej w funcji zanim się ją wywoła jest najlepszym rozwiązaniem ponieważ nie będzie wytuacji typu undefined.
+function funk1() {
+    console.log(gg); //Nie drukuje wartości zmiennej globalnej tylko uważa ją za undefined. Poniważ później w kodzie zmieniamy jej wartość.
+    // var gg = "LOCAL"; // Nie zmienimy wartości zmiennej globalnej w module funkcji, więc wywołanie funkcji wywoła zmienną globalną.
+    console.log(gg); // Wydrukuje nam zmienną zadeklarowaną/zmienioną w funkcji, czyli można powiedzieć lokalną.
+}
+// Wszystkie 3 poniższe wywołania będą drukowały tylko zmienną globalną ponieważ nie zmieniliśmy jej w naszej funkcji.
+console.log(gg);
+funk1();
+console.log(gg);
+
+--------------------------------------------------------------------------
+Kilka informacji na temat języka JavaScript i jego zastosowania znajdują się na stronie:
+
+PL:
+https://pl.wikipedia.org/wiki/JavaScript
+
+ENG:
+https://en.wikipedia.org/wiki/JavaScript
+
+Dość obszerny artykuł na temat funkcji w JavaScript:
+https://jcubic.pl/2014/08/funkcje-w-javascript.html
+i:
+https://www.nettecode.com/javascript-wokol-funkcji-return-console-log/
+
+Standardowe wbudowane obiekty w JS:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+
+Standardowe wbudowane obiekty matematyczne w JS:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+
+Kilka informacji dodatkowaych na temat funkcji w JavaScript.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
+==========================================================================
+
+
+
+
+
+
+
