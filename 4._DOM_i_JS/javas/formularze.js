@@ -63,41 +63,7 @@ function checkForm() {
 // Może to po dłuższym czasie szukania błędu mocno zdenerwować zupełnie niepotrzebnie, więc uważajmy nawet na najmniejsze błędy.
 
 
-// var output = document.getElementById("output");
-// document.getElementById("submit").onclick = checkForm;
-// document.getElementById("myForm").onsubmit = function () {
-//     var myName = document.getElementById("name");
-//     var myEmail = document.getElementById("mail");
-//     var myMes = document.getElementById("msg");
-//     var rMessage = "";
-//     if (myName.value === '') {
-//         rMessage = "name not filled out<br>";
-//     }
-//     if (myEmail.value === '') {
-//         rMessage = rMessage + "Email not filled out<br>";
-//     }
-//     if (!vEmail(myEmail.value)) {
-//         rMessage = rMessage + "NOT VALID Email<br>";
-//     }
-//     if (myMes.value === '') {
-//         rMessage = rMessage + "Message not filled out<br>";
-//     }
-//     if (rMessage.length > 0) {
-//         output.innerHTML = rMessage;
-//         return false;
-//     } else {
-//         return true;
-//     }
-// }
 
-// function vEmail(email) {
-//     var myCk = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     return myCk.test(email);
-// }
-
-// function checkForm() {
-//     output.innerHTML = " Clicked";
-// }
 
 
 
