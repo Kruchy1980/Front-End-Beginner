@@ -1,0 +1,29 @@
+h1 {
+    background-color: rgb(159, 243, 159);
+    text-align: center;
+    font-family: 'Abril Fatface', cursive;
+}
+
+#but1, #but3 {
+    background-color: greenyellow;
+}
+
+.button {
+    padding: 10px;
+    display: inline-block;
+    border: 1px dashed rebeccapurple;
+    background-color: burlywood;
+    margin: 5px;
+    padding: 0;
+}
+
+#wiad {
+    position: fixed;
+    clear: left;
+}
+
+#tarea {
+    clear: both;
+    position: relative;
+    left: 82px;
+}

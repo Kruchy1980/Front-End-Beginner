@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+    <link rel="stylesheet" href="cssstyle/domstyl.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <!-- Możemy umieścić tag skryptowy na górze strony w jej head'zie, ale nie jest to dobre rozwiązanie, ponieważ skrypty przywoływane z pliku .jd mogą potrzebować do działania informacji, które znajdują się w dalszych częściach strony html i nie zostaną wykonane poprawinie. -->
+    <!-- <script src="javas/intro.js"></script> -->
+</head>
+
+<body>
+    <h1>Kilka wiadomości o DOM - gra wstępna ;)</h1>
+
+    <div id="main">
+        <h2>W tej części nie mamy jeszcze do "przycisków" nic przypisanego, więc nie ma sensu klikać:)</h2> <br>
+        <div id="but1" class="button">Kliknij Mnie 1</div>
+        <div id="but2" class="button">Kliknij Mnie 2</div>
+        <div id="but3" class="button">Kliknij Mnie 3</div> <br>
+        <img src="http://lorempixel.com/400/200" alt="I znów lorempixel.com">
+    </div> <br>
+    <div id="wyjscie">Na razie nic</div>
+
+</body>
+<!-- W związku z czym dużo lepiej jest umieszczać tag skryptowy dla JavaScript na samym dole strony, co doprowadzi do tego, że jeśli strona się nie załaduje z różnych powodów to nie wykonają się polecenia ze skryptó, ale jeśli
+Storna się załduje to wszystkie (oczywiście bezbłędnie napisane kody JS) wykonają się. -->
+<script src="javas/intro.js"></script>
+
+</html>

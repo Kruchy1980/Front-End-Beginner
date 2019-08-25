@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formularze- Walidacja</title>
+    <link rel="stylesheet" href="cssstyle/domstyl.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <!-- Możemy umieścić tag skryptowy na górze strony w jej head'zie, ale nie jest to dobre rozwiązanie, ponieważ skrypty przywoływane z pliku .jd mogą potrzebować do działania informacji, które znajdują się w dalszych częściach strony html i nie zostaną wykonane poprawinie. -->
+    <!-- <script src="javas/intro.js"></script> -->
+</head>
+
+<body>
+    <h1>Kilka wiadomości o DOM - Formularze walidacyjne.</h1>
+    <div id="output"></div>
+    <form action="form.php" method="post" id="mojF">
+        <div>
+            <label for="name">Imię: </label>
+            <input type="text" placeholder="Podaj swoje imię">
+        </div>
+        <div>
+            <label for="mail">Email: </label>
+            <input type="text" id="mail" placeholder="Podaj swój adres Email">
+        </div>
+        <div>
+            <label for="msg" id="wiad">Wiadomość: </label>
+            <textarea name="msg" id="tarea" placeholder="Wpisz tu swoją wiadomość"></textarea>
+        </div>
+        <div class="button">
+            <button id="submit" type="submit">Wyślij swoją wiadomość</button>
+        </div>
+    </form>
+
+</body>
+<!-- W związku z czym dużo lepiej jest umieszczać tag skryptowy dla JavaScript na samym dole strony, co doprowadzi do tego, że jeśli strona się nie załaduje z różnych powodów to nie wykonają się polecenia ze skryptó, ale jeśli
+Storna się załduje to wszystkie (oczywiście bezbłędnie napisane kody JS) wykonają się. -->
+<script src="javas/formularze.js"></script>
+
+</html>

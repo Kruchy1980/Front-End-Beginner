@@ -1,0 +1,236 @@
+##########################################################################
+################## Kurs Front End JavaScript, CSS i HTML #################
+##########################################################################
+
+V. DOM Document Object Model - czyli budowa strony i możliwości wykorzystania JavaScript.
+
+1. Intro - Wprowadzenie.
+DOM czyli Document Object Model jest to model obiektowy strony, którym posługujemy się podczas korzystania z konsoli developerskiej "F12" przeglądarek.
+Posługukjemy się tym modelem, gdyż ułatwia nam on wyciąganie elementów HTML i modyfikowanie ich za pomocą różnych języków:
+CSS - jak już wiemy z innych lekcji
+JS - Jak dowiemy się w tym rozdziale.
+Za pomocą DOM'a i JS możemy naszą stronę stworzyć szybką i dynamiczną, czyli taką o jaką nam chodzi, czyli nie odświeżała się całą tylko te elementy, które się zmieniają.
+Mamy ciekawą metodę console.dir(), za pomocą której możemy dostać się do elementów/obiektów dokumentu, czyli naszej strony www, ponieważ jak wiemy, nasza strona jest dokumentem.
+console.dir(); - Metoda Console dir () wyświetla interaktywną listę właściwości określonego obiektu JavaScript
+
+Opis kolejnych zakładek konsoli developerskiej "F12" przeglądarek.
+1. Elements - Tutaj można zobaczyć strukturę HTML swojej strony. Na dole znajduje się przełącznik HTML i Body. Można najechać myszką na dowolny element, aby wyświetlić szczegółowe informacje o każdym z nich.
+Można kliknąć strzałki, aby otworzyć i zamknąć zawartość podstawowych elementów, aby ułatwić ich czytanie. Można więc zamknąć ciało i po prostu przeczytać nagłówek, wybrać element w nagłówku, aby zobaczyć itp. To doskonałe narzędzie do przeglądania kodu HTML witryny.
+2. Console - Jest to konsola JavaScript, w której możesz testować strony i aplikacje. Możesz debugować skrypty i uzyskać porady dotyczące zmian, które należy wprowadzić. Konsola umożliwia wprowadzanie poleceń, dzięki czemu można wchodzić w interakcje ze stroną internetową. Będzie rejestrować informacje diagnostyczne, aby pomóc w debugowaniu. Możesz go użyć na ekranie głównym lub w szufladzie (okno pod ekranem głównym).
+3. Sources - Pokazuje skrypty i fragmenty kodu , które zostaną załadowane i miejsca skąd pochodzą.
+4. Network - Pokazuje to każdy element, który zostanie załadowany, sposób ładowania, typ pliku, rozmiar pliku, czas potrzebny do załadowania oraz linię czasu, kiedy zostanie załadowany w sekwencji ładowania strony. Można to wykorzystać do rozwiązania problemów z siecią, takich jak wąskie gardła w ładowaniu stron i złe żądania.
+Na przykład, jeśli widzisz dużo błędów 404, możesz przyjrzeć się bliżej, aby zobaczyć, jakie są problemy. Być może zlikwidowałeś stronę, która wciąż generuje duży ruch, lub może ktoś źle wpisał link.
+5. Perfomance - To pokazuje czas ładowania każdego zasobu. Możesz zobaczyć, co zajmuje najwięcej czasu, co pomaga zmniejszyć ładowanie strony.
+6. Memory - Pokazuje wykorzystanie pamięci przez każdy element. Jest to świetne do pokazania, który kod należy zoptymalizować.
+7. Application - tla stabularyzowane informacje na temat naszej strony i parametrów jej elementów.
+8. Security - Podaje informacje na temat zabezpiecze strony 
+9. Audits -  To pozwala analizować stronę. Możesz przeprowadzić audyt po załadowaniu lub w trakcie ładowania.
+10. Layers - Pokazuje wartswy naszego dokumentu.
+
+Ogólnie najpotrzebniejsza przy programowaniu strony jest umiejętność posługiwania się  pierwszymi 2woma zzkładkami oraz zakładkami styli, które znajdują się w podoknie można powiedzieć po prawej srtronie panelu narzędzi developerskich.
+Przy późniejszym testowaniu czy debugowaniu strony, przydaje się wiedza na temat reszty zawartości narzęedzi developereskich, z najbardziej sources i  network oraz memory.
+
+-------------------------------------------------------------------------
+Przydatny link do informacji na temat DOM'a:
+https://en.wikipedia.org/wiki/Document_Object_Model
+-------------------------------------------------------------------------
+
+2. Interakcja z DOM'em za pomocą JavaScript.
+Aby dokonać jakichkolwiek zmian w elementach naszej strony, musimy najpierw nauczyć się je wyodrębniać.
+Do tego służy nam proste polecenie:
+
+document + .selektor = document.selektor('nazwa');
+Selektorów w Js-ie jest kilka, a mianowicie:
+
+1. .getElementById('nazwa_id_elementu') - pozwala wyselekcjinować element o zadanym identyfikatorze.
+!!! Zauważmy, że nie używamy tutaj znaków rozpoznawczzych identyfikatora jak w języku css jest to '#', tutaj tylko nazwa.
+!!! Tak samo robimy, jeśli chodzi o inne selektory, np klas czy też elementów lub tagów, ponieważ takie też występują.
+
+2. .getElementsByClassName('nazwa klasy'); - wybiera wszystkie elementy - zwróćmy uwagę na słowo Element(s) czyli liczbę mnogą.
+
+3. .document.getElementsByTagName("div"); - wybira wszystkie elementy po tagu, i również umożliwia wybrania jednego tagu z listy poprzez użycie indedeksu który.
+
+4. .document.querySelectorAll("div.button"); - Query selektor umożliwia nam wybranie grupy elementów z grupy 
+!!! UWAGA Wywołanie następnie takich elementów odbywać się może za pomocą console.log/dir(element[i]);
+!!! UWAGA i == index i może występować tylko przy grupie elementów, jeśli chcemy wybrać tylko jeden element z grupy i nie jest obowiązkowy jeśli chcemy całą grupę.
+
+Jest to tylko kilka ważniejszych selektorów używanych podczas dodawania logiki do stron internetowych.
+--------------------------------------------------------------------------
+
+3. Aktualizacja styli za pomocą JavaScript.
+Dzięki selektorom, możemy za pomocą JavaScript wyciągać każdy elemento ze strony ponedynczo , a następnie go modyfikować używając odpowiednich parametrów, które możemy znaleźć za pomocą polecenia:
+
+console.dir(document.getElementById('but1').style);
+Opis:
+console.dir() - Polecenie wywołujące parametry elementu w konsoli.
+document.getElementById('wywołanie elementu nazwa, id, klasa, itd.') - selektor wybierający dany element
+.<nazwa parametru> - jeśli nie wiemy o jaki nam chodzi, to możemy nie wpisywać tego teraz, a jedynie ponowić wywołanie z parametrem, jak sprawdzimy jakie parametry elementu możemy przywołać.
+
+Przykład:
+// Aktualizacja obrazka img.
+// Najpierw musimy go wyselekcjonowac poprzez wykrycie go na stronie, a nadaliśmy mu id = obrazek czyli w kodzie html.
+// Nie trzeba oczywiście przypisywać zmiennej, tylko od razu możemy wpisać ciągiem co ma się stać, co jest dobre jeśli do przycisku lub linku przypisujemy funkje i używamy addEventListener.
+// Możemy zmienić zupełnie żródło obrazka lub też możemy np pomniejszyć dany obrazek:
+document.getElementById('obrazek').src = "https://images.unsplash.com/photo-1559350296-7f363b66b16a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80"; // Teraz zmieniamy całkowicie źródło obrazka
+document.getElementById('obrazek').src = "https://lorempixel.com/100/100"; // Tutaj zmniejszyliśmy tylko obrazek z tej samej strony.
+
+Query Selektor:
+Query selektor służy między innymi do przywoływania więcej niż jednego elementu z grupy.
+Przykład:
+
+// zmienna do Query selektora:
+var elementPrzycisk = document.querySelector(".button");
+// !!! Zwróćmy uwagę, że użyliśmy querySelektor, a nie QuerySelectorAll, co doprowadziło do tego, że cokolwiek zaplanowaliśmy, będzie przypisane tylko do pierwszego elementu z grupy.
+// I wyświetlimy sobie element ten w konsoli.
+console.dir(elementPrzycisk);
+// Teraz użyjmy querySelectorAll, aby zobaczyć różnicę przy wyświetlaniu elementów o tej samej klasie, tagu, nazwie, zależy co tam wpiszemy.
+var elementPrzycisk1 = document.querySelectorAll(".button");
+// Wyswietlamy elementy w konsoli:
+console.dir(elementPrzycisk1);
+// Kolejne z zastosowań querySelectorAll, to możliwość wywoływania kilku różnej nazwy elementów, i robi się to po przecinku,np:
+var elementPrzycisk2 = document.querySelectorAll(".button, #obrazek, #wyjscie");
+console.dir(elementPrzycisk2);
+
+// Możemy teraz podczepić do tego pętlę, dzięki której przypiszemy każdemu z elementów tej grupy po kolei jakieś zadanie, np:
+for (i = 0; i < elementPrzycisk2.length; i++) {  //Dla każdego elementu "i" w naszej grupie od i=o (czyli pierwszego elementu) do ilości elementOw w grupie elementPrzycisk2.length za każdym razem zwiększamy index "i", który określa element, dodajemy 1, co w efekcie będzie wykorzystywało po kolei elementy z grupy
+    console.log(elementPrzycisk2[i].innerHTML); // Wyświetlimy ich zawartość HTML w konsoli.
+    // Możemy również przypisać każdemu elementowi po kolei jakieś działanie poprzez tą pętlę.
+    elementPrzycisk2[i].addEventListener('click', moja);
+}
+
+
+Kod ,js:
+
+// Teraz przywołamy wszystkie parametry interesującgo nas elementu.
+
+console.dir(document.getElementById('but1')); - a następnie z nich możemy wybirać bardziejszczegółowo i je dopisywać po kropce:
+
+console.dir(document.getElementById('but1').style); - itd, itp.
+
+// Możemy również zmieniac style.
+// Styl but1 - pamiętajmy, że wszystkie możliwości styli możemy znależć dzięki poleceniu: console.dir(document.getElementById('but1').style);
+// I tak można uczynić z każdym elementem.
+document.getElementById('but1').style.backgroundColor = "pink";
+
+// Aktualizacja obrazka img.
+// Najpierw musimy go wyselekcjonowac poprzez wykrycie go na stronie, a nadaliśmy mu id = obrazek czyli w kodzie html.
+// Nie trzeba oczywiście przypisywać zmiennej, tylko od razu możemy wpisać ciągiem co ma się stać, co jest dobre jeśli do przycisku lub linku przypisujemy funkje i używamy addEventListener.
+// Możemy zmienić zupełnie żródło obrazka lub też możemy np pomniejszyć dany obrazek:
+document.getElementById('obrazek').src = "https://images.unsplash.com/photo-1559350296-7f363b66b16a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80"; // Teraz zmieniamy całkowicie źródło obrazka
+// document.getElementById('obrazek').src = "https://lorempixel.com/100/100"; // Tutaj zmniejszyliśmy tylko obrazek z tej samej strony.
+
+
+// Możemy również zmieniac style.
+// Styl but1 - pamiętajmy, że wszystkie możliwości styli możemy znależć dzięki poleceniu: console.dir(document.getElementById('but1').style);
+// I tak można uczynić z każdym elementem.
+document.getElementById('but1').style.backgroundColor = "pink";
+
+// Chcemy aby przycisk nr 2 zmienił kolor po kliknięciu, więc dobrze jest przypisać go najpierw do zmiennej aby potem móc wykonywać na mnim różne operacje.
+var przycisk2 = document.getElementById('but2')
+// Teraz przypisujemy kolor tła
+przycisk2.style.backgroundColor = "crimson";
+// Po kliknięciu natomiast będziemy chcieli zmienić kolor tekstu.
+przycisk2.onclick = mojaFunkcja; // Należy pamiętać, ze jeśli przywołujemy na kliknięcie daną funkcję, to nie prazywołujemy funkdji tylko jej nazwę.
+
+// I tutaj deklarujemy naszą funkcję:
+function mojaFunkcja() {
+    przycisk2.style.backgroundColor = "orange";
+}
+
+// To samo możemy zapisać trochę inaczej, tzn
+//1. Deklarujemy zmienną
+var przycisk4 = document.getElementById('but4')
+// Następnie chcemy zmienić  tekst i kolor tekstu nie tło więc:
+
+przycisk4.onclick = function () { // Od razu tutaj piszemy funkcję
+    przycisk4.innerText = "No teraz to mnie zmieniłeś - tylko po co??;)";
+    przycisk4.style.color = "rgb(255, 31, 28)";
+}
+// Ponieważ najlepiej deklaruje się zmienne na samej górze kodu.
+var out = document.getElementById("wyjscie");
+// Pobawimy się teraz interakcją z myszką, zacznijmy od obrazka.
+var obrazek = document.getElementById('obrazek');
+// A tutaj deklarujemy co ma zrobić, gdy przejedziemy po nim myszką.
+obrazek.onmouseover = funkcja2;
+// Opisuje położenie myszki/kursora.
+function funkcja2(e) {
+    console.log(e.type); //Opisuje typ operacji, jeśli nie użylibyśmy atrubutu .type to wyświetlałoby położenie myszki w konsoli.
+    console.dir(this); // Wyświetla element którego dotyczy akcja.
+    this.style.border = "3px dashed green";       // Pamiętajmy, że this jest funkją wbudowaną, która odsyła do elementu, którego dotyczy.
+    out.innerHTML = "Wjechałeś kursorem na obrazek w pozycji X !" + e.x; // e.x podaje współrzędną x
+}
+
+//Powyższa funkcja lepiej wygląda, gdy użyjemy nie mouseover, a mouseout.
+obrazek.onmouseout = funkcja3;
+var out = document.getElementById("wyjscie");
+function funkcja3(e) {
+    console.log(e.type); //Opisuje typ operacji, jeśli ni użylibyśmy atrubutu .type to wyświetlałoby położenie myszki w konsoli.
+    console.dir(this); // Wyświetla element którego dotyczy akcja.
+    this.style.border = "5px dashed yellow";       // Pamiętajmy, że this jest funkją wbudowaną, która odsyła do elementu, którego dotyczy.
+    // Dodajmy jeszcze trochę opisu i wykorzystajmy nasz wolny kontenerek o id wyjscie
+    // Najpierw musimy je zadeklarować obojętnie czy w czy poza funkcją, lecz w funkcji o każdej trzeeba, a nie chcemy zaśmieczć.
+    out.innerHTML = "Zjechałeś kursorem z obrazka  w pozycji X!" + e.x; // e.x podaje współrzędną x
+}
+---------------------------------------------------------------------------------
+
+4. Interakcja część 2.
+Zaczynamy używać addEventListener, który to ma większe możliwości i jest bardziej elastyczny ponieważ nie musi przywoływa osobnyh funkcji, lecz w nim możemy te funkcje deklarować,
+Co daje nam skrócony kod z takim samym skutkiem co osbne przywoływane funkcje.
+Zapis:
+element.addEventListener(typ, funkcja) {...}
+Mamy oczywiście różne typu Event Listenerów:
+- click - czyli co ma się stać po kliknięciu.
+- mouseover
+- mouseout
+I wiele innych.
+
+Wiecej możliwości selekcjonowania elementów strony.
+
+// Wypróbujemy childNodes z element ID czyli jeśli mamy główny kontenet tzw - rodzic, to możemy wybrać sobie dzieci - czyli kontenerki znajdujące się w głównym z nich.
+var butCN = document.getElementById("glowny").childNodes; // zadeklarowaliśmy zmienną, która ma wyświetlać elementy dzieci z głównego kontenera.
+console.dir(butCN); // Wyświetla wszystkie elementy znajdujący sie w kontenerze rodzić. 
+// Możemy to sprawdzić, że te elementy należą do Nodeelements dzięki powyższemu poleceniu.
+//Każdy element ma swoje miejsce. Czy to przypisy tekstoew, czy to znaki blankspaces itd.
+// Zróbmy tera pętlę, która obejmie wszystkie elementy z kontenera głównego.
+
+for (i = 0; butCN.length; i++) {
+    // Możemy pobawić się trochę i za pomocą funkcji warunkowej przypisać odpowiednie zadani tylko do div'ów.
+    if (butCN[i].nodeName == "DIV") {
+        console.log(butCN[i].id); //NodeName wyświetla nam nazwy danych elementów
+        //Możemy dodać jeszcze sobie EventListenera
+        butCN[i].addEventListener('click', moja);
+    }
+}
+---------------------------------------------------------------------------------------------------
+
+5. Torzenie nowych elementów za pomocą JavaScript.
+
+// Najpierw przygotujmy zmienne, które będziemy chcieli  edytować:
+var przycisk2 = document.getElementById('but2');
+var przycisk4 = document.getElementById('but4');
+var obrazek = document.getElementById('obrazek');
+var out = document.getElementById("wyjscie");
+// Nowe, stare zmienne zadeklarowane po drodze
+var elementPrzycisk = document.querySelector(".button");
+var elementPrzycisk1 = document.querySelectorAll(".button");
+var elementPrzycisk2 = document.querySelectorAll(".button, #obrazek, #wyjscie");
+var butCN = document.getElementById("glowny").childNodes;
+
+// Zaczynamy dodawanie elementów z pomocą JavaScript.
+// Na samym pocztku wyświetlmy sobie elementy dokumentu w konsoli.
+console.dir(document);
+// Teraz dodajmy coś do guzika  pierwszego, a mianowicie EventListenera
+document.getElementById("but1").addEventListener('click', nowafunkcja);
+// I teraz możemy zadeklarować sobie funkcję, którą będziemy chcieli przywołać.
+
+function nowafunkcja() {
+    let nowyel = document.createElement("h1"); // Zmienna Tworzymy nowy element h1.
+    let nowazawartość = document.createTextNode("Nowy Tag H1 !"); // Zmienna Utwórz tekst - narazie o
+    nowyel.appendChild(nowazawartość); // appenChild dodaje zawartość do naszego elementu
+    out.appendChild(nowyel); // Dodaje nowy element do strony
+    console.log(" :jest Zabawa!") // A tu taki elemencik , który wypisuje do konsoli info, od razu sprawdzamy sobie czy kod się cały wykonał poniewż gdyby był błąd w kodzie to wysypałoby sie i nie ukończyło kodu.
+}
+-------------------------------------------------------------------------
+
+6. Formularze validacyjne.
+

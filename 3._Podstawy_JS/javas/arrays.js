@@ -1,8 +1,11 @@
 document.getElementById('but1').addEventListener('click', function () {
     location = location // W ten sposób możemy odświeżyć stronę za pomocą skryptu javascript
-    // document.getElementById('tekst').contentEditable("Włącz konsolę (F12) i do przodu.");
 })
-
+// Aby lepiej się pracowało wpiszemy sobie jakiś tekst na stronę do Wy na to??
+var nowyTekst = document.getElementById('tekst'); // Używamy selektora, aby 'wyrwać' ze strony interesujący nasz element. 
+var podpis = document.getElementById('opis'); // deklarujemy drugą zmienną
+nowyTekst.innerText = ("Włącz konsolę 'F12' i do przodu."); // Naedajemy nowemu elementowi tekst.
+podpis.innerHTML = ("W ten właśnie sposób użyliśmy skryptu do wypisania tekstu na stronie wraz z jej odświeżeniem nie używając do tego tekstu w kodzie html. ")
 // // ARRAY'S -  przykłady.
 // // Tworzenia list.
 // var lista1 = []; // Jest to przykład pustej listy niejawnej, zadeklarowanej jako zmienna globalna.
