@@ -13,16 +13,17 @@ h1 {
     display: inline-block;
     border: 1px dashed rebeccapurple;
     background-color: burlywood;
-    margin: 5px;
+
     padding: 0;
 }
 
-#wiad {
+#msg {
     position: fixed;
-    clear: left;
+
+
 }
 
-#tarea {
+#t-area {
     clear: both;
     position: relative;
     left: 82px;
