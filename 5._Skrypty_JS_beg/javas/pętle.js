@@ -53,8 +53,6 @@ but34.onclick = function () {
     while (a <= 10)
     output1.innerHTML = kontener;
     komentarz1 = "Jak widzimy Pętla Do jest tylko częsciową pętlą potrzebującą osobnego warunku, dlatego nazywa się pętlą do while.";
-
-
 }
 
 // PĘTLA FOR - jest pętlą najbardziej popularną i najczęściej spogykaną/używaną
