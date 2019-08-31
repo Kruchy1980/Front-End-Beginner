@@ -1,0 +1,123 @@
+h1 {
+    background-color: black;
+}
+h3 {
+    text-decoration: underline;
+}
+#obrazek {
+    text-align: center;
+    background:  url("https://cdn.pixabay.com/photo/2018/02/16/11/05/trace-3157431_960_720.jpg")  no-repeat center;
+    background-size: cover;
+    height: 720px;
+    color: rgb(245, 237, 230);
+}
+
+ol {
+    font-weight: bold;
+    background-color: rgb(204, 196, 196);
+    display: inline-block;
+}
+
+#strona {
+    width: 48%;
+    margin: 1%;
+    float: left;
+    background-color: rgb(216, 216, 216);
+}
+#prawo {
+    width: 45%;
+    float: right;
+}
+li {
+    font-weight: 500;
+    background-color: rgb(248, 241, 231);
+}
+#podtytuł {
+    margin: 0;
+    text-align: center;
+    border: 2px dashed darkblue;
+    background-color: black;
+    color: wheat;
+}
+#wyniki {
+    background-color: beige;
+}
+#wyniki div{
+    display: inline-block;
+}
+span{
+    margin: 0 10px;
+    text-decoration: underline;
+    background-color: rgb(245, 227, 227);
+}
+#komentarz, #komentarz1 {
+    margin: 0;
+    text-align: center;
+    border: 2px solid red;
+    background-color: blue;
+    color: whitesmoke;
+}
+
+#menu {
+    width: 45%;
+    margin: 2%;
+    float: left;
+}
+
+#odśwież {
+    width: 45%;
+    margin: 2%;
+    float: right;
+    text-align: -webkit-center;
+}
+
+
+
+#sekcja {
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+}
+
+#refr span {
+    vertical-align: -webkit-baseline-middle;
+}
+#refr {
+    border: 2px double darkblue;
+    border-radius: 50%;
+    width: 150px;
+    height: 33px;
+    background-color: rgb(238, 225, 225);
+}
+
+#guziki div{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 10%;
+    background-color: yellowgreen;
+}
+#guziki p {
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+}
+#komentarze p {
+    margin: 0;
+    height: 20px;;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    background-color: black;
+    color: red;
+}
+
+#but6 p, #but12 p, #but13 p, #but15 p, #but16 p, #but24 p, #but25 p {
+    font-size: 0.8em;
+    margin: 6px 0;
+}
+

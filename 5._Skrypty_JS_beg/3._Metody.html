@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Metody wbudowane</title>
+    <link rel="stylesheet" href="cssstyle/metody.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <!-- Możemy umieścić tag skryptowy na górze strony w jej head'zie, ale nie jest to dobre rozwiązanie, ponieważ skrypty przywoływane z pliku .jd mogą potrzebować do działania informacji, które znajdują się w dalszych częściach strony html i nie zostaną wykonane poprawinie. -->
+    <!-- <script src="javas/intro.js"></script> -->
+</head>
+
+<body>
+    <div id="obrazek">
+        <h1>Kilka wiadomości o Skryptach JS- Metody Wbudowane ;)</h1>
+    </div>
+    <div id="podtytuł">
+        <p>Reszta informacji na temat zasad działąnia z JavaScript znajduje się w opisach na GitHub pod adresem: <br>
+            <a href="https://github.com/Kruchy1980/Front-End-Beginner"
+                target="blank">https://github.com/Kruchy1980/Front-End-Beginner </a>
+            <br>
+            W katalogu Opisy - plik "6._Skrypty_JS.doc" <p>
+    </div> <br>
+    <section id="sekcja">
+        <div id="menu">
+            <ol> Zasady działania z JavaScript'em:
+                <li><a href="1._Intro.html" target="blank"> Praca ze zmiennymi</a></li>
+                <li><a href="2._Operatory_js.html" target="blank"> Operatory </a></li>
+                <li><a href="#"> Metody </a></li>
+                <li><a href="4._Funkcje_warunkowe.html" target="blank">Funkcje Warunkowe</a></li>
+                <li><a href="5._Pętle.html" target="blank">Pętle</a></li>
+            </ol>
+        </div>
+        <div id="odśwież">
+            <div id="refr">
+                <span> Odśwież Stronę!</span>
+            </div>
+        </div>
+    </section> <br>
+
+    <aside id="strona">
+        <div id="główny">
+            <h2>Sprawdźmy kilka matematycznych metod wbudowanych: </h2>
+            <!-- Użyliśmy tutaj tagu '&nbsp;' określającego spację pomiędzy elementami, aby bez stosowania styli ustawić odpowiednio wartości naszego headera h3.   -->
+            <h4>Cyfry:</h4>
+            <label for="number">A:</label>
+            <input type="number" name="numA" id="numA" placeholder="Wpisz pierwszą liczbę!"> <br>
+            <label for="number">B:</label>
+            <input type="number" name="numB" id="numB" placeholder="Wpisz drugą liczbę!">
+            <br>
+        </div>
+        <div>
+            <h2>Wykonaj działanie ===></h2>
+        </div> <br>
+        <div id="wyniki">
+            <div>
+                <h4 id="wynik"> Wynik 1:</h4>
+            </div>
+            <div id="output"><span> wynik </span></div>
+
+        </div> <br>
+        <div id="komentarze">
+            <p> Komentarz do liczb:</p> <br>
+            <div id="komentarz"></div> <br>
+        </div> <br>
+        <div>
+            <ul id="lista">
+                <h2>Kolory:</h2>
+                <li>Pierwszy - index 0</li>
+                <li>Drugi - index 1</li>
+                <li>Trzeci - index 2</li>
+                <li>Czwarty - index 3</li>
+                <li>Piąty - index 4</li>
+                <li>Szósty - index 5</li>
+            </ul>
+        </div>
+    </aside>
+
+    <article id="prawo">
+        <div id="guziki">
+
+            <h3>Matematyczne metody wbudowane:</h3>
+            <div id="but11">
+                <p>Zaokrąglenie<br>Metoda "round"</p>
+            </div>
+            <div id="but12">
+                <p>Zaokrąglenie wzwyż<br>Metoda "ceil"</p>
+            </div>
+            <div id="but13">
+                <p>Zaokrąglenie w dół<br>Metoda "floor"</p>
+            </div>
+            <h3>Po wykonaniu każdej z tych metod odśwież stronę.</h3>
+            <div id="but14">
+                <p>Losuj - Metoda<br>"random"</p>
+            </div>
+            <div id="but15">
+                <p>Losuj - Metoda<br>"random * stała"</p>
+            </div>
+            <h3>Łączenie innych metod z random:</h3>
+            <div id="but16">
+                <p>Losuj - Metoda<br>"random * a"</p>
+            </div>
+            <div id="but17">
+                <p>Losuj Metoda<br>"random + ceil"</p>
+            </div>
+            <div id="but18">
+                <p>Losuj Metoda<br>"random + floor"</p>
+            </div>
+            <div id="but19">
+                <p>Losuj Metoda<br>"random + round"</p>
+            </div>
+            <h3>Metody dotyczące daty:</h3>
+            <div id="but20">
+                <p>Metoda<br>"Date()"</p>
+            </div>
+            <div id="but21">
+                <p>Metoda<br>"getTime()"</p>
+            </div>
+            <div id="but22">
+                <p>Metoda<br>"getDay()"</p>
+            </div>
+            <div id="but23">
+                <p>Metoda<br>"getDate()"</p>
+            </div>
+            <div id="but24">
+                <p>Metoda<br>"getFullYear()"</p>
+            </div>
+            <div id="but25">
+                <p>Metoda<br>"getTimeZoneOffset()"</p>
+            </div>
+
+        </div>
+    </article>
+
+
+
+
+</body>
+<!-- W związku z czym dużo lepiej jest umieszczać tag skryptowy dla JavaScript na samym dole strony, co doprowadzi do tego, że jeśli strona się nie załaduje z różnych powodów to nie wykonają się polecenia ze skryptó, ale jeśli
+Storna się załduje to wszystkie (oczywiście bezbłędnie napisane kody JS) wykonają się. -->
+<script src="javas/metody.js"></script>
+
+</html>

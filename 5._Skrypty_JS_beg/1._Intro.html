@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Skrypty Intro</title>
+    <title>Skrypty Intro - Zmienne</title>
     <link rel="stylesheet" href="cssstyle/mojstyl.css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
     <!-- Możemy umieścić tag skryptowy na górze strony w jej head'zie, ale nie jest to dobre rozwiązanie, ponieważ skrypty przywoływane z pliku .jd mogą potrzebować do działania informacji, które znajdują się w dalszych częściach strony html i nie zostaną wykonane poprawinie. -->
@@ -13,11 +13,59 @@
 </head>
 
 <body>
-    <h1>Kilka wiadomości o Skryptach - gra wstępna ;)</h1>
+    <div id="obrazek">
+        <h1>Kilka wiadomości o Skryptach JS- gra wstępna - zmienne ;)</h1>
+    </div>
+    <div id="podtytuł">
+        <p>Reszta informacji na temat zasad działąnia z JavaScript znajduje się w opisach na GitHub pod adresem: <br>
+            <a href="https://github.com/Kruchy1980/Front-End-Beginner"
+                target="blank">https://github.com/Kruchy1980/Front-End-Beginner </a>
+            <br>
+            W katalogu Opisy - plik "6._Skryoty_JS.doc" <p>
+    </div>
+    <ol> Zasady działania z JavaScript'em:
+        <li><a href="1._Intro.html"> Praca ze zmiennymi</a></li>
+        <li><a href="2._Operatory_js.html" target="blank"> Operatory </a></li>
+        <li><a href="3._Metody.html" target="blank"> Metody </a></li>
+        <li><a href="4._Funkcje_warunkowe.html" target="blank">Funkcje Warunkowe</a></li>
+        <li><a href="5._Pętle.html" target="blank">Pętle</a></li>
+    </ol> <br>
+    <div id="main">
+        <div id="but1">
+            <p> Nieokreślona <br> var x </p>
+        </div>
+        <div id="but2">
+            <p>Dzielenie zmiennych różnych typów: <br> x-str/5</p>
+        </div>
+        <div id="but3">
+            <p>Nie przypisana <br> 'no var'</p>
+        </div>
+        <div id="but4">
+            <p>Dodawanie zmiennych różnych typów: <br> 'x-str + y-int' <br></p>
+        </div>
+        <div id="but5">
+            <p>Dodawanie zmiennych dwóch typów i dzielenie: <br> 'x-str + y-int / 4</p>
+        </div>
+        <div id="but6">
+            <p>Odwrotne dodawanie zmiennych dwóch typów i dzielenie: <br> 'x-int + y-str / 4</p>
+        </div>
+        <div id="but7">
+            <p>Dodawanie dwóch elementów typu string: <br> x=Hello y=World</p>
+        </div>
+        <div id="but8">
+            <p>Dodawanie dwóch elementów typu number:<br> x=7 y=8</p>
+        </div>
+        <div id="but9">
+            <p>Zmienna typu null:<br> x = null</p>
+        </div>
+    </div> <br>
+    <h3>Kliknij w przycisk aby wyświetlić różne działania na zmiennych</h3> <br>
+    <h3>Wartość wyjściowa: </h3> <span id="output"></span>
+    <div id="output1"></div>
 
 </body>
 <!-- W związku z czym dużo lepiej jest umieszczać tag skryptowy dla JavaScript na samym dole strony, co doprowadzi do tego, że jeśli strona się nie załaduje z różnych powodów to nie wykonają się polecenia ze skryptó, ale jeśli
 Storna się załduje to wszystkie (oczywiście bezbłędnie napisane kody JS) wykonają się. -->
-<script src="javas/intro.js"></script>
+<script src="javas/intro_zmienne.js"></script>
 
 </html>

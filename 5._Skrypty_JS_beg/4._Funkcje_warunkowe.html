@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funkcje warunkowe</title>
+    <link rel="stylesheet" href="cssstyle/funkcje_warunkowe.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <!-- Możemy umieścić tag skryptowy na górze strony w jej head'zie, ale nie jest to dobre rozwiązanie, ponieważ skrypty przywoływane z pliku .jd mogą potrzebować do działania informacji, które znajdują się w dalszych częściach strony html i nie zostaną wykonane poprawinie. -->
+    <!-- <script src="javas/intro.js"></script> -->
+</head>
+
+<body>
+    <div id="obrazek">
+        <h1>Kilka wiadomości o Skryptach JS- Funkcje warunkowe ;)</h1>
+    </div>
+    <div id="podtytuł">
+        <p>Reszta informacji na temat zasad działąnia z JavaScript znajduje się w opisach na GitHub pod adresem: <br>
+            <a href="https://github.com/Kruchy1980/Front-End-Beginner"
+                target="blank">https://github.com/Kruchy1980/Front-End-Beginner </a>
+            <br>
+            W katalogu Opisy - plik "6._Skrypty_JS.doc" <p>
+    </div> <br>
+    <section id="sekcja">
+        <div id="menu">
+            <ol> Zasady działania z JavaScript'em:
+                <li><a href="1._Intro.html" target="blank"> Praca ze zmiennymi</a></li>
+                <li><a href="2._Operatory_js.html" target="blank"> Operatory </a></li>
+                <li><a href="3._Metody.html" target="blank"> Metody </a></li>
+                <li><a href="#">Funkcje Warunkowe</a></li>
+                <li><a href="5._Pętle.html" target="blank">Pętle</a></li>
+            </ol>
+        </div>
+        <div id="odśwież">
+            <div id="refr">
+                <span> Odśwież Stronę!</span>
+            </div>
+        </div>
+    </section> <br>
+
+    <aside id="strona">
+        <div id="główny">
+            <h2>Sprawdźmy kilka Funkcji warunkowych: </h2>
+            <!-- Użyliśmy tutaj tagu '&nbsp;' określającego spację pomiędzy elementami, aby bez stosowania styli ustawić odpowiednio wartości naszego headera h3.   -->
+            <h4>Cyfry:</h4>
+            <label for="number">A:</label>
+            <input type="number" name="numA" id="numA" placeholder="Wpisz pierwszą liczbę!"> <br>
+            <label for="number">B:</label>
+            <input type="number" name="numB" id="numB" placeholder="Wpisz drugą liczbę!">
+            <br>
+        </div>
+        <div>
+            <h2>Wykonaj działanie ===></h2>
+        </div> <br>
+        <div id="wyniki">
+            <div>
+                <h4 id="wynik1"> Wynik 1:</h4>
+            </div>
+            <div id="output1"><span> wynik </span></div>
+
+            <div>
+                <h4 id="wynik2"> Wynik 2:</h4>
+            </div>
+            <div id="output2"><span> wynik </span></div>
+
+        </div> <br>
+        <div id="komentarze">
+            <p> Komentarz 1</p> <br>
+            <div id="komentarz1"></div> <br>
+            <p> Komentarz 2</p> <br>
+            <div id="komentarz2"></div> <br>
+        </div> <br>
+
+    </aside>
+
+    <article id="prawo">
+        <div id="guziki">
+            <h3>Funkcje Warunkowe:</h3>
+            <div id="but26">
+                <p>"if"<br>"(a == b)"</p>
+            </div>
+            <div id="but27">
+                <p>"if, else"<br>"(a == b)"</p>
+            </div>
+            <div id="but28">
+                <p>"if, else if"<br>"(a != b)"</p>
+            </div>
+            <div id="but29">
+                <p>"if, else if, else"<br>("a < b")</p> </div> <div id="but30">
+                        <p>Porównanie typów<br>"a === b"</p>
+            </div>
+            <div id="but31">
+                <p>if + operator<br>"a < b && a < 10"</p> </div> <h3>Switch Conditions:</h3>
+                        <div id="but32">
+                            <p>switch()<br>"case x:"</p>
+                        </div>
+    </article>
+</body>
+<!-- W związku z czym dużolepiej jest umieszczać tag skryptowy dla JavaScript na samym dole strony, co doprowadzi do tego,
+                        że jeśli strona się nie załaduje z różnych powodów to nie wykonają się polecenia ze skryptó, ale
+                        jeśli Storna się załduje to wszystkie (oczywiście bezbłędnie napisane kody JS) wykonają się. -->
+<script src="javas/funkcje_warunkowe.js"></script>
+
+</html>

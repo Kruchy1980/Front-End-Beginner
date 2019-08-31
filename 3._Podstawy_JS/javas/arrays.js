@@ -1,5 +1,5 @@
 document.getElementById('but1').addEventListener('click', function () {
-    location = location // W ten sposób możemy odświeżyć stronę za pomocą skryptu javascript
+    location = location; // W ten sposób możemy odświeżyć stronę za pomocą skryptu javascript
 })
 // Aby lepiej się pracowało wpiszemy sobie jakiś tekst na stronę do Wy na to??
 var nowyTekst = document.getElementById('tekst'); // Używamy selektora, aby 'wyrwać' ze strony interesujący nasz element. 

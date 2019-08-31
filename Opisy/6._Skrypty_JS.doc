@@ -3,4 +3,924 @@
 ##########################################################################
 
 
-VI. SKRYPTY JS W STRONACH WWW OD PODSTAW.
+VI. ZASADY DZIAŁANIA Z JAVASCRIPTEM.
+
+1. Praca ze zmiennymi.
+
+Tutaj porozmawiamy, o niektórych zapisach zmiennych, które nie zawsze są zapisami prawidłowymi i wyskakują błędy przy ich 'wyjściu'.
+
+//Na początku przygotujemy sobie zmienne/ą zawierającą wszystkie buttony, aby podpisywać 
+
+// Stwórzmy zmienną globalną, która jest naszym div'em i będzie przyjmoała wartości w miarę postępów na stronie i będzie informowała nas co zrobiliśmy.
+var output = document.getElementById("output");
+var output1 = document.getElementById("output1")
+// Teraz zaczynamy z treścią nas interesującą.
+
+// 1 rodzaj zmiennej - UNDEFINED.
+// Ponieważ chcemy przypisać do przycisku jedną funkcję pokazującą określone działanie na zmiennych to zrobimy kilka zmiennych lokalnych - but1
+document.getElementById("but1").addEventListener('click', function () {
+    let x; // undefined - nieokreślona - jest to każda zmienna, która nie ma przypisanej określonej wartości - nie tylko liczbowejm ale jakiejkolwiek.
+    output.innerHTML = x + " - nie przypisaliśmy wartości do zmiennej x"; //Drukujemy zmienną nirokreśloną więc wyświetli się undefined na ekranie.
+})
+
+
+// Error może pojawić się , jeśli deklarując i wywołując zmienną mieszamy typy, np
+document.getElementById("but2").addEventListener('click', function () {
+    let x = "one";
+    output.innerHTML = x / 5 + " - Not a Number";
+    output1.innerHTML = " Mieszajc typy danych czyli np 'x = string' i dzielimy przez 'int, jak w tym przypadku x='one'/5, to otrzymujemy powyższy wynik."
+})
+
+// Kolejny error pokaże się nam, gdy będziemy chcieli wypisać nie zadeklarowaną zmienną.
+document.getElementById("but3").addEventListener('click', function () {
+    // Musimy najpierw zadeklarować zmienną x ponieważ ostatnio zadeklarowana jest zmienną lokalną czyli taką, którą możemy używać tylko w modułach czyli np w funkcjach.
+    let x;
+    // Weżmy przykład nieistniejącej zmiennej, czyli nie deklarując żadnej zmiennej wywołujemy ją, np.
+    if (x == undefined) { // Zmienna x nadal jest undefined, a stworzyłem to tak dziwnie ponieważ inaczej nie mógłbym wstawić w prosty sposób wyświetlającego się komunikatu, który wyświetla się obecnie ponieważ wyświetlał by się tylko komunikat w konsoli.
+        output.innerHTML = "Nie zadeklarowaliśmy zmiennej 'y' w ogóle, więc informacja o niej wyświetlana jest w konsoli włącz F12 i przeczytaj.";
+        output1.innerHTML = y; // Skoro nie zadeklarowaliśmy w ogóle zmiennej y, to w konsoli wyświetlony zostanie błąd.
+    }
+})
+
+// Dodawanie zmiennych o różnych typach.
+document.getElementById("but4").addEventListener('click', function () {
+    let x = "one"; // deklarujemy zmienną lokalną typu string
+    let y = 5; // deklarujemy zmienną lokalną typu int - intiger
+    output.innerHTML = x + y; // Wykonujemy działanie dodawania dwóch różnych typów zmiennych.
+    output1.innerHTML = "Wynik dodawania zmiennych różnego typu jak widzimy łączy tylko te dwie zmienne."
+})
+
+// Dodawanie zmiennych różnych typów, a następnie dzielenie przez liczbę.
+document.getElementById("but5").addEventListener('click', function () {
+    let x = "one"; // deklarujemy zmienną lokalną typu string
+    let y = 5; // deklarujemy zmienną lokalną typu int - intiger
+    output.innerHTML = x + y / 4; // Wykonujemy działanie dodawania dwóch różnych typów zmiennych.
+    output1.innerHTML = "Jak widzimy najpierw jest wykonywany wynik dzielenia pomiędzy dwoma liczbami, a następnie dodany jest string, i zamienione wszystko na string."
+})
+
+// Dodawanie zmiennych różnych typów, a następnie dzielenie przez liczbę, gdzie pierwszą zmienną jest liczba, a drugą string.
+document.getElementById("but6").addEventListener('click', function () {
+    let y = "one"; // deklarujemy zmienną lokalną typu string
+    let x = 5; // deklarujemy zmienną lokalną typu int - intiger
+    output.innerHTML = x + y / 4; // Wykonujemy działanie dodawania dwóch różnych typów zmiennych.
+    output1.innerHTML = "Jak widzimy, cały wynik jest przypisany do NaN czyli Not a Number. \n To samo się stanie, jeśli weźmiemy '(x + y)' / 4; ";
+})
+
+//Dodawanie dwóch elementów jednego typu string
+document.getElementById("but7").addEventListener('click', function () {
+    let x = "Hello "; // deklarujemy zmienną lokalną typu string
+    let y = "World"; // deklarujemy zmienną lokalną typu int - intiger
+    output.innerHTML = x + y; // Wykonujemy działanie dodawania dwóch różnych typów zmiennych.
+    output1.innerHTML = "Dodawamoe elementów tego samego typu umożliwia wykonywanie akcji ich łączenia jeśli są to elementy typu string";
+})
+
+// Dodawanie elementów int
+document.getElementById("but8").addEventListener('click', function () {
+    let x = 7; // deklarujemy zmienną lokalną typu string
+    let y = 8; // deklarujemy zmienną lokalną typu int - intiger
+    output.innerHTML = x + y; // Wykonujemy działanie dodawania dwóch różnych typów zmiennych.
+    output1.innerHTML = "Dodawamoe prowadzi do wykonania poprawnego działania matematycznego jeśli są to elementy typu number.";
+})
+
+// Zmienna typu null.
+document.getElementById("but9").addEventListener('click', function () {
+    let x = null; // deklarujemy zmienną lokalną typu string
+    output.innerHTML = x; // Wykonujemy działanie dodawania dwóch różnych typów zmiennych.
+    output1.innerHTML = "Zmienna nulljest zmienną nie posiadającą ani właściwosci ani metod. Jest zwracana przez funkdjem które mają zamiar zwrócić nieistniejący obiekt.";
+})
+
+-----------------------------------------------------------------------
+
+2. Operatory w JavaScript.
+
+Operatatory są to znaki, dzięki którym możemy zapisywać wyrażenia matematyczne i nie tylko.
+Mamy różn typy operatorów:
+a) Operatory przypisań/Assignment operators - przypisuje wartość do swojego lewego operandu na podstawie wartości jego prawego operandu. Prosty operator przypisania jest równy (=), co przypisuje wartość swojego prawego operandu do jego lewego operandu. Oznacza to, że x = y przypisuje wartość y do x.
+
+- x = y - przyrównanie
+- x += y <==> x = x + y
+- x -= y <==> x = x - y
+- x *= y <==> x = x * y
+- x /= y <==> x = x / y
+- x %= y <==> x = x % y
+- x **= y <==> x = x ** y
+- x <<= y <==> x = x << y - lewy operator przypisania przesunięcia przesuwa określoną liczbę bitów w lewo i przypisuje wynik do zmiennej. Aby uzyskać więcej informacji, patrz operator przesunięcia w lewo.
+- x >>= y <==> x = x >> y - prawy operator przypisania przesunięcia przesuwa określoną liczbę bitów w lewo i przypisuje wynik do zmiennej. Aby uzyskać więcej informacji, opatrz operator przesunięcia w praw.
+- x >>>= y <==> x = x >>> y - operator przypisania przesunięcia bez znaku w prawo przesuwa określoną liczbę bitów w prawo i przypisuje wynik do zmiennej
+- x &= y <==> x = x & y - bitowy operator przypisania AND używa binarnej reprezentacji obu operandów, wykonuje bitową operację AND i przypisuje wynik do zmiennej. 
+- x ^= y <==> x = x ^ y - bitowy operator przypisania XOR wykorzystuje binarną reprezentację obu operandów, wykonuje bitową operację XOR na nich i przypisuje wynik do zmiennej.
+- x |= y <==> x = x | y - bitowy operator przypisania OR używa binarnej reprezentacji obu operandów, wykonuje bitową operację OR i przypisuje wynik do zmiennej.
+
+b) Operatory porównania/Comparison operators -  porównuje operandy i zwraca wartość logiczną na podstawie tego, czy porównanie jest prawdziwe. Operandy mogą mieć wartości liczbowe, łańcuchowe, logiczne lub obiektowe. Ciągi są porównywane w oparciu o standardowe uporządkowanie leksykograficzne przy użyciu wartości Unicode. W większości przypadków, jeśli dwa operandy nie są tego samego typu, JavaScript próbuje przekonwertować je na odpowiedni typ do porównania. Takie zachowanie zazwyczaj powoduje porównanie liczbowe operandów. Jedyne wyjątki od konwersji typów w porównaniach obejmują operatory === i !==, które wykonują ścisłe porównania równości i nierówności. Operatory te nie próbują konwertować argumentów na kompatybilne typy przed sprawdzeniem równości.
+Przykład:
+- == przyrównanie - jednak nie przyrównuje typów a jedynie wartości.
+- === - przyrównuje wartość i typ danych.
+- != - różne - przy sprawdzaniu tylko wartości nie typu i wartości.
+- !== - różne typy i wartości.
+- > - większe niż.
+- >= - większe lub równe
+- < - mniejsze niż.
+- <= - mniejsze lub równe
+-  
+
+c) Operatory arytmetyczne/Arithmetic opetators -  przyjmuje wartości liczbowe (literały lub zmienne) jako operandy i zwraca pojedynczą wartość liczbową. Standardowe operatory arytmetyczne to dodawanie (+), odejmowanie (-), mnożenie (*) i dzielenie (/). Operatory te działają tak, jak w większości innych języków programowania, gdy są używane z liczbami zmiennoprzecinkowymi.
+Przykład:
+- % - modulo, zastosowany przy dzieleniu zwraca resztę z dzielenia, np 23 % 7 = 2 ponieważ 3 * 7 = 21, a 23 - 21 = 2, które są resztą z dzielenia.
+- <++> == <+=> == <x + 1> czyli zwiększa wartość elementu w pętli o 1 za każdym razem, gdy ona się wykona.
+- <--> ++ <-=> == <x - 1> czyli zmniejsza wartość elementu w pętli o 1 za każdym razem, gdy ona się wykona.
+więcej:
+- + - dodawanie
+- - - odejmowanie
+- * - mnożenie
+- / - dzielenie
+- ** - potęgowanie
+- ** 1/b - pierwiastkowanie - zapis matematyczny czyli podniesienie do potęgi 1/b.
+d) Operatory bitowe/Bitwise operators - traktuje swoje operandy jako zbiór 32 bitów (zer i jedynek), a nie jako liczby dziesiętne, szesnastkowe lub ósemkowe. Na przykład liczba dziesiętna dziewięć ma binarną reprezentację 1001. Operatory bitowe wykonują swoje operacje na takich reprezentacjach binarnych, ale zwracają standardowe wartości liczbowe JavaScript.
+
+e) Operatory logiczne/Logical operators - są zwykle używane z wartościami logicznymi, gdy są, zwracają wartość logiczną. Jednak && i || operatory faktycznie zwracają wartość jednego z określonych operandów, więc jeśli te operatory są używane z wartościami niebędącymi wartościami logicznymi, mogą zwrócić wartość inną niż wartość logiczna.
+Przykłady:
+&& - oraz - if(a = 2 && b =3) { console.log("Prawda")} - jeśli a = 2 oraz b = 3 to wypisz prawda, w przeciwnym razie fałsz.
+|| - lub  - if(a = 2 || b =3) { console.log("Prawda")} - jeśli a = 2 albo b = 3 to wypisz prawda, inaczej fałsz.
+! - przeciwieństwo - if(!a = 3) { console.log("Prawda")} - jeśli a jest różne od 3 pisz Prawda, przeciwnie fałsz.
+Oczywiście można używać to równieą dla danych typu string i wtedy porównują się kolejne litery w stringu, lub te elementy stringu, które 'zindeksujemy'.
+
+f) Operatory stringowe/String operators - oprócz operatorów porównania, których można używać w przypadku wartości ciągu, operator konkatenacji (+) konkatenuje dwie wartości razem, zwracając kolejny ciąg, który jest połączeniem dwóch ciągów argumentów.
+Przykład:
+var mystring = 'alpha';
+mystring += 'bet'; - Co wyjściowo poda wartość alphabet, czyli operator '+=' dodaje wartość i wyświetla całość.
+
+g) Operator warunkowy (trójskładnikowy)/Conditional (ternary) operator - jest jedynym operatorem JavaScript, który przyjmuje trzy operandy. Operator może mieć jedną z dwóch wartości w zależności od warunku. Składnia jest następująca:
+condition ? val1 : val2/ warunek ? wartość1 : wartość2 - Jeśli warunek jest spełniony, operator ma wartość1. W przeciwnym razie ma wartość2. Możesz użyć operatora warunkowego w dowolnym miejscu, w którym użyjesz operatora standardowego.
+
+h) Operator przecinka/nek/Comma operator - (,) po prostu ocenia oba operandy i zwraca wartość ostatniego operandu. Ten operator jest używany głównie w pętli for, aby umożliwić aktualizację wielu zmiennych za każdym razem w pętli, np:
+for (var i = 0, j = 9; i <= j; i++, j--) zadeklarowaliśmy dwie zmienne po przecinku - var i = 0, j = 9; co umożliwiło nam zastowanie przecinka.
+  console.log('a[' + i + '][' + j + ']= ' + a[i][j]); - drukujemy zwiększającą i zmniejszającą się listę z 2 zadeklarowanych list.
+    var x = [0,1,2,3,4,5,6,7,8,9]; - mamy zadeklarowaną lisę 10-elementową x
+    var a = [x, x, x, x, x]; // ta zadeklarowana lista będzie drukowana z przypisanymi numerami.
+
+i) Unary operator - operator ponjedynczy, czyli operator potrzebujący tylko jedną operacyjną, np:
+- delete(operator) + obiekt(operanda), gdzie jako obiekt możemy wstawić obiekt, jego właściwość, rzecz z obiektu, czy też samą własciwość. - kasuje dany element
+- typeof(operator) + element(operanda) - Sprawdza typ elementu.
+- void(opertor) + wyrażenie(expression) - określa wyrażenie, które ma zwracać wartość wyrżenia, bez żądnej wartości, np:
+ <a href="javascript:void(document.form.submit())">
+Kliknij aby zatwierdzić</a> - kliknięcie na link zatwierdzi formularz na stronie nie robiąc nic poza tym lub:
+
+<a href="javascript:void(0)">Kliknij tutqaj aby nic się nie zadziało</a> - ponieważ kliknięcie na link wyśle void, czyli undefined zmienną  do kodu JavaScript, to nic nie stanie się. 
+
+j) Operatory relacyjne/Relational operators
+ - Operator relacyjny porównuje operandy i zwraca wartość logiczną na podstawie tego, czy porównanie jest prawdziwe, np:
+- in - zwraca True, jeśli wartość znajduje się w obiekcie, np for x in array, gdzie array czyli lista lub tabela zadeklarowana i posiadająca kilka elementów. 
+- instanceof - sprawdza, czy określona dana znajduje się w zestawie i zwraca True albo False, np if(dzień instanceof Data) czyli czy dzień znajduje się w dacie, ogólnie zapis:
+objectName(dzień) instanceof objectType(data).
+-------------------------------------------------------------------------
+
+2. Kilka zastosowań operatorów.
+
+// Na samym początku zadeklarujemy sobie zmienne elementów, które będą się zmieniały na naszej stronie.
+// Niestety tylko to co ma się wypisywać możemy zadeklarować globalnie, a zmienne, które wpisujemy do inputów, musimy przywoływać lokalnie.
+// var a = document.getElementById("numA").value; // liczba A a mianowicie jej wartość
+// var b = document.getElementById("numB").value; // liczba B a mianowicie jej wartość
+// var ta = document.getElementById("textA").value; // text A a mianowicie jej wartość
+// var tb = document.getElementById("textB").value; //  text B a mianowicie jej wartość
+var output = document.getElementById("output"); // wynik z dziłania na liczbach
+var output1 = document.getElementById("output1"); // wynik z działania na stringach
+var komentarz = document.getElementById("komentarz"); // komentarz do liczb
+var komentarz1 = document.getElementById("komentarz1"); // komentarz do stringów
+
+// Teraz jak już mamy zadeklarowane zmienne, które będą się zmieniały w miarę wykonywania działąń na stringach, możemy przypisać je teraz do odpowiednich przycisków i pododawać odpowiednie eventListenery.
+document.getElementById("but1").addEventListener("click", function () {
+    //Zmienne, które wpisujemy w inputach, powinny znajdować się w funkcji , a nie poza nią w związku z tym musimy deklarować zminne lokalne, w przeciwnym razie updatowanie inputów nie zaktualizuje nam wyniku.
+    let a = document.getElementById("numA").value; // liczba A a mianowicie jej wartość
+    let b = document.getElementById("numB").value;
+    output.innerHTML = (a + b);
+    output.style.backgroundColor = 'orange';
+    komentarz.innerText = "Jak widzimy przed zdefiniowaniem liczb, jako int , lizczby te traktowane są jako stringi i nie wykonują się działania matematyczne."
+    let ta = document.getElementById("textA").value; // text A a mianowicie jej wartość
+    let tb = document.getElementById("textB").value;
+    output1.innerHTML = (ta + tb);
+    output1.style.backgroundColor = 'pink';
+    komentarz1.innerText = "Stringi natomiast dodawane są jak to stringi. Pamiętajmy, że aby wpisując tekst chcielibyśmy mieć spacje, to powinniśmy uwzględnić to we wpisywanym tekście."
+})
+
+// Drugim sposobem, jest przywoływanie funkcji, bez użycia EventListenera.
+var but2 = document.getElementById("but2");
+
+// Teraz definiujemy, co chcemy aby przycisk nam robił
+
+but2.onclick = dodajliczby;
+
+// Teraz utworzymy daną funkcję  dodaj.
+
+function dodajliczby() {
+    // Aby dodać liczby, musimy zmienić przywoływane elementy na intiger, a robimy to za pomocą metody "parseInt", lub "parseFloat"- jeśli chodzi o liczby zmiennoprzecinkowe w następujący sposób.
+    let a = parseInt(document.getElementById("numA").value); // liczba A a mianowicie jej wartość
+    let b = parseInt(document.getElementById("numB").value);
+    output.innerHTML = a + b;
+    output.style.backgroundColor = "orange";
+    komentarz.innerHTML = "Dodawanie wypadło pozytywnie."
+    let ta = parseInt(document.getElementById("textA").value);
+    let tb = parseInt(document.getElementById("textB").value);
+    output1.innerHTML = (ta + tb);
+    output1.style.backgroundColor = 'pink';
+    komentarz1.innerText = "A to się stanie, gdy z daną metodą 'parseInt, lub parseFloat' będziemy chcieli połączyć stringi"
+}
+
+// Kilka ćwiczeń jeśli chodzi o operatory:
+// Deklarujemy kolejny przycisk
+var but3 = document.getElementById("but3");
+// Przypiszmy funkcję do przycisku
+but3.onclick = function () {
+    let ta = document.getElementById("textA").style.display = "none"; // kasujemy możliwość edytowania wartości elementu input
+    let tb = document.getElementById("textB").style.display = "none"; // kasujemy możliwość edytowania wartości elementu input
+    // Deklarujemy zmienne w trochę inny sposób
+    // Deklarujemy tylko inputy
+    let a = document.getElementById("numA");
+    let b = document.getElementById("numB");
+    // Deklarujemy wartości wpisane do inputów, w sposób zajmujący mniej pamięci.
+    // Musimy jednak zmienić ich nazwy, ponieważ jeśli będziemy je nadpisywać, to będzie wyskakiwał błąd, ponieważ nie będą rozpoznawalne.
+    let aa = parseInt(a.value);
+    let bb = parseInt(b.value);
+    aa++; // Sprobujemy pododawać do wartości po jeden
+    bb--; // Od wartości b spróbójmy odjąć po jeden
+    // Teraz tylko deklarujemy zmienne, aby przyjmomwały wartości aktualizowane, czyli a +1 i b - 1.
+    a.value = aa;
+    b.value = bb;
+    output.innerHTML = (aa + bb); // Sumujemy obie liczby, co przy założonych parametrach będzie dawało nam zawszze ten sam wynik.
+    komentarz.innerText = "Jak widzimy wartości zmieniają się wedle zastosowanych operatorów w funkcji, a mianowicie do pierwszej liczby dodajemy wartość 1, a od b odejmyjemy wartość 1 a następnie sumujemy te liczby, co daje wciąż ten sam wynik."
+    output1.innerHTML = "Nie dotyczy.";
+    komentarz1.innerText = "Nie przypisaliśmy do stringów żadnych funkcji więc w wyniku nic się nie zmienia. Ten przycisk odnosi się tylko do numerów/liczb/cyfr.";
+}
+
+// Jest oczywiście dużo więcej operatorów, które możemy użyć na liczbach głównie ale i na stringach tak samo.
+// Zajmijmy się teraz zmianą kolorów pod przyciskiem czwartym
+// Najpierw deklaracja przycisku.
+var but4 = document.getElementById("but4");
+// Musimy również zadeklarować nasz nowy element, a mianowicie naszą listę.
+var lista = document.getElementById("lista"); // deklarujemy naszą listę sobie.
+// I jeszcze zadeklarujmy sobie zmienną, która będzie zawierała nasze elementy li, aby łatwiej przypisywać potem kolory.
+var elListy = lista.getElementsByTagName("li");
+// Dla sprawdzenia wymieńmy sobie te elementy w konsoli
+console.log(elListy); // Wyświetlamy sobie elementy listy w konsoli.
+// Teraz aby każde z elementów listy przyjmowało inny kolor, powinniśmy ubrać to w pętlę.
+but4.onclick = function () {
+    for (var i = 0; i <= elListy.length; i++) {
+        // Sprawdzamy w konsoli po kolei nasze elementy z listy
+        console.log(elListy[i]);
+        // Przypisujemy teraz wszystkim elementom z listy ten sam kolor, np żółty - dla zabawy tylko, ponieważ chcemy aby każdy element przyjmował inny kolor.
+        elListy[i].style.backgroundColor = "yellow";
+    }
+}
+
+// Dodając instrukcję warunkową, możemy np  nadać inny kolor co drugiemu elementowi.
+// Najpierw deklarujemy nowy przycisk.
+var but5 = document.getElementById("but5");
+// Ze względu na to, że wcześniej zadeklarowaliśmy  elementy listy jako zmienną lokalną, teraz możemy je po prosty użyć jako element funkcji.
+but5.onclick = function () {
+    for (var i = 0; i <= elListy.length; i++) { // Poprzednia pętla, która wybiera nam wszystkie elementy z listy
+        if (i % 2 == 0) { // Tutaj tworzymy funkcję warunkową, która wybierze nam elementy parzyste, którym nadamy inne kolory, niż nadane wcześniej. Ze względu na to, że nie kasujemy wartości przycisku numer 4, jednak warunkiem jest użycie przycisków w konkretnej kolejności
+            elListy[i].style.backgroundColor = "green"; // Parzystym indexom włącznie z 0 przypisujemy kolor zielony.
+        }
+    }
+}
+
+
+// Zmaina kolorów  elementów listy.
+// NAjpierw dklarujemy jak zwykle przycisk
+var but6 = document.getElementById("but6");
+// Aby wykorzystać zmianę kolorów musimy najpierw zadeklarować funkcję generującą różne kolory.
+function getRandomColor() {
+    let letters = '0123456789ABCDEF'; // Deklarujemy zmieną, która zawiera znaki systemu 16-stkowego, którym rónież możemy opisywać kolory
+    let color = '#'; // Skoro kolory w systemie 16-stkowym zapisujemy poprzedzając '#' to deklarujemy to jako zmienną stałą
+    for (var x = 0; x < 6; x++) { // Robimy pętlę, dla 6ściu znaków  opisujących kolor w systemie szestnastkowym 
+        color += letters[Math.floor(Math.random() * 16)]; // Do znaku stałego '#' dodajemy podstawę matematyczną Mth.floor, która zwraca nam największą liczbę całkowitą mniejszą lub równą danej, a następnie losujemy randomowo, zwracając jedną z 16 zadeklarowanych znaków systemu 16stkowego. 
+    }
+    return color; // Zwracamy kolor
+}
+
+
+// Na klkiknięcie  zmieniają się kolory wszystkich elementów naszej listy
+but6.onclick = function () {
+    // Robimy pętlę, która po kolei będzie przyjmowała kolejne elementy  indeksu
+    for (i = 0; i < elListy.length; i++) {
+        // Wraz ze zmianą elementu dodajemy losowy kolor do elementu.
+        elListy[i].style.backgroundColor = getRandomColor();
+    }
+}
+
+!!! UWAGA !!!
+Warunkowe operatory trójskładnikowe, są bardzo pożygtecznem przy stosowaniu stron dynammimcznycj, tym bardziej, ze krótkim zapisem możemy sogbie opisać 2 wrunki:
+Przykład:
+Zadeklarowana zmienna może być lokalna, jeśli używamy w funkcji to szczególnie, lub globalna jeśli używamy poza funkcją i dotyczy to wielu modułów.
+
+let status( nazwa zmiennej zadeklarowanej) = (a > b)(waruek) ?(co ma się stać, gdy warunek jest spełniony) "A jest większe od B" :( co ma się stać, gdy warunek nie został spełniony.) "B jest większe od A";
+
+/// Warunkowe operatory trójskładnikowe.
+// Załóżmy, że chcemy wyświetlić sobie status danych elementów, a możemy to zrobić w następujący sposób
+// zadeklarujmy guzik pod którym chcemy to wrzucić:
+var but7 = document.getElementById('but7');
+//Deklarujemy zmienną w funkcjim którą chcemy przywoływać, zby zadziałało:
+// i prazypisujemy funkcję jako działąjącą pod klikiem.
+
+but7.onclick = function status() {
+    // zadeklarujmy sobie aby zmienić trochę tekst by pasował do tego co chcemy:
+    let string = document.getElementById("string"); // zadeklarowaliśmy sobie element aby go zmienić w miarę potrzeby
+    // I jeszcze zadeklarujemy jeden tekst, a mianowicie wynika na status zamienimy.
+    let liczba = document.getElementById("liczba"); // Zadeklarowaliśmy sobie kolejny tekst, który zmienimy w miarę tego co 
+    // deklarujemy zmimennek, które mają zniknąć ponieważnie będą potrzebne
+    let ta = document.getElementById("textA").style.display = "none"; // kasujemy możliwość edytowania wartości elementu input
+    let tb = document.getElementById("textB").style.display = "none";
+    // deklarujemy zmienne, których ma to dotyczyć
+    let a = parseInt(document.getElementById("numA").value); // liczba A a mianowicie jej wartość
+    let b = parseInt(document.getElementById("numB").value);
+    string.innerText = "STATUS:"
+    liczba.innerText = "WYNIK:"
+    // I tu jeszcze zmienimy trocjhę to co chcemy uwidocznić, a mianowicie wynik ze stringów na wynik
+    // Tutaj deklarujemy zmienną lokalną:
+    let status = (a > b) ? "A jest większe od B" : "B jest większe od A"; // (a>b)- określamy warunek zmiennej,  '?'- jeśli prawda to  "komunikat1" ':'- jeśli nie, to "komunikat2" 
+    // I teraz, zbyśmy wiedzieli o co chodzi to ją przywoływujemy.
+    output1.innerHTML = status;  // Przywoływujemy to co chcemy przywołać, z mainowicie status.
+    output.innerHTML = ("A = " + a + ", B = " + b); // Chcemy poznać wynik, czyli w naszym przypadku zmienne przypisane do odpowiednich miejsc.
+}
+-----------------------------------------------------------------------
+
+OPERATORY LOGICZNE.
+
+// Operatory logiczne, są często używane, jeśli będziemy działali na kilku zmiennych, od którychc będzie zależał wynik.
+// zadeklarujmy guzik pod którym chcemy to wrzucić:
+var but8 = document.getElementById('but8');
+//Deklarujemy zmienną w funkcjim którą chcemy przywoływać, zby zadziałało:
+// i prazypisujemy funkcję jako działąjącą pod klikiem.
+
+but8.onclick = function status() {
+    // zadeklarujmy sobie aby zmienić trochę tekst by pasował do tego co chcemy:
+    let string = document.getElementById("string"); // zadeklarowaliśmy sobie element aby go zmienić w miarę potrzeby
+    // I jeszcze zadeklarujemy jeden tekst, a mianowicie wynika na status zamienimy.
+    let liczba = document.getElementById("liczba"); // Zadeklarowaliśmy sobie kolejny tekst, który zmienimy w miarę tego co 
+    // deklarujemy zmimennek, które mają zniknąć ponieważnie będą potrzebne
+    let ta = document.getElementById("textA").style.display = "none"; // kasujemy możliwość edytowania wartości elementu input
+    let tb = document.getElementById("textB").style.display = "none";
+    // deklarujemy zmienne, których ma to dotyczyć
+    let a = parseInt(document.getElementById("numA").value); // liczba A a mianowicie jej wartość
+    let b = parseInt(document.getElementById("numB").value);
+    string.innerText = "A || B:"
+    liczba.innerText = "A && B:"
+    // I tu jeszcze zmienimy trocjhę to co chcemy uwidocznić, a mianowicie wynik ze stringów na wynik
+    output1.innerHTML = a || b;
+    output.innerHTML = a + " ; " + b; // Chcemy poznać wynik, czyli w naszym przypadku zmienne przypisane do odpowiednich miejsc.
+    komentarz.innerText = "Jak widzimy operator && wyświetla obie deklarowane wartości, a jeśli dodamy więcej łącząc tym operatorem łączymy wartości  czy też warunki itd.";
+    komentarz1.innerText = "Jeśli użyjemy operatora || to wyświetlana będzie albo jedna albo druga wartość.";
+}
+
+// Lepiej będzie to uwidocznione, jeśli zastosujemy boolean.
+
+// zadeklarujmy guzik pod którym chcemy to wrzucić:
+var but9 = document.getElementById('but9');
+//Deklarujemy zmienną w funkcjim którą chcemy przywoływać, zby zadziałało:
+// i prazypisujemy funkcję jako działąjącą pod klikiem.
+
+but9.onclick = function status() {
+    // zadeklarujmy sobie aby zmienić trochę tekst by pasował do tego co chcemy:
+    let string = document.getElementById("string"); // zadeklarowaliśmy sobie element aby go zmienić w miarę potrzeby
+    // I jeszcze zadeklarujemy jeden tekst, a mianowicie wynika na status zamienimy.
+    let liczba = document.getElementById("liczba"); // Zadeklarowaliśmy sobie kolejny tekst, który zmienimy w miarę tego co 
+    // deklarujemy zmimennek, które mają zniknąć ponieważnie będą potrzebne
+    let a = document.getElementById("numA").style.display = "none"; // kasujemy możliwość edytowania wartości elementu input
+    let b = document.getElementById("numB").style.display = "none";
+    // Deklarujemy zmienne do boolean:
+    let ta = document.getElementById("textA").value = "true";
+    let tb = document.getElementById("textB").value = "false";
+    string.innerText = "TA || TB:"
+    liczba.innerText = "TA && TB:"
+    // I tu jeszcze zmienimy trocjhę to co chcemy uwidocznić, a mianowicie wynik ze stringów na wynik
+    output1.innerHTML = ta || tb;
+    output.innerHTML = ta && tb;// Chcemy poznać wynik, czyli w naszym przypadku zmienne przypisane do odpowiednich miejsc.
+    komentarz.innerText = "Ze względu na to, że obie wartości ta i tb, powinny mieć tę samą wartość, aby wyszedł wynik true";
+    komentarz1.innerText = "Ze względu na to, że obie wartości ta i tb, powinny mieć różną wartość, aby wyszedł wynik true i tak się składa, że jest.";
+}
+
+// zadeklarujmy guzik pod którym chcemy to wrzucić:
+var but10 = document.getElementById('but10');
+//Deklarujemy zmienną w funkcjim którą chcemy przywoływać, zby zadziałało:
+// i prazypisujemy funkcję jako działąjącą pod klikiem.
+
+but10.onclick = function status() {
+    // zadeklarujmy sobie aby zmienić trochę tekst by pasował do tego co chcemy:
+    let string = document.getElementById("string"); // zadeklarowaliśmy sobie element aby go zmienić w miarę potrzeby
+    // I jeszcze zadeklarujemy jeden tekst, a mianowicie wynika na status zamienimy.
+    let liczba = document.getElementById("liczba"); // Zadeklarowaliśmy sobie kolejny tekst, który zmienimy w miarę tego co 
+    // deklarujemy zmimennek, które mają zniknąć ponieważnie będą potrzebne
+    let a = document.getElementById("numA").style.display = "none"; // kasujemy możliwość edytowania wartości elementu input
+    let b = document.getElementById("numB").style.display = "none";
+    // Deklarujemy zmienne do boolean:
+    let ta = document.getElementById("textA").value = "false";
+    let tb = document.getElementById("textB").value = "false";
+    string.innerText = "TA || TB:"
+    liczba.innerText = "TA && TB:"
+    // I tu jeszcze zmienimy trocjhę to co chcemy uwidocznić, a mianowicie wynik ze stringów na wynik
+    output1.innerHTML = ta || tb;
+    output.innerHTML = ta && tb;// Chcemy poznać wynik, czyli w naszym przypadku zmienne przypisane do odpowiednich miejsc.
+    komentarz.innerText = "Ze względu na to, że obie wartości ta i tb mają tę samą wartość, więc tutaj wynikiem będzie przyjęta wartość false";
+    komentarz1.innerText = "Ze względu na to, że obie wartości ta i tb, powinny mieć różną wartość, aby wyszedł wynik true i tak się składa, że jest.";
+}
+---------------------------------------------------------------------------
+
+3. Metody JS.
+Medody są to funkcje będące własnościami obiektów. W Js'ie dzielimy na dwa rodzaje:
+W funkcjach języka javascript nazywają się obiektami w związku z czym metody, to odniesienia obiektowe do funkcji.
+
+1) Wbudowane metody - Inaczej zwane Instance methods - metody instancje.
+Metody wbudowazne, są to metody których nazwy przywołują odpowiednie funkcje przywołania,
+Tak jak metoda parseInt zamieniająca stringi wpisane w pola inputowe,
+Aby zamienić je na numery, a mianowicie liczby całkowite intiger - int.
+Metod wbudowanych jest sporo w Javascript. My wykorzystaliśmy tylko kilka z nich.
+
+
+2) Metody statyczne - Static Methods - które są obiektami wzywanymi bezpośdednio przez konstruktor obiektu.
+
+------------------------------------------------------------------------
+// W tej części zajmiemy się niektórymi matematycznymi metodami wbudowanymi.
+// Najpierw jednak zadeklarujmy sobie zmienne zmieniające się.
+var output = document.getElementById("output"); // wynik1 z dziłania na liczbach
+var output1 = document.getElementById("output1"); // wynik2 z dziłania na liczbach
+var komentarz = document.getElementById("komentarz"); // komentarz do liczb.
+var wynik = document.getElementById("wynik"); // Przypisujemy, aby móc zmieniać wyświetlany tekst.
+// Zadeklarujmy jeszcze odświeżanie strony
+var refr = document.getElementById("refr");
+// Teraz przypiszmy jemu odpowiednią funkcję.
+refr.onclick = function () {
+    location = location;
+}
+
+//Teraz zaczynamy treść właściwą.
+// Metoda round - zaokrąglenie
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but11 = document.getElementById("but11");
+// Teraz przypisujemy funkcję do przycisku.
+but11.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = document.getElementById("numB").style.display = "none";
+    output.innerHTML = Math.round(a); //Jak widzimy przywołując wbudowane metody matematyczne, musimy przywołać rodzaj metod, w tym przypadku Math(rodzaj/typ metody).metoda(<parametr>)
+    komentarz.innerText = "Jak widzimy metoda wbudowana round odpowiada za zaokrąglenie cyfry zmiennoprzecinkowej co całości czyli tak jakby float do int, zaokrąglając ją odpowiednio. \n !!!Należy jednak pamiętać, że aby zaokrąglenie działało, to przy deklarowaniu obiektu, musimy użyć metody parseFloat w następujący sposób: let a = parseFloat(document.getElementById('numA').value) \n Przywołujemy tę metodę zapisem określającym typ metody, a mianowicie: Math(rodzaj/typ metody).metoda(<parametr>)";
+}
+
+// Metoda ceil - zaokrąglanie w górę (zawsze).
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but12 = document.getElementById("but12");
+// Teraz przypisujemy funkcję do przycisku.
+but12.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = document.getElementById("numB").style.display = "none";
+    output.innerHTML = Math.ceil(a); //Jak widzimy przywołując wbudowane metody matematyczne, musimy przywołać rodzaj metod, w tym przypadku Math(rodzaj/typ metody).metoda(<parametr>)
+    komentarz.innerText = "Jak widzimy metoda 'ceil' obojętnie jaką mamy cyfrę po przecinku zawsze zaokrągla w górę.";
+}
+
+// Metoda floor - zaokrąglanie w dół.
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but13 = document.getElementById("but13");
+// Teraz przypisujemy funkcję do przycisku.
+but13.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = document.getElementById("numB").style.display = "none";
+    output.innerHTML = Math.floor(a); //Jak widzimy przywołując wbudowane metody matematyczne, musimy przywołać rodzaj metod, w tym przypadku Math(rodzaj/typ metody).metoda(<parametr>)
+    komentarz.innerText = "Jak widzimy metoda 'floor' obojętnie jaką mamy cyfrę po przecinku zawsze zaokrągla w dół.";
+}
+
+// Metoda random - losowe.
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but14 = document.getElementById("but14");
+// Teraz przypisujemy funkcję do przycisku.
+but14.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").style.display = "none");
+    let b = document.getElementById("numB").style.display = "none";
+    output.innerHTML = Math.random(); //Jak widzimy przywołując wbudowane metody matematyczne, musimy przywołać rodzaj metod, w tym przypadku Math(rodzaj/typ metody).metoda(<parametr>)
+    komentarz.innerText = "Jak widzimy metoda 'random' losuje liczby z przedziału od 0 - 1 jeśli nie jest zadeklarowany parametr żaden określający górną g";
+    document.getElementById('info').innerText = "Jak już zobaczyłej jak działa ta funkcja, to odśwież stronę.";
+}
+
+// Metoda random - losowe - random * stała.
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but15 = document.getElementById("but15");
+// Teraz przypisujemy funkcję do przycisku.
+but15.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").style.display = "none");
+    let b = document.getElementById("numB").style.display = "none";
+    output.innerHTML = Math.random() * 1000; //Jak widzimy przywołując wbudowane metody matematyczne, musimy przywołać rodzaj metod, w tym przypadku Math(rodzaj/typ metody).metoda(<parametr>)
+    komentarz.innerText = "Jak widzimy metoda 'random' losuje liczby z przedziału od 0 - 1 jeśli jednak pomnożymy je przez jakąś wartość w dany sposób: Math.random() * 1000; to losowane będą liczby z przedziału od 0 - 1000, \n Jak widzimy przez przemnożenie wyniku, zwiększamy górną granicę przedziału losowania o właśnie mnożną.";
+}
+
+// Metoda random - losowe - random * zmienna a
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but16 = document.getElementById("but16");
+// Teraz przypisujemy funkcję do przycisku.
+but16.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = document.getElementById("numB").style.display = "none";
+    output.innerHTML = Math.random() * a; //Jak widzimy przywołując wbudowane metody matematyczne, musimy przywołać rodzaj metod, w tym przypadku Math(rodzaj/typ metody).metoda(<parametr>)
+    komentarz.innerText = "Moemy sobie teraz zadeklarować górną granicę przedziału z którego będziemy losowali liczbę, wpisując parametr w miejsce A:";
+}
+
+// Metoda random - losowe - łączenie metod
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but17 = document.getElementById("but17");
+// Teraz przypisujemy funkcję do przycisku.
+but17.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = document.getElementById("numB").style.display = "none";
+    output.innerHTML = Math.ceil(Math.random() * a); //Jak widzimy przywołując wbudowane metody matematyczne, musimy przywołać rodzaj metod, w tym przypadku Math(rodzaj/typ metody).metoda(<parametr>)
+    komentarz.innerText = "Połączenie metod robimy w następujący sposób: output.innerHTML = Math.ceil(Math.random() * a),\n Gdzie a jest parametrem określającym zasięg/zakres, z którego losujemy liczbę. \n Za pomocą zaokrąglania w górę - ceil, ten sam zakres będzie przyjmował wartości od 1 - a.";
+}
+
+// Metoda random - losowe - łączenie metod
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but18 = document.getElementById("but18");
+// Teraz przypisujemy funkcję do przycisku.
+but18.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = document.getElementById("numB").style.display = "none";
+    output.innerHTML = Math.floor(Math.random() * a); //Jak widzimy przywołując wbudowane metody matematyczne, musimy przywołać rodzaj metod, w tym przypadku Math(rodzaj/typ metody).metoda(<parametr>)
+    komentarz.innerText = "Połączenie metod robimy w następujący sposób: output.innerHTML = Math.floor(Math.random() * a),\n Gdzie a jest parametrem określającym zasięg/zakres, z którego losujemy liczbę. \n Za pomocą zaokrąglania w dół - floor, ten sam zakres będzie przyjmował wartości od 0 - a-1.";
+}
+
+// Metoda random - losowe - łączenie metod
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but19 = document.getElementById("but19");
+// Teraz przypisujemy funkcję do przycisku.
+but19.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = document.getElementById("numB").style.display = "none";
+    output.innerHTML = a;//Math.round(Math.random() * a); //Jak widzimy przywołując wbudowane metody matematyczne, musimy przywołać rodzaj metod, w tym przypadku Math(rodzaj/typ metody).metoda(<parametr>)
+    komentarz.innerText = "Połączenie metod robimy w następujący sposób: output.innerHTML = Math.round(Math.random() * a),\n Gdzie a jest parametrem określającym zasięg/zakres, z którego losujemy liczbę. \n Za pomocą zaokrąglania ogólneggo - round, ten sam zakres będzie przyjmował wartości od 0 - a.";
+}
+
+// Metoda data - Data()
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but20 = document.getElementById("but20");
+// Teraz przypisujemy funkcję do przycisku.
+but20.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").style.display = "none");
+    let b = document.getElementById("numB").style.display = "none";
+    output.innerHTML = Math.round(Math.random() * a); //Jak widzimy przywołując wbudowane metody matematyczne, musimy przywołać rodzaj metod, w tym przypadku Math(rodzaj/typ metody).metoda(<parametr>)
+    // Zadeklarujmy sobie zmeinną lokalną, która wykorzysta funkcję wbudowaną Date()
+    let taData = new Date(); // Pobiera datę ustawioną w naszym systenmie
+    // Wyświetlmy ją w konsoli
+    wynik.innerText = "Data: ";
+    output.innerHTML = taData; // I wyświetla nam aktualną datę w zadeklarowanym formacie.
+    komentarz.innerText = "Wyświetla nam pełn datę i czas naszego serwera."
+}
+
+// Metoda data - Date.getTime();
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but21 = document.getElementById("but21");
+// Teraz przypisujemy funkcję do przycisku.
+but21.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").style.display = "none");
+    let b = document.getElementById("numB").style.display = "none";
+    // Zadeklarujmy sobie zmeinną lokalną, która wykorzysta funkcję wbudowaną Date()
+    let taData = new Date(); // Pobiera datę ustawioną w naszym systenmie
+    // Pozmieniamy również podpisy przed wynikami:
+    wynik.innerText = "Data.getTime(): ";
+    // Teraz przyjmiemy i wydrukujemy w wynikach  dwie metody:
+    output.innerHTML = taData.getTime() + " milisekund";
+    komentarz.innerText = "Metoda Data.getTime() z daty przywołuje tzw znacznik czasu, czyli czas w milisekundach, który wyświetla się w oknie Wynik 1. \n"
+}
+
+// Metoda data - Date.getDay();
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but22 = document.getElementById("but22");
+// Teraz przypisujemy funkcję do przycisku.
+but22.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").style.display = "none");
+    let b = document.getElementById("numB").style.display = "none";
+    // Zadeklarujmy sobie zmeinną lokalną, która wykorzysta funkcję wbudowaną Date()
+    let taData = new Date(); // Pobiera datę ustawioną w naszym systenmie
+    // Pozmieniamy również podpisy przed wynikami:
+    wynik.innerText = "Data.getDay(): ";
+    // Teraz przyjmiemy i wydrukujemy w wynikach  dwie metody:
+    output.innerHTML = taData.getDay() + " dzień tygodnia";
+    komentarz.innerText = "Metoda Data.getDay() z daty przywołuje dzień tygodnia na podstawie daty"
+}
+
+// Metoda data - Date.getDate();
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but23 = document.getElementById("but23");
+// Teraz przypisujemy funkcję do przycisku.
+but23.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").style.display = "none");
+    let b = document.getElementById("numB").style.display = "none";
+    // Zadeklarujmy sobie zmeinną lokalną, która wykorzysta funkcję wbudowaną Date()
+    let taData = new Date(); // Pobiera datę ustawioną w naszym systenmie
+    // Pozmieniamy również podpisy przed wynikami:
+    wynik.innerText = "Date.getDate(): ";
+    // Teraz przyjmiemy i wydrukujemy w wynikach  dwie metody:
+    output.innerHTML = taData.getDate() + " dzień miesiąca";
+    komentarz.innerText = "Metoda Date.getDate() z daty przywołuje dzień miesiąca"
+}
+// Metoda data - Date.getFullYear();
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but24 = document.getElementById("but24");
+// Teraz przypisujemy funkcję do przycisku.
+but24.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").style.display = "none");
+    let b = document.getElementById("numB").style.display = "none";
+    // Zadeklarujmy sobie zmeinną lokalną, która wykorzysta funkcję wbudowaną Date()
+    let taData = new Date(); // Pobiera datę ustawioną w naszym systenmie
+    // Pozmieniamy również podpisy przed wynikami:
+    wynik.innerText = "Date.getFullYear():  ";
+    // Teraz przyjmiemy i wydrukujemy w wynikach  dwie metody:
+    output.innerHTML = taData.getFullYear();
+    komentarz.innerText = "Metoda Datte.getFullYear() z daty przywołuje rok z czasu systemowego."
+}
+
+// Metoda data - Date.get();
+// Najpierw zadeklarujmy przycisk, do którego to przypiszemy
+var but25 = document.getElementById("but25");
+// Teraz przypisujemy funkcję do przycisku.
+but25.onclick = function () {
+    let a = parseFloat(document.getElementById("numA").style.display = "none");
+    let b = document.getElementById("numB").style.display = "none";
+    // Zadeklarujmy sobie zmeinną lokalną, która wykorzysta funkcję wbudowaną Date()
+    let taData = new Date(); // Pobiera datę ustawioną w naszym systenmie
+    // Pozmieniamy również podpisy przed wynikami:
+    wynik.innerText = "Date.getTimeZoneOffset(): ";
+    // Teraz przyjmiemy i wydrukujemy w wynikach  dwie metody:
+    output.innerHTML = taData.getTimezoneOffset();
+    komentarz.innerText = "Metoda getTimeZoneOffset() jest dość ciekawą metodą, która z daty przywołuje różnicę czasu pomiędzy czasem strefowym/Lokalnym, a Greenwich/Uniwersalnym."
+}
+
+
+----------------------------------------------------------------------
+
+------- Pierwszeńśtwo operatorów ---------
+Określa kolejność, w jakiej są one stosowane podczas oceny wyrażenia.
+Można zastąpić pierwszeństwo operatora za pomocą nawiasów. Częściowa tabelka odpowidająca za pierwszeństwo operatorów znajduje się na stronie:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Unary
+
+------------------------------------------------------------------------
+Więcej informacji o operatorach znajdziemy na stronie:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
+
+oraz:
+https://kursjs.pl/kurs/super-podstawy/operatory.php
+
+Link do pełnej tabeli pierwszeństwa operatorów:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table
+========================================================================
+
+4. Funkcje Warunkowe.
+
+Funkcje warunkowe stosujemy, jeżeli chcemy wprowadzić różne rozwiązania zależne od parametrów do jakiegoś elementu.
+Jednym z przykładów funkcji warunkowej był trójskłądnikowy warunek, który zastosowaliśmy podczas omawaiania operatorów.
+Jednak funkcje warunkowe, różnią się od warunkowego operatora trójskłodnikowego tym, że warunków w funkcjach warunkowych możemy zamieścić nieskończoną ilość w miarę potrzeby.
+
+Przykładowy zapis funkcji warunkowych:
+
+a) Funkcja, która ma się wykonać tylko i wyłącznie wtedy, gdy warunek zostanie spełniony 
+
+if(<warunek>) {
+    Jeśli warunek jest spełniony, to ma się wykonać to co tutaj zakodujemy. 
+}
+Ta funkcja wykona czynność, którą jej zadaliśmy, jeśli spełniony zostanie warunek. Ze względu na to, że nie dodaliśmy żadnego innego warunku i nie zzkodowaliśmy tego co ma się stać jeśli warunek nie zostanie spełniony, to jeśli warunek nie zostanie spełniony, to funkcja ta się nie wykona.
+
+b) Funkcja, która ma się wykonać, jeśli warunek zostanie, lub nie zostanie spełniony.
+
+Funkcja warunkowa z odpowiedzią else:
+if(<warunek>) {
+    Jeśli warunek jest spełniony, to ma się wykonać to co tutaj zakodujemy.
+} else { // W przeciwnym wypadku:
+    Jeśli warunek nie jest spełniony to wykonać ma się to co zakodujemy tutaj.
+}
+c) Funkcja warunkowa wielowątkowa.
+
+if(<warunek>) {
+    Jeśli warunek jest spełniony, to ma się wykonać to co tutaj zakodujemy.
+} else if (<warunek 2>) { // W przeciwnym wypadku:
+(opcjonalnie)
+    Jeśli  ten warunek  jest spełniony to wykonać ma się to co zakodujemy tutaj.
+} else if(<warunek n>) {
+     Jeśli  ten warunek  jest spełniony to wykonać ma się to co zakodujemy tutaj.
+} (opcjonalnie)
+else {
+    Jeśli warunki nie są spełnione to wykonać ma się to co zakodujemy tutaj.
+}
+
+!!! UWAWGA !!!
+Opcje (opcjonalne) nie muszą być zawarte w funkcji warunkowej, jeśli nie ma takiej potrzeby.
+
+// Funkcja warunkowa if.
+// Najpierw zdefiniujmy przycisk, pod który podpiszemy funkcję warunkową
+var but26 = document.getElementById("but26");
+// Teraz możemy do przyciski przypisać funkcję:
+but26.onclick = function () {
+    // Najpierw deklarujemy elementy do ustawienia warunku.
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = parseFloat(document.getElementById("numB").value);
+    // teraz robimy podstawową funkcję warunkową:
+    if (a == b) {
+        wynik1.innerText = "IF: ";
+        output1.innerHTML = a + " jest równe " + b; //Pokazując obie zmienne a i b dodajemy drobny komentarz pokazujący o co kaman.
+        komentarz1.innerText = "Jak widzimy spełniony został warunek równości, który zadeklarowaliśmy w funkcji warunkowej.";
+    }
+    wynik2.innerText = "";
+    output2.innerHTML = "";
+    komentarz2.innerText = "Ze względu na to, że nie zadeklarowaliśmy żadnej wartości, co ma się stać jeśli warunek funkcji nie zostanie spełniony, to funkcja ta się nie wykomuje, jeśli warunek jest nie spełniony.";
+}
+
+// Funkcja warunkowa if, else.
+// Najpierw zdefiniujmy przycisk, pod który podpiszemy funkcję warunkową
+var but27 = document.getElementById("but27");
+// Teraz możemy do przyciski przypisać funkcję:
+but27.onclick = function () {
+    // Najpierw deklarujemy elementy do ustawienia warunku.
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = parseFloat(document.getElementById("numB").value);
+    // teraz robimy podstawową funkcję warunkową:
+    if (a == b) { // Jeśli warunek jest spełniony, to:
+        wynik1.innerText = "IF: ";
+        output1.innerHTML = a + " jest równe " + b; //Pokazując obie zmienne a i b dodajemy drobny komentarz pokazujący o co kaman.
+        output2.innerHTML = " Nie spelniony warunek.";
+        komentarz1.innerText = "Jak widzimy spełniony został warunek równości, który zadeklarowaliśmy w funkcji warunkowej, czyli że a jest równe b.";
+        komentarz2.innerText = "";
+    } else { // Jeśli warunek nie jest spełniony to:
+        wynik2.innerText = "Else: "; // W przeciwnym razie wykonaj to:
+        output2.innerHTML = a + " jest różne od " + b;
+        output1.innerHTML = "Nie spełniony warunek.";
+        komentarz1.innerText = "";
+        komentarz2.innerText = "Zadeklarowany warunek nie jest spełniony, czyli a jest większe od b, więc wykonuje się drugi człon funkcji, a mianowicie - w przeciwnym razie 'else'.\n Stosujemy ten sposób zapisu funkcji warunkowej, jeśli mamy tylko dwie opcje wyniku. ";
+    }
+}
+
+// Funkcja warunkowa if, else if.
+// Najpierw zdefiniujmy przycisk, pod który podpiszemy funkcję warunkową
+var but28 = document.getElementById("but28");
+// Teraz możemy do przyciski przypisać funkcję:
+but28.onclick = function () {
+    // Najpierw deklarujemy elementy do ustawienia warunku.
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = parseFloat(document.getElementById("numB").value);
+    // teraz robimy podstawową funkcję warunkową:
+    if (a != b) { // Jeśli warunek jest spełniony, to:
+        wynik1.innerText = "IF: ";
+        output1.innerHTML = a + " jest różne od " + b; //Pokazując obie zmienne a i b dodajemy drobny komentarz pokazujący o co kaman.
+        output2.innerHTML = "Nie spelniony warunek.";
+        komentarz1.innerText = "Jak widzimy spełniony został warunek różności, który zadeklarowaliśmy w funkcji warunkowej, czyli że a jest różne od b.";
+        komentarz2.innerText = "";
+    } else if (a == b) { // Jeśli warunek nie jest spełniony to:
+        wynik2.innerText = "Else: "; // W przeciwnym razie wykonaj to:
+        output2.innerHTML = a + " jest równe " + b;
+        output1.innerHTML = "Nie spelniony warunek.";
+        komentarz1.innerText = "";
+        komentarz2.innerText = "Zadeklarowany warunek nie jest spełniony, czyli a jest równe od b, więc wykonuje się drugi człon funkcji, a mianowicie - w przeciwnym razie 'else'.\n Stosujemy ten sposób zapisu funkcji warunkowej, jeśli mamy tylko dwie opcje wyniku. \n Jak zauważyliśmy przy zastowowaniu 'else if' musimy podać warunek którego ma nie spełniać w przeciwieństwie do zastosowania 'else', gdie nie musimy podawać żadnego warunku ponieważ jest to zaprzeczenie zadeklarowanego warunku. ";
+    }
+}
+
+// Funkcja warunkowa if, else if.
+// Najpierw zdefiniujmy przycisk, pod który podpiszemy funkcję warunkową
+var but29 = document.getElementById("but29");
+// Teraz możemy do przyciski przypisać funkcję:
+but29.onclick = function () {
+    // Najpierw deklarujemy elementy do ustawienia warunku.
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = parseFloat(document.getElementById("numB").value);
+    // teraz robimy podstawową funkcję warunkową:
+    if (a < b) { // Jeśli warunek jest spełniony, to:
+        wynik1.innerText = "IF: ";
+        wynik2.innerText = "Else If: ";
+        output1.innerHTML = a + " jest mniejsze od " + b; //Pokazując obie zmienne a i b dodajemy drobny komentarz pokazujący o co kaman.
+        output2.innerHTML = "Nie spelniony warunek2.";
+        komentarz1.innerText = "Jak widzimy spełniony został warunek, który zadeklarowaliśmy w funkcji warunkowej, czyli że a jest mniejsze od b.";
+        komentarz2.innerText = "";
+    } else if (a > b) { // Jeśli warunek nie jest spełniony to:
+        wynik2.innerText = "Else if: "; // W przeciwnym razie wykonaj to:
+        wynik1.innerText = "IF: "; // W przeciwnym razie wykonaj to:
+        output2.innerHTML = a + " jest większe od " + b;
+        output1.innerHTML = "Nie spelniony warunek .";
+        komentarz1.innerText = "";
+        komentarz2.innerText = "Zadeklarowany warunek 1 nie jest spełniony, czyli a jest większe od b, więc wykonuje się drugi człon funkcji, a mianowicie - w przeciwnym razie 'else if (<warunek>)'.\n Stosujemy ten sposób zapisu funkcji warunkowej, jeśli mamy tylko dwie opcje wyniku. \n Jak zauważyliśmy przy zastowowaniu 'else if' musimy podać warunek którego ma nie spełniać w przeciwieństwie do zastosowania 'else', gdie nie musimy podawać żadnego warunku ponieważ jest to zaprzeczenie zadeklarowanego warunku. ";
+    } else {
+        wynik1.innerText = "Else: ";
+        wynik2.innerText = "Wynik 2: ";
+        output1.innerHTML = a + " jest równe " + b; //Pokazując obie zmienne a i b dodajemy drobny komentarz pokazujący o co kaman.
+        output2.innerHTML = "Nie spelnione pozostałe warunki";
+        komentarz1.innerText = "Jak widzimy nie spełnione zostały pozostałe warunki, które zadeklarowaliśmy w funkcji warunkowej, czyli że a jest mniejsze/większe od b.";
+        komentarz2.innerText = "";
+    }
+}
+
+// Funkcja warunkowa if, else if.
+// Najpierw zdefiniujmy przycisk, pod który podpiszemy funkcję warunkową
+var but30 = document.getElementById("but30");
+// Teraz możemy do przyciski przypisać funkcję:
+but30.onclick = function () {
+    // Najpierw deklarujemy elementy do ustawienia warunku.
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = parseFloat(document.getElementById("numB").value);
+    // teraz robimy podstawową funkcję warunkową:
+    if (a === b) { // Jeśli warunek jest spełniony, to:
+        wynik1.innerText = "IF: ";
+        output1.innerHTML = a + " jest równe wartością i typem" + b; //Pokazując obie zmienne a i b dodajemy drobny komentarz pokazujący o co kaman.
+        output2.innerHTML = "Nie spelniony warunek.";
+        komentarz1.innerText = "Przypisując wartość string i num (int/float) możemy jednocześnie sprawsdzić porównanie wartości i typu danej. \n Dla tego przykładu zmieniliśmy typ jednej z danych na string, co nawet mimo takiej samej wartości nie będzie się zgadzał typ więc ten warunek nigcy nie będzie spełniony w związku z czym ta część funkcji nie będzie wykonywana.";
+        komentarz2.innerText = "";
+    } else if (a !== b) { // Jeśli warunek nie jest spełniony to:
+        wynik2.innerText = "Else if: "; // W przeciwnym razie wykonaj to:
+        output2.innerHTML = a + " A jest różne wartością lub typem od B " + b;
+        output1.innerHTML = "Nie spelniony warunek.";
+        komentarz1.innerText = "I do rowiązania tego problemu wystarczą tylk dwa warunki.";
+        komentarz2.innerText = "Zadeklarowany warunek 1 nie jest spełniony, więc wykonuje się drugi warunek funkcji, a mianowicie - w przeciwnym razie 'else'.\n Stosujemy ten sposób zapisu funkcji warunkowej, jeśli mamy tylko dwie opcje wyniku. \n Jak zauważyliśmy przy zastowowaniu 'else if' musimy podać warunek którego ma nie spełniać w przeciwieństwie do zastosowania 'else', gdie nie musimy podawać żadnego warunku ponieważ jest to zaprzeczenie zadeklarowanego warunku. ";
+    }
+}
+
+// Funkcja warunkowa if, else + operator.
+// Najpierw zdefiniujmy przycisk, pod który podpiszemy funkcję warunkową
+var but31 = document.getElementById("but31");
+// Teraz możemy do przyciski przypisać funkcję:
+but31.onclick = function () {
+    // Najpierw deklarujemy elementy do ustawienia warunku.
+    let a = parseFloat(document.getElementById("numA").value);
+    let b = parseFloat(document.getElementById("numB").value);
+    // teraz robimy podstawową funkcję warunkową:
+    if (a < b && a < 10) { // Jeśli warunek jest spełniony, to:
+        wynik1.innerText = "IF: ";
+        output1.innerHTML = a + "A jest równe wartością i typem oraz mniejsze od B" + b; //Pokazując obie zmienne a i b dodajemy drobny komentarz pokazujący o co kaman.
+        output2.innerHTML = "Nie spelniony warunek.";
+        komentarz1.innerText = "Podaliśmy tutaj 2 warunki, które muszą być spełnione, aby ten kawałek kodu się wykonał";
+        komentarz2.innerText = "";
+    } else if (a > b || a < 5) { // Jeśli warunek nie jest spełniony to:
+        wynik2.innerText = "Else if: "; // W przeciwnym razie wykonaj to:
+        output2.innerHTML = "Gdy mamy spełnione warunki a > b || a < 5 ";
+        output1.innerHTML = "Nie spelniony warunek.";
+        komentarz2.innerText = "Zadeklarowany warunek 1 nie jest spełniony, więc wykonuje się ten kod. ";
+    } else {
+        wynik2.innerText = "Else: "; // W przeciwnym razie wykonaj to:
+        output2.innerHTML = "Gdy inne warunki są nie spełnione. ";
+        output1.innerHTML = "Nie spelnione waruneki oba.";
+        komentarz2.innerText = "Gdy nie spełnione są oba powyższe warunki, to wyświetla się ten komentarz.";
+
+    }
+}
+----------------------------------------------------------------------
+WARUNKI PRZEŁĄCZNE - SWITCH CONDITIONS.
+
+Są to instrukcje, które służą do wykonywania różnych akcji w oparciu o różne warunki.
+Podstawowy wygląd takiej instrukcji:
+
+switch(expression) {
+  case x:
+    // nasz kod
+    break;
+  case y:
+    // nasz kod
+    break;
+  default:  // Zdefiniowane ogólne zachowanie
+    // nasz kod
+}
+
+Przykład:
+
+
+/// Warunki przełączne - Switch Conitions:
+// Deklaracja naszych 
+var but32 = document.getElementById("but32");
+// Aby dalej zająć się metodą "SWITCH", musimy stworzyć najpierw pusty kontenerek
+var kontenerek = ""; // Pusty kontener do którego możemy potem dopisywać wartości, a następnie dekarujemy sobie przycisk.
+but32.onclick = function () {
+    let a = document.getElementById("numA").value; // 
+    let b = parseFloat(document.getElementById("numB").style.display = "none"); // wyłączamy możliwość wpisywania do drugiego inputa.
+    wynik2.innerText = "";
+    output2.innerText = "";
+    switch (a) { // Rozpoczynamy deklarację naszej instrujkcji przełącznej.
+        case "0": // deklarujemy pierwszy przypadek.
+            kontenerek = "ZERO"; //deklarujemy awrtość wpisywaną do kontenerka
+            break  // Aby wykonywało się to co jest w danym cas'ie, to musimy użyć przerywnika, poniważ w innym wypadku polecenia lecą do kolejnych case'ów.
+        case "1":
+            kontenerek = "TO DRUGI WPIS!";
+            break
+        case "2":
+            kontenerek = "KONTYNUUJEMY WPISYWANIE";
+            break
+        case "5":
+            kontenerek = "JAKAŚ ZMIANA, ABYŚMY WIEDZIELI ŻE DZIAŁA.";
+            break
+        case "7":
+            kontenerek = "I OSTATNI WPIS POD NUMEREM 7!";
+            break
+        default: // Używamy jeśli nie mamy już rzeczy do wpisywania, działa jak "else" w funkcji warunkowej. Czyli skoro nie wybierzemy żadnego wpisu, to wyświetli się to co zadeklarujemy.
+            kontenerek = "To właśnie się wyświetli, jeśli nic nie wpiszemy do inputa, lub wpiszemy wartość, która nie jest przypisana w case'ach.";
+    }
+    output1.innerText = kontenerek; // Po wykonaniu tej funkcji jako output będziemy mieli napis ZERO, jeśli taki mamy zadeklarowany pod 0-rem.
+    komentarz1.innerText = "Musimy zapamiętać, że aby używać stringów, musimy używać  apostrofów 'tekst ', lub cudzysłowia \"tekst\" , a jeśli chcemy używać numerów czy też float czy int, to nie używamy stringowych tagów, tylko po prostu wpisujemy cyfrę (2,3,3.456, itd).";
+}
+------------------------------------------------------------------------------
+
+5. Pętle w JavaScript.
+W JavaScrip'cie mamy kilka rodzajów pętli, który mają wspólny mianownik, a mianowicie bardzo przyspieszają pracę z większą ilością elementów, lub też powtarzaniem sytuacji w kodzie, poprzez nie powtarzanie samego kodu.
+
+a) Pętla While - dopóki dany warunek jet prawdziwy, wykonuj tę pętlę
+
+b) Pętla Do while - wykonuj dopóki warunek nie jest spełniony
+
+c) Pętla For - dla danego warunku wykonuj tą pętlę.
+
+
+
+==============================================================================================

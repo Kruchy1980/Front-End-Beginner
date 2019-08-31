@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Operatory</title>
+    <link rel="stylesheet" href="cssstyle/operatory.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <!-- Możemy umieścić tag skryptowy na górze strony w jej head'zie, ale nie jest to dobre rozwiązanie, ponieważ skrypty przywoływane z pliku .jd mogą potrzebować do działania informacji, które znajdują się w dalszych częściach strony html i nie zostaną wykonane poprawinie. -->
+    <!-- <script src="javas/intro.js"></script> -->
+</head>
+
+<body>
+    <div id="obrazek">
+        <h1>Kilka wiadomości o Skryptach JS- Operatory ;)</h1>
+    </div>
+    <div id="podtytuł">
+        <p>Reszta informacji na temat zasad działąnia z JavaScript znajduje się w opisach na GitHub pod adresem: <br>
+            <a href="https://github.com/Kruchy1980/Front-End-Beginner"
+                target="blank">https://github.com/Kruchy1980/Front-End-Beginner </a>
+            <br>
+            W katalogu Opisy - plik "6._Skrypty_JS.doc" <p>
+    </div>
+    <section id="sekcja">
+        <ol> Zasady działania z JavaScript'em:
+            <li><a href="1._Intro.html" target="blank"> Praca ze zmiennymi</a></li>
+            <li><a href="#"> Operatory </a></li>
+            <li><a href="3._Metody.html" target="blank"> Metody </a></li>
+            <li><a href="4._Funkcje_warunkowe.html" target="blank">Funkcje Warunkowe</a></li>
+            <li><a href="5._Pętle.html" target="blank">Pętle</a></li>
+        </ol>
+    </section> <br>
+
+    <aside id="strona">
+        <div id="główny">
+            <h2>Sprawdźmy kilka operatorów: </h2>
+            <!-- Użyliśmy tutaj tagu '&nbsp;' określającego spację pomiędzy elementami, aby bez stosowania styli ustawić odpowiednio wartości naszego headera h3.   -->
+            <h4>Cyfry: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;Stringi:</h4>
+            <label for="number">A:</label>
+            <input type="number" name="numA" id="numA" placeholder="Wpisz pierwszą liczbę!">
+            <label for="text">TextA:</label>
+            <input type="text" name="textA" id="textA" placeholder="Wpisz swój pierwszy tekst!"> <br>
+            <label for="number">B:</label>
+            <input type="number" name="numB" id="numB" placeholder="Wpisz drugą liczbę!">
+            <label for="text">TextB:</label>
+            <input type="text" name="textB" id="textB" placeholder="Wpisz swój drugi tekst!"> <br>
+        </div>
+        <div>
+            <h2>Wykonaj działanie ===></h2>
+        </div> <br>
+        <div id="wyniki">
+            <div>
+                <h4 id="liczba"> Wynik z liczb:</h4>
+            </div>
+            <div id="output"><span> wynik </span></div>
+            <div>
+                <h4 id="string"> Wynik ze stringów:</h4>
+            </div>
+            <div id="output1"><span> wynik </span></div>
+        </div> <br>
+        <div id="komentarze">
+            <p> Komentarz do liczb:</p> <br>
+            <div id="komentarz"></div> <br>
+            <p>Komentarz do stringów:</p>
+            <div id="komentarz1"></div>
+        </div> <br>
+        <div>
+            <ul id="lista">
+                <h2>Kolory:</h2>
+                <li>Pierwszy - index 0</li>
+                <li>Drugi - index 1</li>
+                <li>Trzeci - index 2</li>
+                <li>Czwarty - index 3</li>
+                <li>Piąty - index 4</li>
+                <li>Szósty - index 5</li>
+            </ul>
+        </div>
+    </aside>
+
+    <div id="prawo">
+        <div id="guziki">
+            <h3>Cyfry i Stringi:</h3>
+            <div id="but1">
+                <p>Dodawanie: <br> a + b</p>
+            </div>
+            <div id="but2">
+                <p>Metoda "parseInt"<br>a + b</p>
+            </div>
+            <div id="but3">
+                <p>Tylko cyfry<br>a++, b--</p>
+            </div> <br>
+            <h3>Kolory:</h3>
+            <div id="but4">
+                <p>Nadanie kolorów<br>"pętla for"</p>
+            </div>
+            <div id="but5">
+                <p>Wybór kolorów<br>"for + if"</p>
+            </div>
+            <div id="but6">
+                <p>Zmiana kolorów<br>wszystkich elementów</p>
+            </div>
+            <h3>Operatory trójskładnikowe - cyfry:</h3>
+            <div id="but7">
+                <p>Porównanie<br>"A > B"</p>
+            </div>
+            <h3>Operatory logiczne</h3>
+            <div id="but8">
+                <p>"A && B"<br>"A || B"</p>
+            </div>
+            <div id="but9">
+                <p>"True && False"<br>"False || True"</p>
+            </div>
+            <div id="but10">
+                <p>"False && False"<br>"False || False"</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+<!-- W związku z czym dużo lepiej jest umieszczać tag skryptowy dla JavaScript na samym dole strony, co doprowadzi do tego, że jeśli strona się nie załaduje z różnych powodów to nie wykonają się polecenia ze skryptó, ale jeśli
+Storna się załduje to wszystkie (oczywiście bezbłędnie napisane kody JS) wykonają się. -->
+<script src="javas/operatory.js"></script>
+
+</html>

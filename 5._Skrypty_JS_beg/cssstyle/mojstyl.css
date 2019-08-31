@@ -1,0 +1,82 @@
+h1 {
+    background-color: black;
+}
+
+#obrazek {
+    text-align: center;
+    background:  url("https://cdn.pixabay.com/photo/2018/02/16/11/05/trace-3157431_960_720.jpg")  no-repeat center;
+    background-size: cover;
+    height: 720px;
+    color: rgb(245, 237, 230);
+}
+
+ol {
+    font-weight: bold;
+    background-color: rgb(204, 196, 196);
+    display: inline-block;
+}
+
+li {
+    font-weight: 500;
+    background-color: rgb(248, 241, 231);
+}
+
+p {
+    text-align: center;
+}
+
+h3 {
+    display: inline-block;
+}
+
+span {
+    text-decoration: underline;
+    background-color: rgb(241, 236, 236);
+}
+
+#main div {
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    background-color: yellowgreen;
+}
+
+#main p {
+    padding: 5px;
+}
+#but1 p {
+    margin: 31px 0 0 0;
+}
+#but2 p {
+    margin: 2px 0 0 0;
+}
+#but3 p {
+    margin: 16px 0 0 0;
+}
+#but4 p {
+    margin: 0;
+}
+#but5 p {
+    margin: 2px 0 0 0;
+    font-size: 0.9em;
+}
+#but6 p {
+    margin: 0;
+    font-size: 0.85em;
+}
+#but7 p {
+    margin: -2px 0 0 0;
+    font-size: 0.85em;
+}
+#but8 p {
+    margin: -1px 0 0 0;
+}
+#but9 p {
+    margin: 19px 0 0 0;
+}
+#podtytuł {
+    background-color: rgb(211, 189, 189);
+}
