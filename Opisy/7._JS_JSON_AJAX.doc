@@ -1,0 +1,37 @@
+##########################################################################
+################## Kurs Front End JavaScript, CSS i HTML #################
+##########################################################################
+
+VII. JS, JSON, AJAX podstawy.
+
+1. JSON - Java Script Object Noatation- podstawy.
+JSON jest lekkkim formatem wymiany danych komputerowych. 
+Jest to format tekstowy bazujący na podzbiorze języka JavaScript.
+Jest to również format nizależny od od konkretnego języka lecz jest obsługiwany przez wiele języków programowania.
+Jesy to jeden z nieformalnych sposobbów przekazywania danych do aplikacji opartych o AJAX.
+Dane zapisane w formacie JSON są pobierane z serwera jako tekst przy wykorzystaniu obiektu 'XML HttpRequest' języka JavaScript, a następnie przekształcane w obiekt.
+W plikach Json tekst domyślnie kodowany jest za pomocą systemu kodowania Unicode wykorzystującego od 1 - 4 bajtów do zakodowania pojedynczego znaku - 'UTF-8' (Unicode Transformation Format).
+UTF-8 jest w pełni kompatybilny z systemem kodowania znaków ASCII  
+-------
+AJAX (ang. Asynchronous JavaScript and XML, asynchroniczny JavaScript i XML) – technika tworzenia aplikacji internetowych,
+W której interakcja użytkownika z serwerem odbywa się bez przeładowywania całego dokumentu, w sposób asynchroniczny.
+Ma to umożliwiać bardziej dynamiczną interakcję z użytkownikiem niż w tradycyjnym modelu,
+W którym każde żądanie nowych danych wiąże się z przesłaniem całej strony HTML.
+--------------------------------------------------------------------------
+
+JSON pozwala nam pracować w prosty sposób z danymi. Musimy pamiętać, że pracując z Jsonem nie musimy abyt mocno przejmować się spacjami, ale używając kodu w pliku .js,
+Musimy pamiętać o tzw whitespaces - czyli spacji po prostu. Aby tego uniknąć możemy po prostu użyć narzędzia zwanego JSON Minimizer'em,
+A Możemy znaleźć je w internecie. 
+Linki do przykładowych stron znajdują się w stópce tej części opisu. 
+
+--------------------------------------------------------------------------
+Dobre narzędzie do generowania kodu Json'owskiego:
+JSON Generator:
+https://next.json-generator.com/4JHIUkLrv
+
+Przykładowe narzędzia pozwalające minimalizować kod Json'owy:
+1. https://codebeautify.org/jsonminifier 
+2. https://jsonformatter.org/json-minify
+3. https://onlinejsontools.com/minify-json
+
+--------------------------------------------------------------------------

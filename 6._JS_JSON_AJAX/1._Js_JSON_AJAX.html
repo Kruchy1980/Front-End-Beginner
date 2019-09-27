@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS-JSON-AJAX</title>
+    <link rel="stylesheet" href="cssstyle/main.css">
+</head>
+
+<body>
+    <header id="nagłówek">
+        <h1>Kilka wiadomości na temat - JSON'a</h1>
+    </header>
+    <div id="podtytuł">
+        <p>Reszta informacji na temat zasad działania z JavaScript znajduje się w opisach na GitHub pod adresem: <br>
+            <a href="https://github.com/Kruchy1980/Front-End-Beginner"
+                target="blank">https://github.com/Kruchy1980/Front-End-Beginner </a>
+            <br>
+            W katalogu Opisy - plik "7._JS_JSON_AJAX.doc" <p>
+    </div> <br>
+    <ul id="spis_treści"> Spis Treści:
+        <li><a href="#">JSON Podstawy.</a></li>
+    </ul>
+    <aside id="lewa">
+        <div>
+            <h2 id="kod"> Kod Json'owski:</h2>
+            <h4 id="json"> { <br>
+                "_id": "5d6cf7352803f8ec2c576e5b", <br>
+                "index": 0, <br>
+                "guid": "8727ac10-9163-48eb-baf0-5f8058e618eb",
+                "isActive": false, <br>
+                "balance": "$3,341.19",<br>
+                "picture": "http://placehold.it/32x32",<br>
+                "age": 20, <br>
+                "eyeColor": "green", <br>
+                "name": { <br>
+                "first": "Joanne", <br>
+                "last": "Welch" <br>
+                } <br>
+                }</h4>
+        </div>
+    </aside>
+    <article id="prawa">
+        <div>
+            <h2 id="wynik"> Wynik kodu po uproszczeniu:</h2>
+            <h4 id="res">
+                '{"_id":"5d6cf7352803f8ec2c576e5b","index":0,<br>
+                "guid":"8727ac10-9163-48eb-baf0-5f8058e618eb","isActive":false,"balance":"$3,341.19","picture":"http://placehold.it/32x32","age":20,"eyeColor":"green","name":{"first":"Joanne","last":"Welch"}}';
+            </h4>
+        </div>
+    </article>
+</body>
+<script src="javas/intro.js"></script>
+
+</html>
