@@ -89,4 +89,37 @@ DOM jest wgrywany razem ze stroną, Dzięki językowi JavaoSoript i zastosowaniu
 3. Można podejmować interakcje z wydarzeniami na stronie.
 4. Można tworzyć nowe wydarzenia na stronie.
 
+-------------------------------------------------------------
+JQuery - poprzez użycie funkcji '$' posiada możliwość do używa funkcji '$' zmiany styli CSS na dwa sposoby:
+1. Poprzez funkcję '$', która to jest metodą wbudowaną jQuery, często nazywaną jako komenda są powiązane jako wywoływacze obiektów jQuery.
+2. Poprzez funkcję poprzedzoną prefixem "$-", które to są funkcjami narzędziowymi tej biblioteki, i dzie diałają bezpośrednio z obiektami jQuery.
+!!! Info dodatkowe !!!
+Zapisy selektorów jQuery są takie same jak selektory języka CSS.
 
+--- Kawałek kodu, który po zapisie kodu z użyciem jQuery powoduje wykonanie się go dopiero po załadowaniu strony. ---
+
+Metoda, która jest zwykle używana, to:
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        //jQuery code
+    });
+    </script>
+
+Drugi sposób na zapisanie tego samego kawałka kodu w skróconej wersji (jednak rzadziej używany), to:
+
+<script type="text/javascript">
+    $(function(){
+        //jQuery code
+    });
+    </script>
+Czyli po prostu bez używania document.ready.
+--------------------------------------------------------------
+  <!-- Jeśli chcemy używać jQuery od google'a lub microsoftm to wklejamy w head'zie strony jeden z poniższych link'ów -->
+  Google CDN:
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  Microsoft CDN:
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+Jak już podłączymy nasz skrypt w nagłówku strony, lub jego ciele - rekomendowane, to możemyprzystępować do kodowania.
