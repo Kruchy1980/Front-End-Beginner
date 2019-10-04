@@ -24,6 +24,7 @@ h1 {
 /* Spis Treści */
 #spis_treści {
     /* display: inline-block; */
+    margin: 10px auto;
     background-color: rgb(95, 95, 95);
     color: white;
     width: 45%;
@@ -69,4 +70,10 @@ h1 {
 #res {
     width: 90%;
     height: 100px;
+}
+/* Dodatkowa zawartość strony */
+aside {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
 }
