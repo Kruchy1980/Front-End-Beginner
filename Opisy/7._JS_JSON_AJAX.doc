@@ -128,9 +128,11 @@ b.send();
 
 3. Jak wykorzystać AJAX do pobierania danych z plików.
 
-Aby w ogóle zabrać się za to, należy odpalić nasz kod HTML na serwerze, może być lokalny.
+Aby w ogóle zabrać się za to, należy odpalić nasz kod HTML na serwerze, może być lokalny wtyczka liveServer w VSCode.
 Sposób odpalenia serwera lokalnego jest zależny od systemu operacyjnego i/lub edytora tekstu którym się posługujemy.
-Dokładniejszy opis jak to zrobić będzie uaktualniany powoli przez kolejne 3 miesiące niestety.
+Po odpaleniu tedo serwera poniższy kod powiniein zadziałać beabłędnie i powinno wyświetlić się w odpowiednim miejscu informcja z pliku u nas data.txt., ale też możemy stworzyć plik php. niestety nie zadziała w tym wypadku ponieważ zbyt długie nazwy plików nie sprzyjają dobrej interpretacji podanych w plikach danych.
+
+Temat przedstawiony powyżej jest jeszcze do przepracowania i uaktualnienia za co bardzo przepraszam w obecnym momencie i pewnie kiedyś go poprawię.
 
 
 
