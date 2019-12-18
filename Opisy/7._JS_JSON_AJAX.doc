@@ -82,6 +82,50 @@ document.getElementById("output2").innerHTML = mojSejf;
 
 ============================================================
 
+2. Łączenie plików Json'owskich z HTML - pliki z serwera a nie towrzone lokalnie.
 
+
+// If we prepare jason file for the website we cn than connect this using AJAX./ Jeżeli przygotujemy kod jsonowski w następujący sposób:
+
+// Generujemy kod używając np:
+//https://onlinerandomtools.com/generate-random-json
+
+// Następnie kompresujemy go w np:
+//https://codebeautify.org/jsonminifier
+
+// Kolejnym krokiem jest sprawdzenie czy kod jest poprawny, a pomoże nam w tym:
+// https://jsonlint.com/
+
+// I ostatnim krokiem jest wrzucenie kodu na przeglądarkę za pomocą:
+// http://myjson.com/
+// Które generuje nam adres emaliow'y, który po otworzeniu wyświetla nam kod Json'owski w przeglądarce.
+
+// Teraz czas na użycie AJAX, który umożliwia nam dostęp do stron internetowych, z interesuje nas strona z kodem jsonowskim
+// =========================================================
+// możemy utworzyć nowy plik  z rozszerzeniem .json
+// Tworzymy zmienną
+var a = new XMLHttpRequest(); // Tworzymy zmienną pod którą podczepiamy zapytanie XML Http
+a.open("GET", "https://api.myjson.com/bins/1agos9", true); // Ustawiamy połączenie  - co zmieni nam ready state z 0 na 1.Jak zauważyliśmy w tej metodzie użyliśmy naszeto pliku z internetu, a nie utworzonego w osobnym pliku, ponieważ dziwnym trafem nie chciało mi odczytać pliku data.json więc prowadzi to do wniosku że nie jest to najlepszy sposób pozyskania danych więc podaliśmy adres url do naszego jsonow'skiego pliku.
+a.send(); // Teraz wysyłamy nasze dane, co zmienia nam ready Status na 4 i powinien nasz json pokazać się w response - do naprawieniam ponieważ coś po drodze pogubiłem.
+console.log(a);// Mozemy wydrukować sobie wynik zmiennej w konsoli dla sprawdzenia
+//-------------------------------------------------------
+//Otrzymywanie Jsona/ pobiereanie/ rządanie za pomocą AJAX - z danych zewnętrznych - czyli naszego pliku przerzuconego do przeglądarki.
+var b = new XMLHttpRequest();
+b.open("GET", "https://api.myjson.com/bins/hf6o1", true);
+b.onreadystatechange = function() { // Sprawdzamy, czy stan się zmieni
+    if(this.readyState == 4) { // Jeśli readyState będzie równy 4 czyli plik będzie pobrany, to wtedy,
+        var obj = JSON.parse(this.responseText); // Jeśli chcemy wyświetlić format json'owski
+        for(i=0;i<obj.length;i++){ // Możemy jak poprzednko stworzyć też pętle dla większej ilości elementów
+            mojSejf += obj[i].daughter.book + "<br>" + obj[i].mood + "<br>"; // I wydruk danych pobranych z jasona
+        }
+        document.getElementById("output3").innerHTML = mojSejf;
+        console.log(obj); // Wyświetlimy go w konsoli.
+    }
+}
+b.send();
+
+==============================================================
+
+3. Jak wykorzystać AJAX do pobierania danych z plików.
 
 
