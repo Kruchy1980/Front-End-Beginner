@@ -5,11 +5,11 @@ function myFun() {
     console.log("HELLO");
     var d = new XMLHttpRequest();
     d.onreadystatechange = function () {
-        if(d.readyState == 4 && d.status == 200) {
+        if (d.readyState == 4 && d.status == 200) {
             console.log(this.responseText);
         }
     }
-    d.open("GET", "/home/jakub/Documents/Front End JS/Kurs Laurence'a Svekis/Repo/Front-End-Beginner/6._JS_JSON_AJAX/javas/data.txt", true);
+    d.open("GET", "data.txt", true);
     d.send();
 }
 

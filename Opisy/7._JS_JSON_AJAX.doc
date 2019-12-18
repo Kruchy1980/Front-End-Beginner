@@ -1,4 +1,4 @@
-2. JavaScript AJAX Connection,##########################################################################
+##########################################################################
 ################## Kurs Front End JavaScript, CSS i HTML #################
 ##########################################################################
 
@@ -127,5 +127,12 @@ b.send();
 ==============================================================
 
 3. Jak wykorzystać AJAX do pobierania danych z plików.
+
+Aby w ogóle zabrać się za to, należy odpalić nasz kod HTML na serwerze, może być lokalny.
+Sposób odpalenia serwera lokalnego jest zależny od systemu operacyjnego i/lub edytora tekstu którym się posługujemy.
+Dokładniejszy opis jak to zrobić będzie uaktualniany powoli przez kolejne 3 miesiące niestety.
+
+
+
 
 
