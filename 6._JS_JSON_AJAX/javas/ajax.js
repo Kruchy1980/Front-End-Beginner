@@ -3,10 +3,10 @@ document.getElementById("but1").addEventListener("click", myFun);
 
 function myFun() {
     console.log("HELLO");
-    var d = new XMLHttpRequest();
-    d.onreadystatechange = function () {
-        if (d.readyState == 4 && d.status == 200) {
-            console.log(this.responseText);
+    let desc = new XMLHttpRequest();
+    desc.onreadystatechange = function () {
+        if (desc.readyState == 4 && desc.status == 200) {
+            document.getElementById('output4').innerHTML = this.responseText;
         }
     }
     d.open("GET", "data.txt", true);
