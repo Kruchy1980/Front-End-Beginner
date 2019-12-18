@@ -1,0 +1,79 @@
+/* Tytuł na stronie */
+h1 {
+    text-align: center;
+    color: wheat;
+    border: 2px dotted black;
+    background-color: rgb(63, 63, 63);
+    font-size: 16xp;
+}
+
+/* Nagłówek */
+#nagłówek {
+    background: url("https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80") no-repeat center;
+    background-size: cover;
+    height: 500px;
+}
+
+/* Podtytuł */
+#podtytuł {
+    background-color: rgb(63, 63, 63);
+    color: white;
+    text-align: center;
+}
+
+/* Spis Treści */
+#spis_treści {
+    /* display: inline-block; */
+    margin: 10px auto;
+    background-color: rgb(95, 95, 95);
+    color: white;
+    width: 45%;
+}
+/* lista */
+#spis_treści li {
+    background-color: azure;
+}
+
+/* Lewa strona treści */
+#lewa {
+    float: left;
+    width: 40%;
+    border-right: 1px solid black;
+}
+
+/* Prawa strona treści */
+#prawa {
+    float: right;
+    width: 55%;
+}
+
+/*  Strona lewa Textarea Kod Json'owski */
+#kod {
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* Sama textarea */
+#json {
+    text-align: left;
+    border: 1px dashed black;
+    background-color: rgb(187, 186, 186);
+}
+
+/* Strona prawa  */
+#wynik {
+    text-align: center;
+    text-decoration: underline;
+}
+
+/* rezultat kodu */
+#res {
+    width: 90%;
+    height: 100px;
+}
+/* Dodatkowa zawartość strony */
+aside {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}

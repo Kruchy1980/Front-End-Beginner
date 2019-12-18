@@ -1,0 +1,125 @@
+##########################################################################
+################## Kurs Front End JavaScript, CSS i HTML #################
+##########################################################################
+
+VIII. Podstawy JQuery.
+Jak używać biblioteki jQuery.
+JQuery jest jedną z najbardziej popularnych bibliotek JavaScript.
+Główne zalety jQuery:
+1. Zamiana zwykłego kodu JavaScript w metody, które potem można bez problemu i łatwor przywołać.
+2. Ułatwia nawigację po dokumencie.
+3. Ułatwia selekcję elementów strony.
+4. Umożliwia tworzenie animacji.
+5. Zajmuje się również Eventami.
+6. Umożliwia również korzystanie z AJAX'a.
+7. Umożliwia również tworzenie dynamicznych interakcji ze stronami.
+
+Poza tym plusami jQuery są:
+1. Mniejsza ilość kodu, który umożliwia zastosowaani jQuery, przyspiesza działanie stron.
+2. Przyspiesza również działanie interakcji ze strona.
+3. Selektory są takie same jak w CSS.
+4. Łatwo jest nauczyć się podstaw tej biblioteki.
+5. Prościej dodajemy funkcjonowanie JavaScript do strony.
+
+Jak dodać jQuery do kodu HTML:
+Najlepiej zastosować dodanie z serwera, a robimy to wchodząc na stronę:
+https://code.jquery.com/
+A następnie w nagłówku naszej strony dodać wyświetlający się kawałek kodu po wybraniu jQuery'ego.
+Tutaj użyję jQuwey 3.4.1 uncompressed.
+Po kliknięciu na ten link wyświetli się okno z kawałkiem kodu, który należy dodać w nagłówku naszej strony - w kodzie HTML - lub też na jej dole.
+
+----------- KOD---------
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery</title>
+    <link rel="stylesheet" href="../css/jq-one.css">
+    <!-- Tutaj wklejamy kod, który połączy nam jQuery z naszą stroną -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+</head>
+
+===============================================================================
+Będziemy również używali Framework Bootstrap  w werskji 3.3.7 - ponieważ jest tam trochę więcej darmowych glyphiconów, czyli drobnych grafik, które mogą naszą stronę urozmaicić.
+Połączenie z bootstrap'u z kodem HTML odnywać będzie się również za pomocą CDN - czyli za pomocą wklejenia skryptu do pobrania przez stronę z serwera.
+Znajduje się to w podtytule Bootstrap CDN na stronie:
+https://getbootstrap.com/docs/3.3/getting-started/
+
+Zwróć jednocześnie uwagę, że znajdują się tam 3 linki odpowiadające za:
+1. Podłączenie bootstrapa z minimalną wersją CSS2.
+2. Opcjonalne połączenie bootstrapa a pełną wershą CSS.
+3. Podłączenie bootstrap'a z językiem JavaScript.
+
+Dodatkowo na stronie
+https://getbootstrap.com/
+Znajdują się w podtytule BootstrapCDN linki, które łączą bootstrap'a z językiem CSS, Proper.js i biblioteką jQuery.
+Które to umieszczamy na dole strony, podobnie jak połączenie z plikiem .js
+
+-------------- KOD ----------------------
+    <!--  Tutaj możemy umieścić linki do dodatków do framewotku bootstrap. -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- I link do naszego pliku .js -->
+<script src="../javas/jq-one.js"></script>
+
+</body>
+
+---------------------------------------------
+Dodatkowe informacje, pomagające łączyć kolejne biblioteki do kodu HTML znajdują się na stronie:
+https://developers.google.com/speed/libraries/#libraries
+
+Więcej informacji na temat jQuery możemy znaleźć na stronie:
+https://en.wikipedia.org/wiki/JQuery
+
+=============================================================
+
+DOM - Document Object Model, używanie za pomocą jQuery.
+
+Więcej na ten temat dowiemy się ze strony:
+https://en.wikipedia.org/wiki/Document_Object_Model
+-------------------------------------------------------------
+DOM jest wgrywany razem ze stroną, Dzięki językowi JavaoSoript i zastosowaniu biblioteki Jquery można:
+1. Dodawać, zmieniać, usuwać wszystkie elementy kodu HTML oraz atrybuty stron www.
+2. Można zmieniać wszystkie style CSS na stronie.
+3. Można podejmować interakcje z wydarzeniami na stronie.
+4. Można tworzyć nowe wydarzenia na stronie.
+
+-------------------------------------------------------------
+JQuery - poprzez użycie funkcji '$' posiada możliwość do używa funkcji '$' zmiany styli CSS na dwa sposoby:
+1. Poprzez funkcję '$', która to jest metodą wbudowaną jQuery, często nazywaną jako komenda są powiązane jako wywoływacze obiektów jQuery.
+2. Poprzez funkcję poprzedzoną prefixem "$-", które to są funkcjami narzędziowymi tej biblioteki, i dzie diałają bezpośrednio z obiektami jQuery.
+!!! Info dodatkowe !!!
+Zapisy selektorów jQuery są takie same jak selektory języka CSS.
+
+--- Kawałek kodu, który po zapisie kodu z użyciem jQuery powoduje wykonanie się go dopiero po załadowaniu strony. ---
+
+Metoda, która jest zwykle używana, to:
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        //jQuery code
+    });
+    </script>
+
+Drugi sposób na zapisanie tego samego kawałka kodu w skróconej wersji (jednak rzadziej używany), to:
+
+<script type="text/javascript">
+    $(function(){
+        //jQuery code
+    });
+    </script>
+Czyli po prostu bez używania document.ready.
+--------------------------------------------------------------
+  <!-- Jeśli chcemy używać jQuery od google'a lub microsoftm to wklejamy w head'zie strony jeden z poniższych link'ów -->
+  Google CDN:
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  Microsoft CDN:
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+Jak już podłączymy nasz skrypt w nagłówku strony, lub jego ciele - rekomendowane, to możemyprzystępować do kodowania.
