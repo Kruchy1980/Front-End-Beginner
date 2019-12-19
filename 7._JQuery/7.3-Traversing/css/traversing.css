@@ -5,14 +5,14 @@
 #myForm {
   display: flex;
   flex-direction: column;
-  width: 45%;
-  margin-left: 20px;
+  margin: 0 20px;
 }
 
 #myForm input,
 #myForm textarea,
 #myForm button {
   margin: 10px 0;
+  width: 45%;
 }
 
 #check {
@@ -24,6 +24,9 @@
   text-transform: uppercase;
   -webkit-text-fill-color: #00000000;
   -webkit-text-stroke: #082500 1px;
+  align-self: flex-end !important;
+  order: -1;
+  margin-right: 10px;
 }
 
 #submit {
