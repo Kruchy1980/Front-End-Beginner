@@ -14,7 +14,7 @@
     <title>Traversing in JQuery</title>
   </head>
   <body>
-      <div id="content">
+      <button id="content">
     <h1>
       Below are some elements for practicing with HTML Elements with JQuery
     </h1>
@@ -27,7 +27,7 @@
       <li>element of ordered list</li>
     </ol>
 <p>Form:</p>
-    <form action="#" id="myForm">
+    <button action="#" id="myForm">
       <input type="text" id="name" placeholder="your Name" />
       <input type="text" id="surname" placeholder="your surname" />
       <textarea
@@ -37,18 +37,17 @@
         rows="10"
         placeholder="Enter your Message"
       ></textarea>
+            <input id="email" name="email" type="email" placeholder="your email address">
       <button name="btn" id="check">
         Check Me
       </button>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        placeholder="your email address"
-      /><button type="submit" id="submit">Submit the Form</</button>
+<button type="submit" id="submit">Submit the Form</button>
     </form>
-</div>
+            <div id='errors'></div>
+            <div id='output'></div>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="../javas/traversing.js"></script>
+    <script src="../javas/1.traversing.js"></script>
   </body>
 </html>
