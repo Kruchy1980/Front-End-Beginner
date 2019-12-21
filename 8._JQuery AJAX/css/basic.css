@@ -1,0 +1,8 @@
+#output {
+  text-align: center;
+  font-size: 36px;
+  color: #ff0000;
+  border-top: 1px solid #000;
+  margin-top: 15px;
+  padding: 10px;
+}
