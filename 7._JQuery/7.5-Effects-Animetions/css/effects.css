@@ -1,0 +1,19 @@
+#pictures {
+  margin: 10px 20px;
+}
+
+#pictures img {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+#output1,
+#output2 {
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  height: auto;
+  padding: 6px;
+  background-color: #aaa;
+  color: #045358;
+}
