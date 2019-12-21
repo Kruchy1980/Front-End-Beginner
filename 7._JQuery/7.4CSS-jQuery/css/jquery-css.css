@@ -1,0 +1,9 @@
+.clickable {
+  font-size: 3em;
+  font-family: "Courier New", Courier, monospace;
+  text-decoration: dotted line-through;
+  color: #000077;
+  background-color: rgb(255, 9, 58);
+  font-weight: bold;
+  -webkit-text-stroke: 1px #9acd32;
+}
