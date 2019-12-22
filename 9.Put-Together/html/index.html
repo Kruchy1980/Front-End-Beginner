@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      crossorigin="anonymous"
+    />
+    <!-- Ten poniższy link podłącza nam jquery-ui -->
+    <link
+      rel="stylesheet"
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+    />
+    <title>Final project</title>
+  </head>
+
+  <body>
+    <h1>Projekt finałowy</h1>
+    <div id="output">Output1 Content</div>
+
+    <input id="pswa" class="matchField" type="text" />
+    <br />
+    <br />
+    <input id="pswb" class="matchField" type="text" />
+    <div id="status"></div>
+
+    <div id="myForm">
+      <input type="radio" value="Yes" name="myRadio" />Yes
+      <br />
+      <input type="radio" value="No" name="myRadio" checked />No
+      <br />
+      <input type="checkbox" value="send data" name="myCheck1" id="myCheck1" />
+      Check Me
+      <br />
+      <input
+        type="checkbox"
+        value="send data 2"
+        name="myCheck2"
+        id="myCheck2"
+        checked
+      />
+      Hide or Show Output Div <br />
+      Select one
+      <select>
+        <option value="option1" selected="selected">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+        <option value="option4">Option 4</option>
+      </select>
+    </div>
+    <div class="one"><a href="#" id="myClicker">Click me</a></div>
+    <input type="text" value="TEST" id="myA" placeholder="name" />
+
+    <br /><br />
+    <!-- Kawałek kodu potrzebny do wyszukiwania userów -->
+    <div class="ui-widget">
+      <label for="searcher">Search: </label
+      ><input type="text" id="searcher" name="searcher" />
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!-- Ponższy skrypt umożliwia nam użycie jquery-ui -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="../javas/main.js"></script>
+  </body>
+</html>

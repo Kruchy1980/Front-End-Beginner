@@ -1,0 +1,83 @@
+// Prygotowanie dokumentu
+
+$(document).ready(function () {
+    // sprawdzenie poprawności hasła odbędzie się za pomocą wywołania funkcji validate podczaws wpisywania w pole drugie hasła
+    $('#pswb').keyup(validate);
+    // Sprawdzamy czy hasła są takie same
+    function validate() {
+        // deklaracja zmiennych odpowiadających za wartości wpisane w inputy
+        let psw1 = $('#pswa').val();
+        let psw2 = $('#pswb').val();
+        // funkcja warunkowa odpowiadająca za porównanie tych inputów a raczej ich wartości i odpowiednie wyświetlenie komunikatu jeśli są zgodne lub nie
+        if (psw1 === psw2) {
+            $('#status').text('Password Correct').css('color', 'green');
+        } else {
+            $('#status').text('Password Incorrect').css('color', 'red');
+        }
+    }
+    $('#myForm select').change(function () {
+        console.log($(this).val());
+        $('#output').text('selected: ' + $(this).val())
+    })
+
+    //Checkboxes and radiobuttons
+    $('#myCheck1').on('change', function () {
+        console.log($(this));
+        if ($(this).prop('checked')) {
+            let sure = confirm('Are you sure?')
+            this.checked = sure;
+        } else {
+            confirm('Think About it')
+        }
+        $('#output').html('Checked').css({ 'background-color': 'yellow', 'border': '2px solid black' });
+    });
+    $('#myCheck2').change(function (e) {
+        if (this.checked) {
+            $('#output').show();
+        } else {
+            $('#output').hide()
+        };
+
+    });
+    $('#myForm input:radio').change(function () {
+        $('#output').html('Radio Cahnged: ' + $(this).val).css({ 'background-color': 'yellow', 'border': '2px solid black' });
+    })
+    // Jquery UI link and script already added to html
+    // Najpierw próba z ograniczoną ilością danych
+    // Deklarujemy zmienną jako tablicę z kilkoma elementami
+
+    let bag = ['abc', 'def', 'ghi'];
+    // Teraz za pomocą jQuery przypisujemy funkcję autocomplete do inputa wyszukującego dane
+    $('#searcher').autocomplete({
+        // skąd szukać
+        source: bag,
+        // możliwość podania wielu liter
+        multiple: true,
+        // nie ma potrzeby by dopasowanie musiało być
+        mustMatch: false
+    });
+    // Upgrade naszego searchera - po wpisywaniu liter powinny pokazywać się podpowiedzi.clickable
+    $('#searcher').keyup(function () {
+        let searchText = $(this).val();
+        bag.length = 0;
+        // Pobierzmy użytkowników za pomocą ajax'a ze strony randomowych użytkowników, link podany w pliku Final.md
+        //?results=50 oznacza pobór danych 50 randomowych userów
+        $.ajax({
+            url: 'https://randomuser.me/api/?results=50',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $.each(data.results, function (k, v) {
+                    // Dodaj każde z danych do naszej pustej listy
+                    bag.push(v.name.first + " " + v.name.last);
+                });
+                //Wypisz imiona i nazwiska wszystkie w konsoli
+                console.log(bag);
+
+
+            }
+        });
+    })
+
+
+})
